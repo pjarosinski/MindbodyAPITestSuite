@@ -1,0 +1,13 @@
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\MbUnitExperimentsTests.dll
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\MbUnitExperimentsTests.pdb
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\Gallio.dll
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\MbUnit.dll
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\RestSharp.dll
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\NHamcrest.dll
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\RestSharp.xml
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\NHamcrest.pdb
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\obj\Debug\MbUnitExperimentsTests.dll
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\obj\Debug\MbUnitExperimentsTests.pdb
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\obj\Debug\MbUnitExperimentsTests.csprojResolveAssemblyReference.cache
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\MbUnitExperiments.dll
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\MbUnitExperiments.pdb

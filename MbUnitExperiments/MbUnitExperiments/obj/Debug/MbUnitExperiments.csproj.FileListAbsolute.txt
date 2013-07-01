@@ -1,0 +1,10 @@
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperiments\bin\Debug\MbUnitExperiments.dll
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperiments\bin\Debug\MbUnitExperiments.pdb
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperiments\bin\Debug\Gallio.dll
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperiments\bin\Debug\MbUnit.dll
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperiments\bin\Debug\RestSharp.dll
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperiments\bin\Debug\NHamcrest.dll
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperiments\bin\Debug\RestSharp.xml
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperiments\bin\Debug\NHamcrest.pdb
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperiments\obj\Debug\MbUnitExperiments.dll
+c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperiments\obj\Debug\MbUnitExperiments.pdb

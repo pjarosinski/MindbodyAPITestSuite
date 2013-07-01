@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using RestSharp;
+
+namespace MbUnitExperiments.TokensRestCalls
+{
+    public class TokensRestCalls : AbstractBaseRestSetup
+    {
+        public string GenerateToken()
+        {
+            var client = new RestClient("https://dev-auth.mindbodyonline.com");
+
+            var request = new RestRequest("/issue/oauth2/token", Method.POST) {RequestFormat = DataFormat.Json};
+
+            request.AddHeader("Content-Type", "application/json");
+            request.AddHeader("Authorization", "Basic aW50ZWdyYXRpb25fY2xpZW50OnNlY3JldA==");
+
+            request.AddBody(
+                new
+                    {
+                        username = "api_user",
+                        password = "user1234",
+                        scope = "urn:mboframeworkapi",
+                        grant_type = "password"
+                    });
+
+            var response = client.Execute(request);
+
+            return response.Content;
+        }
+
+
+    }
+}
