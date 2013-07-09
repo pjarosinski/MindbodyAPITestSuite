@@ -8,3 +8,14 @@ c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\Mb
 c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperiments\bin\Debug\NHamcrest.pdb
 c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperiments\obj\Debug\MbUnitExperiments.dll
 c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperiments\obj\Debug\MbUnitExperiments.pdb
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperiments\bin\Debug\MbUnitExperiments.dll
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperiments\bin\Debug\MbUnitExperiments.pdb
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperiments\bin\Debug\Gallio.dll
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperiments\bin\Debug\MbUnit.dll
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperiments\bin\Debug\RestSharp.dll
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperiments\bin\Debug\NHamcrest.dll
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperiments\bin\Debug\RestSharp.xml
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperiments\bin\Debug\NHamcrest.pdb
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperiments\obj\Debug\MbUnitExperiments.csprojResolveAssemblyReference.cache
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperiments\obj\Debug\MbUnitExperiments.dll
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperiments\obj\Debug\MbUnitExperiments.pdb

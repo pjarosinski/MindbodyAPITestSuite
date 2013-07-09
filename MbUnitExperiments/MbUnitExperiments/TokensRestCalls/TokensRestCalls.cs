@@ -11,9 +11,9 @@ namespace MbUnitExperiments.TokensRestCalls
     {
         public string GenerateToken()
         {
-            var client = new RestClient("https://dev-auth.mindbodyonline.com");
+            var client = new RestClient("https://auth.mbodev.me");
 
-            var request = new RestRequest("/issue/oauth2/token", Method.POST) {RequestFormat = DataFormat.Json};
+            var request = new RestRequest("/issue/oauth2/token", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
             request.AddHeader("Authorization", "Basic aW50ZWdyYXRpb25fY2xpZW50OnNlY3JldA==");
@@ -32,6 +32,27 @@ namespace MbUnitExperiments.TokensRestCalls
             return response.Content;
         }
 
+        public string GetUserToken()
+        {
+            var client = new RestClient("https://dev-auth.mindbodyonline.com");
 
+            var request = new RestRequest("/issue/oauth2/token", Method.POST) {RequestFormat = DataFormat.Json};
+
+            request.AddHeader("Content-type", "application/json");
+            request.AddHeader("Authorization", "Basic aW50ZWdyYXRpb25fY2xpZW50OnNlY3JldA==");
+
+            request.AddBody(
+                new
+                    {
+                        username = "api_user",
+                        password = "user1234",
+                        scope = "urn:mboframeworkapi",
+                        grant_type = "password"
+                    });
+
+            var response = client.Execute(request);
+
+            return response.Content;
+        }
     }
 }

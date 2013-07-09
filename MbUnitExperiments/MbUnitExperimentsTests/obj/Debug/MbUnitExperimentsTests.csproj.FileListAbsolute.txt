@@ -11,3 +11,16 @@ c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\Mb
 c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\obj\Debug\MbUnitExperimentsTests.csprojResolveAssemblyReference.cache
 c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\MbUnitExperiments.dll
 c:\users\chris.essley\documents\visual studio 2012\Projects\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\MbUnitExperiments.pdb
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\MbUnitExperimentsTests.dll
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\MbUnitExperimentsTests.pdb
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\Gallio.dll
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\MbUnit.dll
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\MbUnitExperiments.dll
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\RestSharp.dll
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\NHamcrest.dll
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\MbUnitExperiments.pdb
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\RestSharp.xml
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperimentsTests\bin\Debug\NHamcrest.pdb
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperimentsTests\obj\Debug\MbUnitExperimentsTests.csprojResolveAssemblyReference.cache
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperimentsTests\obj\Debug\MbUnitExperimentsTests.dll
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\MbUnitExperiments\MbUnitExperimentsTests\obj\Debug\MbUnitExperimentsTests.pdb

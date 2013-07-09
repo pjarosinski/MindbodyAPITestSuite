@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="AbstractBaseRestSetup.cs" />
     <Compile Include="RestObjects\RestUser.cs" />
+    <Compile Include="RestObjects\RestUserProfile.cs" />
     <Compile Include="TokensRestCalls\TokensRestCalls.cs" />
     <Compile Include="UserRestCalls\UserRestCalls.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

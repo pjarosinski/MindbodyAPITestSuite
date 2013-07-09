@@ -21,5 +21,17 @@ namespace MbUnitExperimentsTests.TokensRestCallsTests
 
             Assert.AreNotEqual(0, response.Length);
         }
+
+        [Test]
+        public void GetUserTokenTest()
+        {
+            TokensRestCalls tokensRestCalls = new TokensRestCalls();
+
+            string response = tokensRestCalls.GetUserToken();
+
+            Console.WriteLine(response);
+
+            Assert.AreNotEqual(0, response.Length);
+        }
     }
 }
