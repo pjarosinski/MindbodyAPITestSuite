@@ -9,7 +9,7 @@ using MbUnitExperiments.RestObjects;
 
 namespace MbUnitExperimentsTests
 {
-    [TestFixture, Parallelizable, ThreadedRepeat(1)]
+    [TestFixture, Parallelizable, ThreadedRepeat(100)]
     public abstract class AbstractRestCallTestSuite
     {
         public RestUser User = new RestUser { Username = "chris3.essley@mindbodyonline.com", Password = "owner1234", Firstname = "chris", Lastname = "essley" };
