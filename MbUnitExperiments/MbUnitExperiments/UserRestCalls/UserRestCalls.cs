@@ -34,7 +34,7 @@ namespace MbUnitExperiments.UserRestCalls
             var request = new RestRequest("/rest/user/{id}", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserAccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
 
             request.AddUrlSegment("id", userId.ToString(CultureInfo.InvariantCulture));
 
