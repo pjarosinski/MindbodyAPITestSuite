@@ -65,6 +65,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AbstractRestCallTestSuite.cs" />
+    <Compile Include="BillingInfoRestCallsTests\BillingInfoRestCallsTests.cs" />
     <Compile Include="TokensRestCallsTests\TokensRestCallsTests.cs" />
     <Compile Include="UserRestCallsTests\UserRestCallsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

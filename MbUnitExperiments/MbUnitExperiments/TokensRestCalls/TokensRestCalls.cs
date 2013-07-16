@@ -9,7 +9,7 @@ namespace MbUnitExperiments.TokensRestCalls
 {
     public class TokensRestCalls : AbstractBaseRestSetup
     {
-        public string GenerateToken()
+        public IRestResponse GenerateToken()
         {
             var client = new RestClient("https://auth.mbodev.me");
 
@@ -27,12 +27,10 @@ namespace MbUnitExperiments.TokensRestCalls
                         grant_type = "password"
                     });
 
-            var response = client.Execute(request);
-
-            return response.Content;
+            return client.Execute(request);
         }
 
-        public string GetUserToken()
+        public IRestResponse GetUserToken()
         {
             var client = new RestClient("https://dev-auth.mindbodyonline.com");
 
@@ -50,9 +48,7 @@ namespace MbUnitExperiments.TokensRestCalls
                         grant_type = "password"
                     });
 
-            var response = client.Execute(request);
-
-            return response.Content;
+            return client.Execute(request);
         }
     }
 }

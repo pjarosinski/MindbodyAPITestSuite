@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MbUnit.Framework;
 using MbUnitExperiments.TokensRestCalls;
+using RestSharp;
 
 namespace MbUnitExperimentsTests.TokensRestCallsTests
 {
@@ -15,11 +16,11 @@ namespace MbUnitExperimentsTests.TokensRestCallsTests
         {
             TokensRestCalls tokenRestCalls = new TokensRestCalls();
 
-            string response = tokenRestCalls.GenerateToken();
+            IRestResponse response = tokenRestCalls.GenerateToken();
 
             Console.WriteLine(response);
 
-            Assert.AreNotEqual(0, response.Length);
+            Assert.AreNotEqual(0, response.ContentLength);
         }
 
         [Test]
@@ -27,11 +28,11 @@ namespace MbUnitExperimentsTests.TokensRestCallsTests
         {
             TokensRestCalls tokensRestCalls = new TokensRestCalls();
 
-            string response = tokensRestCalls.GetUserToken();
+            IRestResponse response = tokensRestCalls.GetUserToken();
 
             Console.WriteLine(response);
 
-            Assert.AreNotEqual(0, response.Length);
+            Assert.AreNotEqual(0, response.ContentLength);
         }
     }
 }

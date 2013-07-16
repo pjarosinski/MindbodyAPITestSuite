@@ -11,7 +11,7 @@ namespace MbUnitExperiments.UserRestCalls
 {
     public class UserRestCalls : AbstractBaseRestSetup
     {
-        public string SetupUser(int userId)
+        public IRestResponse SetupUser(int userId)
         {
             var client = new RestClient("http://dev2-connect.mbodev.me");
 
@@ -22,12 +22,10 @@ namespace MbUnitExperiments.UserRestCalls
 
             request.AddUrlSegment("id", userId.ToString(CultureInfo.InvariantCulture));
 
-            var response = client.Execute(request);
-
-            return response.Content;
+            return client.Execute(request);
         }
 
-        public string GetUser(int userId)
+        public IRestResponse GetUser(int userId)
         {
             var client = new RestClient("http://dev2-connect.mbodev.me");
 
@@ -38,12 +36,10 @@ namespace MbUnitExperiments.UserRestCalls
 
             request.AddUrlSegment("id", userId.ToString(CultureInfo.InvariantCulture));
 
-            var response = client.Execute(request);
-
-            return response.Content;
+            return client.Execute(request);
         }
 
-        public string CreateUser(RestUser user)
+        public IRestResponse CreateUser(RestUser user)
         {
             var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
@@ -61,12 +57,10 @@ namespace MbUnitExperiments.UserRestCalls
                         lastname = user.Lastname
                     });
 
-            var response = client.Execute(request);
-
-            return response.Content;
+            return client.Execute(request);
         }
 
-        public string UpdateUser(int userId, RestUserProfile userProfile)
+        public IRestResponse UpdateUser(int userId, RestUserProfile userProfile)
         {
             var client = new RestClient("http://dev2-connect.mbodev.me");
 
@@ -86,9 +80,7 @@ namespace MbUnitExperiments.UserRestCalls
                         zip = userProfile.Zip
                     });
 
-            var response = client.Execute(request);
-
-            return response.Content;
+            return client.Execute(request);
         }
     }
 }

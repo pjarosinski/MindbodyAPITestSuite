@@ -2,6 +2,7 @@
 using MbUnit.Framework;
 using MbUnitExperiments.RestObjects;
 using MbUnitExperiments.UserRestCalls;
+using RestSharp;
 
 namespace MbUnitExperimentsTests.UserRestCallsTests
 {
@@ -12,11 +13,11 @@ namespace MbUnitExperimentsTests.UserRestCallsTests
         {
             UserRestCalls userRestCalls = new UserRestCalls();
 
-            string response = userRestCalls.SetupUser(UserId);
+            IRestResponse response = userRestCalls.SetupUser(UserId);
 
             Console.WriteLine(response);
 
-            Assert.AreNotEqual(0, response.Length);
+            Assert.AreNotEqual(0, response.ContentLength);
         }
 
         [Test]
@@ -24,11 +25,11 @@ namespace MbUnitExperimentsTests.UserRestCallsTests
         {
             UserRestCalls userRestCalls = new UserRestCalls();
 
-            string response = userRestCalls.GetUser(UserId);
+            IRestResponse response = userRestCalls.GetUser(UserId);
 
             Console.WriteLine(response);
 
-            Assert.AreNotEqual(0, response.Length);
+            Assert.AreNotEqual(0, response.ContentLength);
         }
 
         [Test]
@@ -36,11 +37,11 @@ namespace MbUnitExperimentsTests.UserRestCallsTests
         {
             UserRestCalls userRestCalls = new UserRestCalls();
 
-            string response = userRestCalls.CreateUser(User);
+            IRestResponse response = userRestCalls.CreateUser(User);
 
             Console.WriteLine(response);
 
-            Assert.AreNotEqual(0, response.Length);
+            Assert.AreNotEqual(0, response.ContentLength);
         }
 
         [Test]
@@ -48,11 +49,11 @@ namespace MbUnitExperimentsTests.UserRestCallsTests
         {
             UserRestCalls userRestCalls = new UserRestCalls();
 
-            string response = userRestCalls.UpdateUser(UserId, UserProfile);
+            IRestResponse response = userRestCalls.UpdateUser(UserId, UserProfile);
 
             Console.WriteLine(response);
 
-            Assert.AreNotEqual(0, response.Length);
+            Assert.AreNotEqual(0, response.ContentLength);
         }
     }
 }

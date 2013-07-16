@@ -4,41 +4,97 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MbUnitExperiments.RestObjects;
 using RestSharp;
 
 namespace MbUnitExperiments.BillingInfoRestCalls
 {
     public class BillingInfoRestCalls : AbstractBaseRestSetup
     {
-        public string GetUserBillingInfo(int userId)
+        public IRestResponse GetUserBillingInfo(int userId)
         {
             var client = new RestClient("http://dev2-connect.mbodev.me");
 
-            var request = new RestRequest("/rest/user/{userId}/profileimage", Method.GET) { RequestFormat = DataFormat.Json };
+            var request = new RestRequest("/rest/user/{userId}/billinginfo", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-type", "application/json");
             request.AddHeader("Authorization", "Bearer " + UserAccessToken);
 
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
 
-            var response = client.Execute(request);
-
-            return response.Content;
+            return client.Execute(request);
         }
 
-        public string AddUserBillingInfo()
+        public IRestResponse AddUserBillingInfo(int userId, RestBillingInfo userInfo)
         {
-            return "";
+            var client = new RestClient("http://dev2-connect.mbodev.me");
+
+            var request = new RestRequest("/rest/user/{userId}/billinginfo", Method.POST) { RequestFormat = DataFormat.Json };
+
+            request.AddHeader("Content-type", "application/json");
+            request.AddHeader("Authorization", "Bearer " + UserAccessToken);
+
+            request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
+
+            request.AddBody(new
+                {
+                    name = userInfo.Name,
+                    streetaddress = userInfo.StreetAddress,
+                    city = userInfo.City,
+                    state = userInfo.State,
+                    postalcode = userInfo.PostalCode,
+                    cardnumber = userInfo.CardNumber,
+                    expirationmonth = userInfo.ExpirationMonth,
+                    expirationyear = userInfo.ExpirationYear,
+                    CVV = userInfo.Cvv,
+                    primarycard = userInfo.PrimaryCard
+                });
+
+            return client.Execute(request);
         }
 
-        public string RemoveUserBillingInfo()
+        public IRestResponse RemoveUserBillingInfo(int userId, int cardId)
         {
-            return "";
+            var client = new RestClient("http://dev2-connect.mbodev.me");
+
+            var request = new RestRequest("/rest/user/{userId}/billinginfo/{cardId}", Method.DELETE) { RequestFormat = DataFormat.Json };
+
+            request.AddHeader("Content-type", "application/json");
+            request.AddHeader("Authorization", "Bearer " + UserAccessToken);
+
+            request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
+            request.AddUrlSegment("cardId", cardId.ToString(CultureInfo.InvariantCulture));
+
+            return client.Execute(request);
         }
 
-        public string UpdateUserBillingInfo()
+        public IRestResponse UpdateUserBillingInfo(int userId, int cardId, RestBillingInfo userInfo)
         {
-            return "";
+            var client = new RestClient("http://dev2-connect.mbodev.me");
+
+            var request = new RestRequest("/rest/user/{userId}/billinginfo/{cardId}", Method.PUT) { RequestFormat = DataFormat.Json };
+
+            request.AddHeader("Content-type", "application/json");
+            request.AddHeader("Authorization", "Bearer " + UserAccessToken);
+
+            request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
+            request.AddUrlSegment("cardId", cardId.ToString(CultureInfo.InvariantCulture));
+
+            request.AddBody(new
+            {
+                name = userInfo.Name,
+                streetaddress = userInfo.StreetAddress,
+                city = userInfo.City,
+                state = userInfo.State,
+                postalcode = userInfo.PostalCode,
+                cardnumber = userInfo.CardNumber,
+                expirationmonth = userInfo.ExpirationMonth,
+                expirationyear = userInfo.ExpirationYear,
+                CVV = userInfo.Cvv,
+                primarycard = userInfo.PrimaryCard
+            });
+
+            return client.Execute(request);
         }
     }
 }

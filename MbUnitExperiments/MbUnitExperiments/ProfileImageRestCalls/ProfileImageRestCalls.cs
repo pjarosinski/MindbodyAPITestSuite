@@ -10,7 +10,7 @@ namespace MbUnitExperiments.ProfileImageRestCalls
 {
     public class ProfileImageRestCalls : AbstractBaseRestSetup
     {
-        public string GetUserProfileImage(int userId)
+        public IRestResponse GetUserProfileImage(int userId)
         {
             var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
@@ -19,14 +19,12 @@ namespace MbUnitExperiments.ProfileImageRestCalls
             request.AddHeader("Content-type", "application/json");
             request.AddHeader("Authorization", "Bearer " + UserAccessToken);
 
-            request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
+            request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture)); 
 
-            var response = client.Execute(request);
-
-            return response.Content;
+            return client.Execute(request);
         }
 
-        public string AddUserProfileImage(int userId)
+        public IRestResponse AddUserProfileImage(int userId)
         {
             var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
@@ -43,9 +41,7 @@ namespace MbUnitExperiments.ProfileImageRestCalls
                     file = "no file"
                 });
 
-            var response = client.Execute(request);
-
-            return response.Content;
+            return client.Execute(request);
         }
     }
 }
