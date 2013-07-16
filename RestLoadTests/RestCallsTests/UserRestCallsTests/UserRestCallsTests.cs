@@ -1,10 +1,8 @@
 ﻿using System;
 using MbUnit.Framework;
-using MbUnitExperiments.RestObjects;
-using MbUnitExperiments.UserRestCalls;
 using RestSharp;
 
-namespace MbUnitExperimentsTests.UserRestCallsTests
+namespace RestCallsTests.UserRestCallsTests
 {
     public class UserRestCallsTests : AbstractRestCallTestSuite
     {

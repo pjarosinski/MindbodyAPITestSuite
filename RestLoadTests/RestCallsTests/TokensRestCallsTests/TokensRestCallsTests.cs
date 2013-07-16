@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MbUnit.Framework;
-using MbUnitExperiments.TokensRestCalls;
 using RestSharp;
 
-namespace MbUnitExperimentsTests.TokensRestCallsTests
+namespace RestCallsTests.TokensRestCallsTests
 {
     public class TokensRestCallsTests : AbstractRestCallTestSuite
     {

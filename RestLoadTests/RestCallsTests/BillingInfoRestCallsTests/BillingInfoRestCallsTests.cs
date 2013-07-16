@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MbUnit.Framework;
-using MbUnitExperiments.BillingInfoRestCalls;
 using RestSharp;
 
-namespace MbUnitExperimentsTests.BillingInfoRestCallsTests
+namespace RestCallsTests.BillingInfoRestCallsTests
 {
     public class BillingInfoRestCallsTests : AbstractRestCallTestSuite
     {

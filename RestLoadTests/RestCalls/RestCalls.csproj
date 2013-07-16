@@ -7,8 +7,8 @@
     <ProjectGuid>{5F905ACE-FCF7-4D75-BD8F-42147BACA60D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MbUnitExperiments</RootNamespace>
-    <AssemblyName>MbUnitExperiments</AssemblyName>
+    <RootNamespace>RestCalls</RootNamespace>
+    <AssemblyName>RestCalls</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

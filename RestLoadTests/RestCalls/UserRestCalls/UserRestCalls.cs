@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MbUnitExperiments.RestObjects;
+﻿using System.Globalization;
+using RestCalls.RestObjects;
 using RestSharp;
 
-namespace MbUnitExperiments.UserRestCalls
+namespace RestCalls.UserRestCalls
 {
     public class UserRestCalls : AbstractBaseRestSetup
     {

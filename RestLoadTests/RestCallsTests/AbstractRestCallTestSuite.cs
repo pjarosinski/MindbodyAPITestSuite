@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MbUnit.Framework;
-using MbUnitExperiments.RestObjects;
 
-namespace MbUnitExperimentsTests
+namespace RestCallsTests
 {
     [TestFixture, Parallelizable, ThreadedRepeat(100)]
     public abstract class AbstractRestCallTestSuite
