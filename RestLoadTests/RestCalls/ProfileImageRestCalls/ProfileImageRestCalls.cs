@@ -19,7 +19,7 @@ namespace RestCalls.ProfileImageRestCalls
             return client.Execute(request);
         }
 
-        public IRestResponse AddUserProfileImage(int userId)
+        public IRestResponse AddUserProfileImage(int userId, string base64File)
         {
             var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
@@ -33,7 +33,7 @@ namespace RestCalls.ProfileImageRestCalls
             request.AddBody(
                 new
                 {
-                    file = "no file"
+                    file = base64File
                 });
 
             return client.Execute(request);

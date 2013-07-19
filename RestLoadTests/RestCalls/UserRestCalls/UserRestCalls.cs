@@ -10,7 +10,7 @@ namespace RestCalls.UserRestCalls
         {
             var client = new RestClient("http://dev2-connect.mbodev.me");
 
-            var request = new RestRequest("/rest/user/{id}/setup") {RequestFormat = DataFormat.Json};
+            var request = new RestRequest("/rest/user/{id}/setup", Method.POST) {RequestFormat = DataFormat.Json};
 
             request.AddHeader("Content-type", "application/json");
             request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);

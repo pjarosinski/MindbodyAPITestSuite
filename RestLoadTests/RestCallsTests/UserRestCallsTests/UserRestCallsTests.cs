@@ -1,5 +1,6 @@
 ﻿using System;
 using MbUnit.Framework;
+using RestCalls.UserRestCalls;
 using RestSharp;
 
 namespace RestCallsTests.UserRestCallsTests

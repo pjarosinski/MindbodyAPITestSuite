@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using MbUnit.Framework;
+using RestCalls.RestObjects;
 
 namespace RestCallsTests
 {

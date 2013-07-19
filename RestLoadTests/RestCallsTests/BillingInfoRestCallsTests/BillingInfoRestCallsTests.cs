@@ -1,5 +1,6 @@
 ﻿using System;
 using MbUnit.Framework;
+using RestCalls.BillingInfoRestCalls;
 using RestSharp;
 
 namespace RestCallsTests.BillingInfoRestCallsTests
