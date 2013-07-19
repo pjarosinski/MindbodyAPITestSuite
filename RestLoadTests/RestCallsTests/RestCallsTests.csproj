@@ -64,6 +64,7 @@
     <Compile Include="AbstractRestCallTestSuite.cs" />
     <Compile Include="BillingInfoRestCallsTests\BillingInfoRestCallsTests.cs" />
     <Compile Include="FavoritesRestCallsTests\FavoritesRestCallsTests.cs" />
+    <Compile Include="LocationAndClassesRestCallsTests\LocationsAndClassesRestCallsTests.cs" />
     <Compile Include="ProfileImageRestCallsTests\ProfileImageRestCallsTests.cs" />
     <Compile Include="TokensRestCallsTests\TokensRestCallsTests.cs" />
     <Compile Include="UserRestCallsTests\UserRestCallsTests.cs" />

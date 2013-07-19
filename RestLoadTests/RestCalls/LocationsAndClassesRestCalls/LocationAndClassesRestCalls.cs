@@ -132,9 +132,9 @@ namespace RestCalls.LocationsAndClassesRestCalls
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
 
             request.AddBody(new
-            {
-                classid = classId
-            });
+                {
+                    classid = classId
+                });
 
             return client.Execute(request);
         }
