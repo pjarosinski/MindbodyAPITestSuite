@@ -45,12 +45,12 @@ namespace RestCalls.UserRestCalls
 
             request.AddBody(
                 new
-                    {
-                        username = user.Username,
-                        password = user.Password,
-                        firstname = user.Firstname,
-                        lastname = user.Lastname
-                    });
+                {
+                    username = user.Username,
+                    password = user.Password,
+                    firstname = user.Firstname,
+                    lastname = user.Lastname
+                });
 
             return client.Execute(request);
         }
@@ -66,14 +66,14 @@ namespace RestCalls.UserRestCalls
 
             request.AddBody(
                 new
-                    {
-                        firstname = userProfile.FirstName,
-                        lastname = userProfile.LastName,
-                        address = userProfile.Address,
-                        city = userProfile.City,
-                        state = userProfile.State,
-                        zip = userProfile.Zip
-                    });
+                {
+                    firstname = userProfile.FirstName,
+                    lastname = userProfile.LastName,
+                    address = userProfile.Address,
+                    city = userProfile.City,
+                    state = userProfile.State,
+                    zip = userProfile.Zip
+                });
 
             return client.Execute(request);
         }

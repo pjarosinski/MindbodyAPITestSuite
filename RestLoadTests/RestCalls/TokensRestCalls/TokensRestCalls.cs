@@ -15,12 +15,12 @@ namespace RestCalls.TokensRestCalls
 
             request.AddBody(
                 new
-                    {
-                        username = "api_user",
-                        password = "user1234",
-                        scope = "urn:mboframeworkapi",
-                        grant_type = "password"
-                    });
+                {
+                    username = "api_user",
+                    password = "user1234",
+                    scope = "urn:mboframeworkapi",
+                    grant_type = "password"
+                });
 
             return client.Execute(request);
         }
@@ -36,12 +36,12 @@ namespace RestCalls.TokensRestCalls
 
             request.AddBody(
                 new
-                    {
-                        username = "api_user",
-                        password = "user1234",
-                        scope = "urn:mboframeworkapi",
-                        grant_type = "password"
-                    });
+                {
+                    username = "api_user",
+                    password = "user1234",
+                    scope = "urn:mboframeworkapi",
+                    grant_type = "password"
+                });
 
             return client.Execute(request);
         }

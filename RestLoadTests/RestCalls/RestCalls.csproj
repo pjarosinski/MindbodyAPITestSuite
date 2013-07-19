@@ -61,10 +61,12 @@
     <Compile Include="RestObjects\RestShoppingCart.cs" />
     <Compile Include="RestObjects\RestStaff.cs" />
     <Compile Include="RestObjects\RestStaffInfo.cs" />
+    <Compile Include="RestObjects\RestTaxes.cs" />
     <Compile Include="RestObjects\RestUser.cs" />
     <Compile Include="RestObjects\RestUserProfile.cs" />
     <Compile Include="SeriesRestCalls\SeriesRestCalls.cs" />
     <Compile Include="StaffRestCalls\StaffRestCalls.cs" />
+    <Compile Include="TaxRestCalls\TaxRestCalls.cs" />
     <Compile Include="TokensRestCalls\TokensRestCalls.cs" />
     <Compile Include="UserRestCalls\UserRestCalls.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

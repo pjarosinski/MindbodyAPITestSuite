@@ -32,19 +32,19 @@ namespace RestCalls.SeriesRestCalls
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
            
             request.AddBody(new
-            {
-                name  = series.Name,
-                price = series.Price,
-                programID = series.ProgramId,
-                seriesTypeID = series.SeriesTypeId,
-                categoryID = series.CategoryId,
-                count = series.Count,
-                duration = series.Duration,
-                sessiontypeids = series.SessionTypeIds,
-                onlineprice = series.OnlinePrice,
-                enabletax1 = series.EnableTax1,
-                enabletax2 = series.EnableTax2
-            });
+                {
+                    name  = series.Name,
+                    price = series.Price,
+                    programID = series.ProgramId,
+                    seriesTypeID = series.SeriesTypeId,
+                    categoryID = series.CategoryId,
+                    count = series.Count,
+                    duration = series.Duration,
+                    sessiontypeids = series.SessionTypeIds,
+                    onlineprice = series.OnlinePrice,
+                    enabletax1 = series.EnableTax1,
+                    enabletax2 = series.EnableTax2
+                });
 
             return client.Execute(request);
         }
@@ -60,19 +60,19 @@ namespace RestCalls.SeriesRestCalls
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddBody(new
-            {
-                name = series.Name,
-                price = series.Price,
-                programID = series.ProgramId,
-                seriesTypeID = series.SeriesTypeId,
-                categoryID = series.CategoryId,
-                count = series.Count,
-                duration = series.Duration,
-                sessiontypeids = series.SessionTypeIds,
-                onlineprice = series.OnlinePrice,
-                enabletax1 = series.EnableTax1,
-                enabletax2 = series.EnableTax2
-            });
+                {
+                    name = series.Name,
+                    price = series.Price,
+                    programID = series.ProgramId,
+                    seriesTypeID = series.SeriesTypeId,
+                    categoryID = series.CategoryId,
+                    count = series.Count,
+                    duration = series.Duration,
+                    sessiontypeids = series.SessionTypeIds,
+                    onlineprice = series.OnlinePrice,
+                    enabletax1 = series.EnableTax1,
+                    enabletax2 = series.EnableTax2
+                });
 
             return client.Execute(request);
         }

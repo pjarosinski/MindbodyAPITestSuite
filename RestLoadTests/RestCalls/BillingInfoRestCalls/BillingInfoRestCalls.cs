@@ -76,18 +76,18 @@ namespace RestCalls.BillingInfoRestCalls
             request.AddUrlSegment("cardId", cardId.ToString(CultureInfo.InvariantCulture));
 
             request.AddBody(new
-            {
-                name = userInfo.Name,
-                streetaddress = userInfo.StreetAddress,
-                city = userInfo.City,
-                state = userInfo.State,
-                postalcode = userInfo.PostalCode,
-                cardnumber = userInfo.CardNumber,
-                expirationmonth = userInfo.ExpirationMonth,
-                expirationyear = userInfo.ExpirationYear,
-                CVV = userInfo.Cvv,
-                primarycard = userInfo.PrimaryCard
-            });
+                {
+                    name = userInfo.Name,
+                    streetaddress = userInfo.StreetAddress,
+                    city = userInfo.City,
+                    state = userInfo.State,
+                    postalcode = userInfo.PostalCode,
+                    cardnumber = userInfo.CardNumber,
+                    expirationmonth = userInfo.ExpirationMonth,
+                    expirationyear = userInfo.ExpirationYear,
+                    CVV = userInfo.Cvv,
+                    primarycard = userInfo.PrimaryCard
+                });
 
             return client.Execute(request);
         }

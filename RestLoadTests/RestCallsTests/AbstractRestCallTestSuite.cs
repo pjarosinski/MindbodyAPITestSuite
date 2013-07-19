@@ -5,7 +5,7 @@ using RestCalls.RestObjects;
 
 namespace RestCallsTests
 {
-    [TestFixture, Parallelizable, ThreadedRepeat(100)]
+    [TestFixture, Parallelizable, ThreadedRepeat(2)]
     public abstract class AbstractRestCallTestSuite
     {
         public RestUser User = new RestUser { Username = "chris3.essley@mindbodyonline.com", Password = "owner1234", Firstname = "chris", Lastname = "essley" };
