@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RestCalls.RestObjects;
 using RestSharp;
 
 namespace RestCalls.TaxRestCalls
@@ -11,12 +13,41 @@ namespace RestCalls.TaxRestCalls
     {
         public IRestResponse GetTaxRates(int locationId, int siteId)
         {
-            return new RestResponse();
+            var client = new RestClient("http://dev-mobile-rest.mbodev.me");
+
+            var request = new RestRequest("/Settings/TaxTables/{LocationID}", Method.GET) { RequestFormat = DataFormat.Json };
+
+            request.AddHeader("Content-Type", "application/json");
+            request.AddHeader("Authorization", "Bearer " + StaffAccessToken);
+            request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
+
+            request.AddUrlSegment("LocationID", locationId.ToString(CultureInfo.InvariantCulture));
+
+            return client.Execute(request);
         }
 
-        public IRestResponse UpdateTaxRates(int locationId, int siteId)
+        public IRestResponse UpdateTaxRates(int locationId, int siteId, RestTaxes taxes)
         {
-            return new RestResponse();
+            var client = new RestClient("http://dev-mobile-rest.mbodev.me");
+
+            var request = new RestRequest("/Settings/TaxTables/{LocationID}", Method.PUT) { RequestFormat = DataFormat.Json };
+
+            request.AddHeader("Content-Type", "application/json");
+            request.AddHeader("Authorization", "Bearer " + StaffAccessToken);
+            request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
+
+            request.AddUrlSegment("LocationID", locationId.ToString(CultureInfo.InvariantCulture));
+
+            request.AddBody(new
+                {
+                    Tax1 =taxes.Tax1,
+                    Tax2 = taxes.Tax2,
+                    Tax3 = taxes.Tax3,
+                    Tax4 = taxes.Tax4,
+                    Tax5 = taxes.Tax5
+                });
+
+            return client.Execute(request);
         }
     }
 }

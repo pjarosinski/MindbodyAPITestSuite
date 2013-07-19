@@ -69,6 +69,7 @@
     <Compile Include="ProfileImageRestCallsTests\ProfileImageRestCallsTests.cs" />
     <Compile Include="SeriesRestCallsTests\SeriesRestCallsTests.cs" />
     <Compile Include="StaffRestCallsTests\StaffRestCallsTests.cs" />
+    <Compile Include="TaxRestCallsTests\TaxRestCallsTests.cs" />
     <Compile Include="TokensRestCallsTests\TokensRestCallsTests.cs" />
     <Compile Include="UserRestCallsTests\UserRestCallsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
