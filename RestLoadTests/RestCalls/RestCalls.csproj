@@ -58,6 +58,8 @@
     <Compile Include="ProfileImageRestCalls\ProfileImageRestCalls.cs" />
     <Compile Include="RestObjects\RestBillingInfo.cs" />
     <Compile Include="RestObjects\RestSeries.cs" />
+    <Compile Include="RestObjects\RestStaff.cs" />
+    <Compile Include="RestObjects\RestStaffInfo.cs" />
     <Compile Include="RestObjects\RestUser.cs" />
     <Compile Include="RestObjects\RestUserProfile.cs" />
     <Compile Include="SeriesRestCalls\SeriesRestCalls.cs" />

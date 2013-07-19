@@ -18,3 +18,4 @@ C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\RestCalls\bin
 C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\RestCalls\bin\Debug\NHamcrest.pdb
 C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\RestCalls\obj\Debug\RestCalls.dll
 C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\RestCalls\obj\Debug\RestCalls.pdb
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\RestCalls\obj\Debug\RestCalls.csprojResolveAssemblyReference.cache
