@@ -11,5 +11,7 @@
             "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXV0aC5tYm9kZXYubWUvdHJ1c3QvdjIiLCJhdWQiOiJ1cm46bWJvZnJhbWV3b3JrYXBpIiwibmJmIjoxMzczNDAyMzY3LCJleHAiOjEzNzM0MDk1NjcsIm5hbWVpZCI6ImFwaV91c2VyIiwidW5pcXVlX25hbWUiOiJhcGlfdXNlciIsImF1dGhtZXRob2QiOiJPQXV0aDIiLCJhdXRoX3RpbWUiOiIyMDEzLTA3LTA5VDIwOjM5OjI3LjQ1NloiLCJodHRwOi8vaWRlbnRpdHlzZXJ2ZXIudGhpbmt0ZWN0dXJlLmNvbS9jbGFpbXMvY2xpZW50IjoiVGVzdENsaWVudCIsImh0dHA6Ly9pZGVudGl0eXNlcnZlci50aGlua3RlY3R1cmUuY29tL2NsYWltcy9zY29wZSI6InVybjptYm9mcmFtZXdvcmthcGkiLCJyb2xlIjoiTWluZGJvZHlBcGlDbGllbnQifQ.PTy0FAfotu7FVC3VrZXrEqQM2RPIOD2Yshuqjsdg6VI";
 
         public readonly string GeneratedRefreshToken = "b44a3b8e715c4e9e9a6e26fe4d3491b9";
+
+        public readonly string StaffAccessToken = "Not Implemented Yet";
     }
 }
