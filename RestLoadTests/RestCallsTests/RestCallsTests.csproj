@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="AbstractRestCallTestSuite.cs" />
     <Compile Include="BillingInfoRestCallsTests\BillingInfoRestCallsTests.cs" />
+    <Compile Include="CheckoutRestCallsTests\CheckoutRestCallsTests.cs" />
     <Compile Include="FavoritesRestCallsTests\FavoritesRestCallsTests.cs" />
     <Compile Include="LocationAndClassesRestCallsTests\LocationsAndClassesRestCallsTests.cs" />
     <Compile Include="ProfileImageRestCallsTests\ProfileImageRestCallsTests.cs" />
