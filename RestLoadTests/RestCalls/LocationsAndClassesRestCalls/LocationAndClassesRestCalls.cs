@@ -49,29 +49,94 @@ namespace RestCalls.LocationsAndClassesRestCalls
             return client.Execute(request);
         }
 
-        public string GetClassesForSpecificLocationWithinSpecificDateRange()
+        public IRestResponse GetClassesForSpecificLocationWithinSpecificDateRange(string startDate, string endDate, int locationId, int userId, int siteId)
         {
-            return "";
+            var client = new RestClient("http://dev2-connect.mbodev.me");
+
+            var request = new RestRequest("/rest/class?startRange={startDate}&endRange={endDate}&locationId={locationId}&userid={UserId}", Method.GET) { RequestFormat = DataFormat.Json };
+
+            request.AddHeader("Content-Type", "application/json");
+            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
+
+            request.AddUrlSegment("startDate", startDate);
+            request.AddUrlSegment("endDate", endDate);
+            request.AddUrlSegment("locationId", locationId.ToString(CultureInfo.InvariantCulture));
+            request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
+
+            return client.Execute(request);
         }
 
-        public string GetClassInformationBasedOnClassId()
+        public IRestResponse GetClassInformationBasedOnClassId(int classInstanceId, int userId, int siteId)
         {
-            return "";
+            var client = new RestClient("http://dev2-connect.mbodev.me");
+
+            var request = new RestRequest("/rest/class/{classInstanceId}?userid={userId}", Method.GET) { RequestFormat = DataFormat.Json };
+
+            request.AddHeader("Content-Type", "application/json");
+            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
+
+            request.AddUrlSegment("classInstanceId", classInstanceId.ToString(CultureInfo.InvariantCulture));
+            request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
+
+            return client.Execute(request);
         }
 
-        public string AddClientToClass()
+        public IRestResponse AddClientToClass(int userId, int siteId, int classId)
         {
-            return "";
+            var client = new RestClient("http://dev2-connect.mbodev.me");
+
+            var request = new RestRequest("/rest/user/{userid}/visits", Method.POST) { RequestFormat = DataFormat.Json };
+
+            request.AddHeader("Content-Type", "application/json");
+            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
+
+            request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
+
+            request.AddBody(new
+                {
+                    classid = classId
+                });
+
+            return client.Execute(request);
         }
 
-        public string RemoveClientFromClass()
+        public IRestResponse RemoveClientFromClass(int userId, int visitId, int siteId)
         {
-            return "";
+            var client = new RestClient("http://dev2-connect.mbodev.me");
+
+            var request = new RestRequest("/rest/user/{UserId}/visits/{visitId}", Method.DELETE) { RequestFormat = DataFormat.Json };
+
+            request.AddHeader("Content-Type", "application/json");
+            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
+
+            request.AddUrlSegment("UserId", userId.ToString(CultureInfo.InvariantCulture));
+            request.AddUrlSegment("visitId", visitId.ToString(CultureInfo.InvariantCulture));
+
+            return client.Execute(request);
         }
 
-        public string AddClientToWaitList()
+        public IRestResponse AddClientToWaitList(int userId, int siteId, int classId)
         {
-            return "";
+            var client = new RestClient("http://dev2-connect.mbodev.me");
+
+            var request = new RestRequest("/rest/user/{userid}/waitlist", Method.POST) { RequestFormat = DataFormat.Json };
+
+            request.AddHeader("Content-Type", "application/json");
+            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
+
+            request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
+
+            request.AddBody(new
+            {
+                classid = classId
+            });
+
+            return client.Execute(request);
         }
     }
 }
