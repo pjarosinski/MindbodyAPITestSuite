@@ -40,7 +40,7 @@ namespace RestCallsTests.LocationAndClassesRestCallsTests
         }
 
         [Test]
-        public void GetLcationsWithinRadiusBasedOnLatLongTest()
+        public void GetLocationsWithinRadiusBasedOnLatLongTest()
         {
             double lat = 5.43452345;
             double longitude = 3.4546345346;

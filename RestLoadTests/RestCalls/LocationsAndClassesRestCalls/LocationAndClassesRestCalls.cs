@@ -62,7 +62,7 @@ namespace RestCalls.LocationsAndClassesRestCalls
             request.AddUrlSegment("startDate", startDate);
             request.AddUrlSegment("endDate", endDate);
             request.AddUrlSegment("locationId", locationId.ToString(CultureInfo.InvariantCulture));
-            request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
+            request.AddUrlSegment("UserId", userId.ToString(CultureInfo.InvariantCulture));
 
             return client.Execute(request);
         }

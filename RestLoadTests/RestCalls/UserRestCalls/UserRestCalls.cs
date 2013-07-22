@@ -64,6 +64,8 @@ namespace RestCalls.UserRestCalls
             request.AddHeader("Content-type", "application/json");
             request.AddHeader("Authorization", "Bearer " + UserAccessToken);
 
+            request.AddUrlSegment("id", userId.ToString(CultureInfo.InvariantCulture));
+
             request.AddBody(
                 new
                 {
