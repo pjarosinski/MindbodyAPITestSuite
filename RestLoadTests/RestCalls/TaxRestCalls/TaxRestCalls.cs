@@ -40,7 +40,7 @@ namespace RestCalls.TaxRestCalls
 
             request.AddBody(new
                 {
-                    Tax1 =taxes.Tax1,
+                    Tax1 = taxes.Tax1,
                     Tax2 = taxes.Tax2,
                     Tax3 = taxes.Tax3,
                     Tax4 = taxes.Tax4,
