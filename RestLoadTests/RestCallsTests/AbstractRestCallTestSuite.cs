@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using MbUnit.Framework;
 using RestCalls.RestObjects;
 
 namespace RestCallsTests
 {
-    [TestFixture, Parallelizable, ThreadedRepeat(1)]
+    [TestFixture, Parallelizable, ThreadedRepeat(2)]
     public abstract class AbstractRestCallTestSuite
     {
+        public const int MaxThreads = 2;
+
         public RestUser User = new RestUser { Username = "jim3.joneson@mindbodyonline.com", Password = "owner1234", Firstname = "jim", Lastname = "joneson" };
 
         public RestUserProfile UserProfile = new RestUserProfile { FirstName = "jim", LastName = "joneson", Address = "123 fake st", City = "SLO", State = "CA", Zip = "93405" };
@@ -34,6 +38,21 @@ namespace RestCallsTests
         {
             _runTime.Stop();
             Console.WriteLine("Runtime: " +  _runTime.Elapsed);
+        }
+
+        public IEnumerable<object> GetRandomUser()
+        {
+            int index = 0;
+            for (; index < MaxThreads; index++)
+            {
+                yield return new RestUser { Username = "jim" + GetRandomInt() + index + ".joneson@mindbodyonline.com", Password = "owner1234", Firstname = "jim", Lastname = "joneson" };
+            }
+        }
+
+        private int GetRandomInt()
+        {
+            Random random = new Random();
+            return random.Next(0, 1000000);
         }
     }
 }

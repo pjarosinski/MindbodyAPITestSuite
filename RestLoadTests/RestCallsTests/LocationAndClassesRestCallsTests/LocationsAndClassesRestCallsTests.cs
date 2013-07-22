@@ -84,8 +84,7 @@ namespace RestCallsTests.LocationAndClassesRestCallsTests
 
             LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls();
 
-            IRestResponse response = locationAndClassesRestCalls.GetClassInformationBasedOnClassId(classInstanceId,
-                                                                                                   UserId, siteId);
+            IRestResponse response = locationAndClassesRestCalls.GetClassInformationBasedOnClassId(classInstanceId, UserId, siteId);
 
             Console.WriteLine(response.Content);
 

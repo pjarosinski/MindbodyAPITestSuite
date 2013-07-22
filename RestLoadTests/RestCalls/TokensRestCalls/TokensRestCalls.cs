@@ -37,8 +37,8 @@ namespace RestCalls.TokensRestCalls
             request.AddBody(
                 new
                 {
-                    username = "api_user",
-                    password = "user1234",
+                    username = "jim3.joneson@mindbodyonline.com",
+                    password = "owner1234",
                     scope = "urn:mboframeworkapi",
                     grant_type = "password"
                 });

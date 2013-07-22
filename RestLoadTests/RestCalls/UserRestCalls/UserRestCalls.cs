@@ -62,7 +62,7 @@ namespace RestCalls.UserRestCalls
             var request = new RestRequest("/rest/user/{id}", Method.PUT) {RequestFormat = DataFormat.Json};
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserAccessToken);
+            request.AddHeader("Authorization", "Bearer {" + UserAccessToken + "}");
 
             request.AddUrlSegment("id", userId.ToString(CultureInfo.InvariantCulture));
 

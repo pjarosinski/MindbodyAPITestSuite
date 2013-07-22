@@ -1,5 +1,6 @@
 ﻿using System;
 using MbUnit.Framework;
+using RestCalls.RestObjects;
 using RestCalls.UserRestCalls;
 using RestSharp;
 
@@ -31,16 +32,22 @@ namespace RestCallsTests.UserRestCallsTests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
-        public void CreateUserTest()
+        [Test, Factory("GetRandomUser")]
+        public void CreateUserTest(RestUser user)
         {
             UserRestCalls userRestCalls = new UserRestCalls();
 
-            IRestResponse response = userRestCalls.CreateUser(User);
+            IRestResponse response = userRestCalls.CreateUser(user);
 
             Console.WriteLine(response.Content);
 
             Assert.AreNotEqual(0, response.ContentLength);
+        }
+
+        [Test, Factory("GetRandomUser")]
+        public void TestGetRandomUser(RestUser user)
+        {
+            Console.WriteLine(user.Username);
         }
 
         [Test]
