@@ -7,7 +7,7 @@ using RestCalls.RestObjects;
 
 namespace RestCallsTests
 {
-    [TestFixture, Parallelizable, ThreadedRepeat(2)]
+    [TestFixture, Parallelizable, ThreadedRepeat(1)]
     public abstract class AbstractRestCallTestSuite
     {
         public const int MaxThreads = 2;
@@ -42,11 +42,7 @@ namespace RestCallsTests
 
         public IEnumerable<object> GetRandomUser()
         {
-            int index = 0;
-            for (; index < MaxThreads; index++)
-            {
-                yield return new RestUser { Username = "jim" + GetRandomInt() + index + ".joneson@mindbodyonline.com", Password = "owner1234", Firstname = "jim", Lastname = "joneson" };
-            }
+            yield return new RestUser { Username = "jim" + GetRandomInt() + ".joneson@mindbodyonline.com", Password = "owner1234", Firstname = "jim", Lastname = "joneson" };
         }
 
         private int GetRandomInt()
