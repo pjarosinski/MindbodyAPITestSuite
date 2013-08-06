@@ -1,6 +1,6 @@
-﻿namespace RestCalls.RestObjects
+﻿namespace RestCalls.RestRequestObjects
 {
-    public class RestUserProfile
+    public class RestRequestUserProfile
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

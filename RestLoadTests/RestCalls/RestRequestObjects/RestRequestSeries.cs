@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RestCalls.RestObjects
+﻿namespace RestCalls.RestRequestObjects
 {
-    public class RestSeries
+    public class RestRequestSeries
     {
         public string Name { get; set; }
         public double Price { get; set; }

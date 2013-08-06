@@ -1,12 +1,12 @@
 ﻿using System.Globalization;
-using RestCalls.RestObjects;
+using RestCalls.RestRequestObjects;
 using RestSharp;
 
 namespace RestCalls.StaffRestCalls
 {
     public class StaffRestCalls : AbstractBaseRestSetup
     {
-        public IRestResponse AddStaff(int siteId, RestStaff staff)
+        public IRestResponse AddStaff(int siteId, RestRequestStaff staff)
         {
             var client = new RestClient("http://dev2-connect.mbodev.me/");
 
@@ -30,7 +30,7 @@ namespace RestCalls.StaffRestCalls
             return client.Execute(request);
         }
 
-        public IRestResponse UpdateStaff(int siteId, int staffId, RestStaff staff)
+        public IRestResponse UpdateStaff(int siteId, int staffId, RestRequestStaff staff)
         {
             var client = new RestClient("http://dev2-connect.mbodev.me/");
 
@@ -56,7 +56,7 @@ namespace RestCalls.StaffRestCalls
             return client.Execute(request);
         }
 
-        public IRestResponse StaffToken(RestStaffInfo staff)
+        public IRestResponse StaffToken(RestRequestStaffInfo staff)
         {
             var client = new RestClient("https://dev-auth.mindbodyonline.com");
 

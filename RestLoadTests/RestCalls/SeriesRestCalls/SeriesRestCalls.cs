@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using RestCalls.RestObjects;
+using RestCalls.RestRequestObjects;
 using RestSharp;
 
 namespace RestCalls.SeriesRestCalls
@@ -21,7 +21,7 @@ namespace RestCalls.SeriesRestCalls
             return client.Execute(request);
         }
 
-        public IRestResponse AddSeries(int siteId, RestSeries series)
+        public IRestResponse AddSeries(int siteId, RestRequestSeries series)
         {
             var client = new RestClient("http://dev2-connect.mbodev.me");
 
@@ -49,7 +49,7 @@ namespace RestCalls.SeriesRestCalls
             return client.Execute(request);
         }
 
-        public IRestResponse UpdateSeries(int siteId, RestSeries series)
+        public IRestResponse UpdateSeries(int siteId, RestRequestSeries series)
         {
             var client = new RestClient("http://dev2-connect.mbodev.me");
 

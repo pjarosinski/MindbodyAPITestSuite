@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using RestCalls.RestObjects;
+using RestCalls.RestRequestObjects;
 using RestSharp;
 
 namespace RestCalls.BillingInfoRestCalls
@@ -20,7 +20,7 @@ namespace RestCalls.BillingInfoRestCalls
             return client.Execute(request);
         }
 
-        public IRestResponse AddUserBillingInfo(int userId, RestBillingInfo userInfo)
+        public IRestResponse AddUserBillingInfo(int userId, RestRequestBillingInfo userInfo)
         {
             var client = new RestClient("http://dev2-connect.mbodev.me");
 
@@ -63,7 +63,7 @@ namespace RestCalls.BillingInfoRestCalls
             return client.Execute(request);
         }
 
-        public IRestResponse UpdateUserBillingInfo(int userId, int cardId, RestBillingInfo userInfo)
+        public IRestResponse UpdateUserBillingInfo(int userId, int cardId, RestRequestBillingInfo userInfo)
         {
             var client = new RestClient("http://dev2-connect.mbodev.me");
 

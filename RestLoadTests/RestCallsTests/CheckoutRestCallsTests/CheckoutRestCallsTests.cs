@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MbUnit.Framework;
 using RestCalls.CheckoutRestCalls;
-using RestCalls.RestObjects;
+using RestCalls.RestRequestObjects;
 using RestSharp;
 
 namespace RestCallsTests.CheckoutRestCallsTests
@@ -18,7 +18,7 @@ namespace RestCallsTests.CheckoutRestCallsTests
             int siteId = -40000;
 
             //needs real mock data as do all tests 7-19-13
-            RestShoppingCart cart = new RestShoppingCart { SeriesId = 234, Amount = 3.50, UserId = UserId, UserBillingInfoId = 4 };
+            RestRequestShoppingCart cart = new RestRequestShoppingCart { SeriesId = 234, Amount = 3.50, UserId = UserId, UserBillingInfoId = 4 };
 
             CheckoutRestCalls checkoutRestCalls = new CheckoutRestCalls();
 

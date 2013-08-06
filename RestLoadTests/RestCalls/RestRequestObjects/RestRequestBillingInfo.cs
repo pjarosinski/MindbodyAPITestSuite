@@ -1,6 +1,6 @@
-﻿namespace RestCalls.RestObjects
+﻿namespace RestCalls.RestRequestObjects
 {
-    public class RestBillingInfo
+    public class RestRequestBillingInfo
     {
         public string Name { get; set; }
         public string StreetAddress { get; set; }

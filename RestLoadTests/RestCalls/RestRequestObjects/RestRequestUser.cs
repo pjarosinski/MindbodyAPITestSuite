@@ -1,6 +1,6 @@
-﻿namespace RestCalls.RestObjects
+﻿namespace RestCalls.RestRequestObjects
 {
-    public class RestUser
+    public class RestRequestUser
     {
         public string Username { get; set; }
         public string Password { get; set; }

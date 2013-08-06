@@ -1,6 +1,6 @@
 ﻿using System;
 using MbUnit.Framework;
-using RestCalls.RestObjects;
+using RestCalls.RestRequestObjects;
 using RestCalls.UserRestCalls;
 using RestSharp;
 
@@ -33,7 +33,7 @@ namespace RestCallsTests.UserRestCallsTests
         }
 
         [Test, Factory("GetRandomUser")]
-        public void CreateUserTest(RestUser user)
+        public void CreateUserTest(RestRequestUser user)
         {
             UserRestCalls userRestCalls = new UserRestCalls();
 
@@ -45,7 +45,7 @@ namespace RestCallsTests.UserRestCallsTests
         }
 
         [Test, Factory("GetRandomUser")]
-        public void TestGetRandomUser(RestUser user)
+        public void TestGetRandomUser(RestRequestUser user)
         {
             Console.WriteLine(user.Username);
         }

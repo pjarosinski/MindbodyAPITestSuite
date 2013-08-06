@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RestCalls.RestObjects;
+using RestCalls.RestRequestObjects;
 using RestSharp;
 
 namespace RestCalls.TaxRestCalls
@@ -26,7 +26,7 @@ namespace RestCalls.TaxRestCalls
             return client.Execute(request);
         }
 
-        public IRestResponse UpdateTaxRates(int locationId, int siteId, RestTaxes taxes)
+        public IRestResponse UpdateTaxRates(int locationId, int siteId, RestRequestTaxes taxes)
         {
             var client = new RestClient("http://dev-mobile-rest.mbodev.me");
 

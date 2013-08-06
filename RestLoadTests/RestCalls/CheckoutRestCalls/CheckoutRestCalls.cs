@@ -1,12 +1,12 @@
 ﻿using System.Globalization;
-using RestCalls.RestObjects;
+using RestCalls.RestRequestObjects;
 using RestSharp;
 
 namespace RestCalls.CheckoutRestCalls
 {
     public class CheckoutRestCalls : AbstractBaseRestSetup
     {
-        public IRestResponse CheckoutShoppingCart(int siteId, RestShoppingCart cart)
+        public IRestResponse CheckoutShoppingCart(int siteId, RestRequestShoppingCart cart)
         {
             var client = new RestClient("http://dev2-connect.mbodev.me");
 

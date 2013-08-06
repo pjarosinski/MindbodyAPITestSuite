@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MbUnit.Framework;
-using RestCalls.RestObjects;
+using RestCalls.RestRequestObjects;
 using RestCalls.StaffRestCalls;
 using RestSharp;
 
@@ -15,7 +15,7 @@ namespace RestCallsTests.StaffRestCallsTests
         [Test]
         public void StaffTokenTest()
         {
-            RestStaffInfo staff = new RestStaffInfo
+            RestRequestStaffInfo staff = new RestRequestStaffInfo
                 {
                     Username = "masteryoda",
                     Password = "test1234",
@@ -36,7 +36,7 @@ namespace RestCallsTests.StaffRestCallsTests
         [Test]
         public void AddStaffTest()
         {
-            RestStaff staff = new RestStaff
+            RestRequestStaff staff = new RestRequestStaff
                 {
                     Firstname = "chris",
                     Lastname = "essley4",
@@ -60,7 +60,7 @@ namespace RestCallsTests.StaffRestCallsTests
         [Test]
         public void UpdateStaffTest()
         {
-            RestStaff staff = new RestStaff
+            RestRequestStaff staff = new RestRequestStaff
             {
                 Firstname = "chris",
                 Lastname = "essley4",

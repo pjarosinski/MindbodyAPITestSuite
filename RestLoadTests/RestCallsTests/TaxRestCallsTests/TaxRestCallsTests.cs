@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MbUnit.Framework;
-using RestCalls.RestObjects;
+using RestCalls.RestRequestObjects;
 using RestCalls.TaxRestCalls;
 using RestSharp;
 
@@ -33,7 +33,7 @@ namespace RestCallsTests.TaxRestCallsTests
             int locationId = 4;
             int siteId = -40000;
 
-            RestTaxes taxes = new RestTaxes {Tax1 = 3.3, Tax2 = 2.5, Tax3 = 6.7, Tax4 = 2.3, Tax5 = 1.1};
+            RestRequestTaxes taxes = new RestRequestTaxes { Tax1 = 3.3, Tax2 = 2.5, Tax3 = 6.7, Tax4 = 2.3, Tax5 = 1.1 };
 
             TaxRestCalls taxRestCalls = new TaxRestCalls();
 

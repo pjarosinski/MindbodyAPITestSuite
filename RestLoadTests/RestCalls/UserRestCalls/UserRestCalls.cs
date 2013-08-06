@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using RestCalls.RestObjects;
+using RestCalls.RestRequestObjects;
 using RestSharp;
 
 namespace RestCalls.UserRestCalls
@@ -34,7 +34,7 @@ namespace RestCalls.UserRestCalls
             return client.Execute(request);
         }
 
-        public IRestResponse CreateUser(RestUser user)
+        public IRestResponse CreateUser(RestRequestUser user)
         {
             var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
@@ -55,7 +55,7 @@ namespace RestCalls.UserRestCalls
             return client.Execute(request);
         }
 
-        public IRestResponse UpdateUser(int userId, RestUserProfile userProfile)
+        public IRestResponse UpdateUser(int userId, RestRequestUserProfile userProfile)
         {
             var client = new RestClient("http://dev2-connect.mbodev.me");
 
