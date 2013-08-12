@@ -18,7 +18,7 @@ namespace RestCalls.TaxRestCalls
             var request = new RestRequest("/Settings/TaxTables/{LocationID}", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + StaffAccessToken);
+            request.AddHeader("Authorization", "Bearer " + StaffUserToken.AccessToken);
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddUrlSegment("LocationID", locationId.ToString(CultureInfo.InvariantCulture));
@@ -33,7 +33,7 @@ namespace RestCalls.TaxRestCalls
             var request = new RestRequest("/Settings/TaxTables/{LocationID}", Method.PUT) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + StaffAccessToken);
+            request.AddHeader("Authorization", "Bearer " + StaffUserToken.AccessToken);
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddUrlSegment("LocationID", locationId.ToString(CultureInfo.InvariantCulture));

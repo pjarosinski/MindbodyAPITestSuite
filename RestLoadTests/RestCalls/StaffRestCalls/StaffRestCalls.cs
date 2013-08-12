@@ -13,7 +13,7 @@ namespace RestCalls.StaffRestCalls
             var request = new RestRequest("/rest/staff", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + StaffAccessToken);
+            request.AddHeader("Authorization", "Bearer " + StaffUserToken.AccessToken);
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddBody(
@@ -37,7 +37,7 @@ namespace RestCalls.StaffRestCalls
             var request = new RestRequest("/rest/staff/{staffId}", Method.PUT) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + StaffAccessToken);
+            request.AddHeader("Authorization", "Bearer " + StaffUserToken.AccessToken);
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddUrlSegment("staffId", staffId.ToString(CultureInfo.InvariantCulture));
@@ -85,7 +85,7 @@ namespace RestCalls.StaffRestCalls
             var request = new RestRequest("/rest/staff/ProfileImage/?staffID={StaffID}", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + StaffAccessToken);
+            request.AddHeader("Authorization", "Bearer " + StaffUserToken.AccessToken);
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddUrlSegment("StaffID", staffId.ToString(CultureInfo.InvariantCulture));

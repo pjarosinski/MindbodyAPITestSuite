@@ -13,7 +13,7 @@ namespace RestCalls.CheckoutRestCalls
             var request = new RestRequest("/rest/sale/Checkout", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserAccessToken);
+            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken);
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddBody(new

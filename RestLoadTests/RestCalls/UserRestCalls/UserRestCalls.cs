@@ -13,7 +13,7 @@ namespace RestCalls.UserRestCalls
             var request = new RestRequest("/rest/user/{id}/setup", Method.POST) {RequestFormat = DataFormat.Json};
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
 
             request.AddUrlSegment("id", userId.ToString(CultureInfo.InvariantCulture));
 
@@ -27,7 +27,7 @@ namespace RestCalls.UserRestCalls
             var request = new RestRequest("/rest/user/{id}", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
 
             request.AddUrlSegment("id", userId.ToString(CultureInfo.InvariantCulture));
 
@@ -41,7 +41,7 @@ namespace RestCalls.UserRestCalls
             var request = new RestRequest("/rest/user", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
 
             request.AddBody(
                 new
@@ -62,7 +62,7 @@ namespace RestCalls.UserRestCalls
             var request = new RestRequest("/rest/user/{id}", Method.PUT) {RequestFormat = DataFormat.Json};
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer {" + UserAccessToken + "}");
+            request.AddHeader("Authorization", "Bearer {" + UserToken.AccessToken + "}");
 
             request.AddUrlSegment("id", userId.ToString(CultureInfo.InvariantCulture));
 

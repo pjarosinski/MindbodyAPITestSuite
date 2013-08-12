@@ -12,7 +12,7 @@ namespace RestCalls.LocationsAndClassesRestCalls
             var request = new RestRequest("/rest/Location/{id}", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
 
             request.AddUrlSegment("id", locationId.ToString(CultureInfo.InvariantCulture));
 
@@ -26,7 +26,7 @@ namespace RestCalls.LocationsAndClassesRestCalls
             var request = new RestRequest("/rest/Location?searchText={searchText}", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
 
             request.AddUrlSegment("searchText", searchText);
 
@@ -40,7 +40,7 @@ namespace RestCalls.LocationsAndClassesRestCalls
             var request = new RestRequest("/rest/location/GetLocationsWithinRadius?latitude={lat}&longitude={long}&radius={miles}", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
 
             request.AddUrlSegment("lat", latitude.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("long", longitude.ToString(CultureInfo.InvariantCulture));
@@ -56,7 +56,7 @@ namespace RestCalls.LocationsAndClassesRestCalls
             var request = new RestRequest("/rest/class?startRange={startDate}&endRange={endDate}&locationId={locationId}&userid={UserId}", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddUrlSegment("startDate", startDate);
@@ -74,7 +74,7 @@ namespace RestCalls.LocationsAndClassesRestCalls
             var request = new RestRequest("/rest/class/{classInstanceId}?userid={userId}", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddUrlSegment("classInstanceId", classInstanceId.ToString(CultureInfo.InvariantCulture));
@@ -90,7 +90,7 @@ namespace RestCalls.LocationsAndClassesRestCalls
             var request = new RestRequest("/rest/user/{userid}/visits", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
@@ -110,7 +110,7 @@ namespace RestCalls.LocationsAndClassesRestCalls
             var request = new RestRequest("/rest/user/{UserId}/visits/{visitId}", Method.DELETE) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddUrlSegment("UserId", userId.ToString(CultureInfo.InvariantCulture));
@@ -126,7 +126,7 @@ namespace RestCalls.LocationsAndClassesRestCalls
             var request = new RestRequest("/rest/user/{userid}/waitlist", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedAccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
