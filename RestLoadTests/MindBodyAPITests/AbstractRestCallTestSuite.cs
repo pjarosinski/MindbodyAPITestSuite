@@ -10,8 +10,6 @@ namespace MindBodyAPITests
     //I think that using a factory with parallelizable will do what threaded reapeat does.
     public abstract class AbstractRestCallTestSuite
     {
-        public const int MaxThreads = 2;
-
         public RestRequestUser User = new RestRequestUser();
 
         public RestRequestUserProfile UserProfile = new RestRequestUserProfile { FirstName = "jim", LastName = "joneson", Address = "123 fake st", City = "SLO", State = "CA", Zip = "93405" };
@@ -27,6 +25,12 @@ namespace MindBodyAPITests
 
         private readonly Stopwatch _runTime = new Stopwatch();
 
+        [FixtureSetUp]
+        public virtual void FixtureSetUp()
+        {
+            //create useres here, maybe just check if they have been created already and do refresh tokens.
+        }
+
         [SetUp]
         public virtual void SetUp()
         {
@@ -38,6 +42,13 @@ namespace MindBodyAPITests
         {
             _runTime.Stop();
             Console.WriteLine("Runtime: " +  _runTime.Elapsed);
+            Console.WriteLine("Test");
+        }
+
+        [FixtureTearDown]
+        public virtual void FixtureTearDown()
+        {
+            //delete users.
         }
 
         private void DeleteUser()

@@ -1,0 +1,6 @@
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\OAuthAPITests\bin\Debug\OAuthAPITests.exe.config
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\OAuthAPITests\bin\Debug\OAuthAPITests.exe
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\OAuthAPITests\bin\Debug\OAuthAPITests.pdb
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\OAuthAPITests\obj\Debug\OAuthAPITests.csprojResolveAssemblyReference.cache
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\OAuthAPITests\obj\Debug\OAuthAPITests.exe
+C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\OAuthAPITests\obj\Debug\OAuthAPITests.pdb

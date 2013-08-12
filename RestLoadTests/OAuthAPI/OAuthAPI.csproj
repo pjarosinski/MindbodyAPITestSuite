@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>bfccb022-321e-4324-b732-0a5a6041a943</ProjectGuid>
+    <ProjectGuid>{26C4D1FF-28D3-4048-9737-6CE545F90493}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OAuthAPI</RootNamespace>
