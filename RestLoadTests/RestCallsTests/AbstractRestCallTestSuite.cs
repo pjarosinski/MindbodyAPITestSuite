@@ -44,7 +44,10 @@ namespace RestCallsTests
 
         public IEnumerable<object> GetRandomUser()
         {
-            yield return new RestRequestUser { Username = "jim" + GetRandomInt() + ".joneson@mindbodyonline.com", Password = "owner1234", Firstname = "jim", Lastname = "joneson" };
+            for (int i = 0; i < 2; i++)
+            {
+                yield return new RestRequestUser { Username = "joe" + i + ".joneson@mindbodyonline.com", Password = "owner1234", Firstname = "jim", Lastname = "joneson" }; 
+            }  
         }
 
         private int GetRandomInt()
