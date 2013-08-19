@@ -1,9 +1,10 @@
 ﻿using System;
 using MbUnit.Framework;
-using MindBodyAPI.TokensRestCalls;
+using MindBodyAPITests;
+using OAuthAPI.TokensRestCalls;
 using RestSharp;
 
-namespace MindBodyAPITests.TokensRestCallsTests
+namespace OAuthAPITests.TokensRestCallsTests
 {
     public class TokensRestCallsTests : AbstractRestCallTestSuite
     {

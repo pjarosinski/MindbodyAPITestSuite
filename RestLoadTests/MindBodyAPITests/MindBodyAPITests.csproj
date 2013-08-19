@@ -70,7 +70,6 @@
     <Compile Include="SeriesRestCallsTests\SeriesRestCallsTests.cs" />
     <Compile Include="StaffRestCallsTests\StaffRestCallsTests.cs" />
     <Compile Include="TaxRestCallsTests\TaxRestCallsTests.cs" />
-    <Compile Include="TokensRestCallsTests\TokensRestCallsTests.cs" />
     <Compile Include="UserRestCallsTests\UserRestCallsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VisitHistoryFutureScheduleRestCallsTests\VisitHistoryFutureScheduleRestCallsTests.cs" />

@@ -1,6 +1,7 @@
-﻿using RestSharp;
+﻿using MindBodyAPI;
+using RestSharp;
 
-namespace MindBodyAPI.TokensRestCalls
+namespace OAuthAPI.TokensRestCalls
 {
     public class TokensRestCalls : AbstractBaseRestSetup
     {

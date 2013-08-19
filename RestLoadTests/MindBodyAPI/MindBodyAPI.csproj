@@ -68,7 +68,6 @@
     <Compile Include="SeriesRestCalls\SeriesRestCalls.cs" />
     <Compile Include="StaffRestCalls\StaffRestCalls.cs" />
     <Compile Include="TaxRestCalls\TaxRestCalls.cs" />
-    <Compile Include="TokensRestCalls\TokensRestCalls.cs" />
     <Compile Include="UserRestCalls\UserRestCalls.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VisitHistoryFutureScheduleRestCalls\VisitHistoryFutureScheduleRestCalls.cs" />
