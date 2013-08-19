@@ -20,7 +20,7 @@ namespace MindBodyAPITests.StaffRestCallsTests
                     SubscriberId = -4926
                 };
 
-            StaffRestCalls staffRestCalls = new StaffRestCalls();
+            StaffRestCalls staffRestCalls = new StaffRestCalls(null, null);
 
             IRestResponse response = staffRestCalls.StaffToken(staff);
 
@@ -44,7 +44,7 @@ namespace MindBodyAPITests.StaffRestCallsTests
 
             int siteId = -40000;
 
-            StaffRestCalls staffRestCalls = new StaffRestCalls();
+            StaffRestCalls staffRestCalls = new StaffRestCalls(null, null);
 
             IRestResponse response = staffRestCalls.AddStaff(siteId, staff);
             
@@ -70,7 +70,7 @@ namespace MindBodyAPITests.StaffRestCallsTests
 
             int staffId = 3;
 
-            StaffRestCalls staffRestCalls = new StaffRestCalls();
+            StaffRestCalls staffRestCalls = new StaffRestCalls(null, null);
 
             IRestResponse response = staffRestCalls.UpdateStaff(siteId, staffId, staff);
 
@@ -88,7 +88,7 @@ namespace MindBodyAPITests.StaffRestCallsTests
 
             int staffId = 3;
 
-            StaffRestCalls staffRestCalls = new StaffRestCalls();
+            StaffRestCalls staffRestCalls = new StaffRestCalls(null, null);
 
             IRestResponse response = staffRestCalls.StaffPhoto(siteId, staffId, file);
 

@@ -16,7 +16,7 @@ namespace MindBodyAPITests.CheckoutRestCallsTests
             //needs real mock data as do all tests 7-19-13
             RestRequestShoppingCart cart = new RestRequestShoppingCart { SeriesId = 234, Amount = 3.50, UserId = UserId, UserBillingInfoId = 4 };
 
-            CheckoutRestCalls checkoutRestCalls = new CheckoutRestCalls();
+            CheckoutRestCalls checkoutRestCalls = new CheckoutRestCalls(null, null);
 
             IRestResponse response = checkoutRestCalls.CheckoutShoppingCart(siteId, cart);
 

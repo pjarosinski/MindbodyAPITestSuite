@@ -13,7 +13,7 @@ namespace MindBodyAPITests.SeriesRestCallsTests
             int siteId = -40000;
             int classInstanceId = 3245;
 
-            SeriesRestCalls seriesRestCalls = new SeriesRestCalls();
+            SeriesRestCalls seriesRestCalls = new SeriesRestCalls(null, null);
 
             IRestResponse response = seriesRestCalls.GetPricingOptionsForSpecificClass(siteId, classInstanceId);
 
@@ -27,7 +27,7 @@ namespace MindBodyAPITests.SeriesRestCallsTests
         {
             int siteId = -40000;
 
-            SeriesRestCalls seriesRestCalls = new SeriesRestCalls();
+            SeriesRestCalls seriesRestCalls = new SeriesRestCalls(null, null);
 
             IRestResponse response = seriesRestCalls.AddSeries(siteId, Series);
 
@@ -41,7 +41,7 @@ namespace MindBodyAPITests.SeriesRestCallsTests
         {
             int siteId = -40000;
 
-            SeriesRestCalls seriesRestCalls = new SeriesRestCalls();
+            SeriesRestCalls seriesRestCalls = new SeriesRestCalls(null, null);
 
             IRestResponse response = seriesRestCalls.UpdateSeries(siteId, Series);
 

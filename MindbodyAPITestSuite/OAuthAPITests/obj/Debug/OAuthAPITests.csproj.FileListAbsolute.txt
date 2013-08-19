@@ -26,3 +26,5 @@ C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\obj\Debug\OAuthAPITests.csprojResolveAssemblyReference.cache
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\obj\Debug\OAuthAPITests.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\obj\Debug\OAuthAPITests.pdb
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Debug\Newtonsoft.Json.xml

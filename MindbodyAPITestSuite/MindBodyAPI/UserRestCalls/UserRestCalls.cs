@@ -1,11 +1,16 @@
 ﻿using System.Globalization;
 using MindBodyAPI.RestRequestObjects;
+using MindBodyAPI.RestResponseObjects;
 using RestSharp;
 
 namespace MindBodyAPI.UserRestCalls
 {
     public class UserRestCalls : AbstractBaseRestSetup
     {
+        public UserRestCalls(RestResponseToken generatedToken, RestResponseToken userToken) : base(generatedToken, userToken)
+        {
+        }
+
         public IRestResponse SetupUser(int userId)
         {
             var client = new RestClient("http://dev-mobile-connect.mbodev.me");
@@ -13,23 +18,21 @@ namespace MindBodyAPI.UserRestCalls
             var request = new RestRequest("/rest/user/{id}/setup", Method.POST) {RequestFormat = DataFormat.Json};
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken );
 
             request.AddUrlSegment("id", userId.ToString(CultureInfo.InvariantCulture));
 
             return client.Execute(request);
         }
 
-        public IRestResponse GetUser(int userId)
+        public IRestResponse GetUser()
         {
             var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
-            var request = new RestRequest("/rest/user/{id}", Method.GET) { RequestFormat = DataFormat.Json };
+            var request = new RestRequest("/rest/user", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
-
-            request.AddUrlSegment("id", userId.ToString(CultureInfo.InvariantCulture));
+            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken );
 
             return client.Execute(request);
         }
@@ -41,7 +44,7 @@ namespace MindBodyAPI.UserRestCalls
             var request = new RestRequest("/rest/user", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken );
 
             request.AddBody(
                 new
@@ -62,7 +65,7 @@ namespace MindBodyAPI.UserRestCalls
             var request = new RestRequest("/rest/user/{id}", Method.PUT) {RequestFormat = DataFormat.Json};
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer {" + UserToken.AccessToken + "}");
+            request.AddHeader("Authorization", "Bearer {" + UserToken.AccessToken  + "}");
 
             request.AddUrlSegment("id", userId.ToString(CultureInfo.InvariantCulture));
 

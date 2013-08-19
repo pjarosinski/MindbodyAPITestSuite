@@ -12,7 +12,7 @@ namespace MindBodyAPITests.LocationAndClassesRestCallsTests
         {
             int locationId = 5;
 
-            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls();
+            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls(null, null);
 
             IRestResponse response = locationAndClassesRestCalls.GetSpecificLocationBasedOnId(locationId);
 
@@ -26,7 +26,7 @@ namespace MindBodyAPITests.LocationAndClassesRestCallsTests
         {
             string searchText = "in San Luis Obispo";
 
-            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls();
+            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls(null, null);
 
             IRestResponse response = locationAndClassesRestCalls.SearchForLocationBasedOnSearchText(searchText);
 
@@ -42,7 +42,7 @@ namespace MindBodyAPITests.LocationAndClassesRestCallsTests
             double longitude = 3.4546345346;
             double miles = 7.0;
 
-            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls();
+            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls(null, null);
 
             IRestResponse response = locationAndClassesRestCalls.GetLocationsWithinRadiusBasedOnLatLong(lat, longitude,
                                                                                                         miles);
@@ -60,7 +60,7 @@ namespace MindBodyAPITests.LocationAndClassesRestCallsTests
             int locationId = 5;
             int siteId = -40000;
 
-            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls();
+            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls(null, null);
 
             IRestResponse response =
                 locationAndClassesRestCalls.GetClassesForSpecificLocationWithinSpecificDateRange(startDate, endDate,
@@ -78,7 +78,7 @@ namespace MindBodyAPITests.LocationAndClassesRestCallsTests
             int classInstanceId = 3;
             int siteId = -40000;
 
-            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls();
+            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls(null, null);
 
             IRestResponse response = locationAndClassesRestCalls.GetClassInformationBasedOnClassId(classInstanceId, UserId, siteId);
 
@@ -93,7 +93,7 @@ namespace MindBodyAPITests.LocationAndClassesRestCallsTests
             int siteId = -40000;
             int classId = 34;
 
-            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls();
+            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls(null, null);
 
             IRestResponse response = locationAndClassesRestCalls.AddClientToClass(UserId, siteId, classId);
 
@@ -108,7 +108,7 @@ namespace MindBodyAPITests.LocationAndClassesRestCallsTests
             int visitId = 5435;
             int siteId = -40000;
 
-            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls();
+            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls(null, null);
 
             IRestResponse response = locationAndClassesRestCalls.RemoveClientFromClass(UserId, visitId, siteId);
 
@@ -123,7 +123,7 @@ namespace MindBodyAPITests.LocationAndClassesRestCallsTests
             int siteId = -40000;
             int classId = -34;
 
-            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls();
+            LocationAndClassesRestCalls locationAndClassesRestCalls = new LocationAndClassesRestCalls(null, null);
 
             IRestResponse response = locationAndClassesRestCalls.AddClientToWaitList(UserId, siteId, classId);
 

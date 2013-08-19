@@ -1,11 +1,16 @@
 ﻿using System.Globalization;
 using MindBodyAPI.RestRequestObjects;
+using MindBodyAPI.RestResponseObjects;
 using RestSharp;
 
 namespace MindBodyAPI.TaxRestCalls
 {
     public class TaxRestCalls : AbstractBaseRestSetup
     {
+        public TaxRestCalls(RestResponseToken generatedToken, RestResponseToken userToken) : base(generatedToken, userToken)
+        {
+        }
+
         public IRestResponse GetTaxRates(int locationId, int siteId)
         {
             var client = new RestClient("http://dev-mobile-connect.mbodev.me");
@@ -13,7 +18,7 @@ namespace MindBodyAPI.TaxRestCalls
             var request = new RestRequest("/Settings/TaxTables/{LocationID}", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + StaffUserToken.AccessToken);
+            request.AddHeader("Authorization", "Bearer " + StaffUserToken.AccessToken );
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddUrlSegment("LocationID", locationId.ToString(CultureInfo.InvariantCulture));
@@ -28,7 +33,7 @@ namespace MindBodyAPI.TaxRestCalls
             var request = new RestRequest("/Settings/TaxTables/{LocationID}", Method.PUT) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + StaffUserToken.AccessToken);
+            request.AddHeader("Authorization", "Bearer " + StaffUserToken.AccessToken );
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddUrlSegment("LocationID", locationId.ToString(CultureInfo.InvariantCulture));

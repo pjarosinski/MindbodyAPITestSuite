@@ -10,7 +10,7 @@ namespace MindBodyAPITests.ProfileImageRestCallsTests
         [Test]
         public void GetUserProfileImageTest()
         {
-            ProfileImageRestCalls profileImageRestCalls = new ProfileImageRestCalls();
+            ProfileImageRestCalls profileImageRestCalls = new ProfileImageRestCalls(null, null);
 
             IRestResponse response = profileImageRestCalls.GetUserProfileImage(UserId);
 
@@ -24,7 +24,7 @@ namespace MindBodyAPITests.ProfileImageRestCallsTests
         {
             string base64File = "324234234234234";
 
-            ProfileImageRestCalls profileImageRestCalls = new ProfileImageRestCalls();
+            ProfileImageRestCalls profileImageRestCalls = new ProfileImageRestCalls(null, null);
 
             IRestResponse response = profileImageRestCalls.AddUserProfileImage(UserId, base64File);
 

@@ -1,11 +1,16 @@
 ﻿using System.Globalization;
 using MindBodyAPI.RestRequestObjects;
+using MindBodyAPI.RestResponseObjects;
 using RestSharp;
 
 namespace MindBodyAPI.SeriesRestCalls
 {
     public class SeriesRestCalls : AbstractBaseRestSetup
     {
+        public SeriesRestCalls(RestResponseToken generatedToken, RestResponseToken userToken) : base(generatedToken, userToken)
+        {
+        }
+
         public IRestResponse GetPricingOptionsForSpecificClass(int siteId, int classInstanceId)
         {
             var client = new RestClient("http://dev-mobile-connect.mbodev.me");
@@ -13,7 +18,7 @@ namespace MindBodyAPI.SeriesRestCalls
             var request = new RestRequest("/rest/series?classid={ClassInstanceId}", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken );
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddUrlSegment("ClassInstanceId", classInstanceId.ToString(CultureInfo.InvariantCulture));
@@ -28,7 +33,7 @@ namespace MindBodyAPI.SeriesRestCalls
             var request = new RestRequest("/rest/series", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + StaffUserToken.AccessToken);
+            request.AddHeader("Authorization", "Bearer " + StaffUserToken.AccessToken );
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
            
             request.AddBody(new
@@ -56,7 +61,7 @@ namespace MindBodyAPI.SeriesRestCalls
             var request = new RestRequest("/rest/series/15", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + StaffUserToken.AccessToken);
+            request.AddHeader("Authorization", "Bearer " + StaffUserToken.AccessToken );
             request.AddHeader("SiteId", siteId.ToString(CultureInfo.InvariantCulture));
 
             request.AddBody(new

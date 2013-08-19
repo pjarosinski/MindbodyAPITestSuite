@@ -4,7 +4,7 @@ using RestSharp;
 
 namespace OAuthAPI.TokensRestCalls
 {
-    public class TokensRestCalls : AbstractBaseRestSetup
+    public class TokensRestCalls
     {
         public IRestResponse GenerateToken()
         {

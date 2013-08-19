@@ -13,7 +13,7 @@ namespace MindBodyAPITests.UserRestCallsTests
         [Test]
         public void SetupUserTest()
         {
-            UserRestCalls userRestCalls = new UserRestCalls();
+            UserRestCalls userRestCalls = new UserRestCalls(null, null);
 
             IRestResponse response = userRestCalls.SetupUser(UserId);
 
@@ -25,9 +25,9 @@ namespace MindBodyAPITests.UserRestCallsTests
         [Test]
         public void GetUserTest()
         {
-            UserRestCalls userRestCalls = new UserRestCalls();
+            UserRestCalls userRestCalls = new UserRestCalls(GeneratedToken, UserToken);
 
-            IRestResponse response = userRestCalls.GetUser(UserId);
+            IRestResponse response = userRestCalls.GetUser();
 
             Console.WriteLine(response.Content);
 
@@ -39,8 +39,8 @@ namespace MindBodyAPITests.UserRestCallsTests
         {
             int content;
             IRestResponse mockResponse = BaseMockResponse;
-                
-            UserRestCalls userRestCalls = new UserRestCalls();
+
+            UserRestCalls userRestCalls = new UserRestCalls(GeneratedToken, null);
 
             IRestResponse response = userRestCalls.CreateUser(User);
 
@@ -60,7 +60,7 @@ namespace MindBodyAPITests.UserRestCallsTests
         [Test]
         public void UpdateUserTest()
         {
-            UserRestCalls userRestCalls = new UserRestCalls();
+            UserRestCalls userRestCalls = new UserRestCalls(null, null);
 
             IRestResponse response = userRestCalls.UpdateUser(UserId, UserProfile);
 
@@ -69,12 +69,6 @@ namespace MindBodyAPITests.UserRestCallsTests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        public IEnumerable<object> GetRandomUser()
-        {
-            for (int i = 0; i < 2; i++)
-            {
-                yield return new RestRequestUser { Username = "joe" + i + ".joneson@mindbodyonline.com", Password = "owner1234", Firstname = "jim", Lastname = "joneson" };
-            }
-        }
+        
     }
 }

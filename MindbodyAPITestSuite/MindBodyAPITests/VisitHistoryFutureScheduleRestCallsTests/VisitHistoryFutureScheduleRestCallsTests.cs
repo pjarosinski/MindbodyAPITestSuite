@@ -13,7 +13,7 @@ namespace MindBodyAPITests.VisitHistoryFutureScheduleRestCallsTests
             string startDate = "08/10/2013";
             string endDate = "08/20/2013";
 
-            VisitHistoryFutureScheduleRestCalls visitHistoryFutureScheduleRestCalls = new VisitHistoryFutureScheduleRestCalls();
+            VisitHistoryFutureScheduleRestCalls visitHistoryFutureScheduleRestCalls = new VisitHistoryFutureScheduleRestCalls(null, null);
 
             IRestResponse response = visitHistoryFutureScheduleRestCalls.GetVisitHistoryFutureSchedule(UserId, startDate, endDate);
 

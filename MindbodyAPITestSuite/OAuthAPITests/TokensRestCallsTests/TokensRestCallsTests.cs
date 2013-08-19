@@ -7,7 +7,7 @@ using RestSharp;
 
 namespace OAuthAPITests.TokensRestCallsTests
 {
-    public class TokensRestCallsTests : AbstractRestCallTestSuite
+    public class TokensRestCallsTests : AbstractOAuthRestCallsSuite
     {
         [Test]
         public void GenerateTokenTest()

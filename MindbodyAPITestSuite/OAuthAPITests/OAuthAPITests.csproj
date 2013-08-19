@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractOAuthRestCallsSuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TokensRestCallsTests\TokensRestCallsTests.cs" />
   </ItemGroup>

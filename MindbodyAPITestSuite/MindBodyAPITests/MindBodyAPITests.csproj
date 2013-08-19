@@ -82,6 +82,10 @@
       <Project>{5F905ACE-FCF7-4D75-BD8F-42147BACA60D}</Project>
       <Name>MindBodyAPI</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OAuthAPI\OAuthAPI.csproj">
+      <Project>{26C4D1FF-28D3-4048-9737-6CE545F90493}</Project>
+      <Name>OAuthAPI</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Choose>

@@ -11,7 +11,7 @@ namespace MindBodyAPITests.FavoritesRestCallsTests
         {
             int siteId = -40000;
 
-            FavoritesRestCalls favoritesRestCalls = new FavoritesRestCalls();
+            FavoritesRestCalls favoritesRestCalls = new FavoritesRestCalls(null, null);
 
             IRestResponse response = favoritesRestCalls.GetFavoriteUserLocations(UserId, siteId);
 
@@ -25,7 +25,7 @@ namespace MindBodyAPITests.FavoritesRestCallsTests
             int siteId = -40000;
             int masterSiteId = 10;
 
-            FavoritesRestCalls favoritesRestCalls = new FavoritesRestCalls();
+            FavoritesRestCalls favoritesRestCalls = new FavoritesRestCalls(null, null);
 
             IRestResponse response = favoritesRestCalls.AddFavoriteLocation(UserId, siteId, masterSiteId);
 
@@ -39,7 +39,7 @@ namespace MindBodyAPITests.FavoritesRestCallsTests
             int siteId = -40000;
             int masterSiteId = 10;
 
-            FavoritesRestCalls favoritesRestCalls = new FavoritesRestCalls();
+            FavoritesRestCalls favoritesRestCalls = new FavoritesRestCalls(null, null);
 
             IRestResponse response = favoritesRestCalls.RemoveFavoriteLocation(UserId, siteId, masterSiteId);
 
@@ -53,7 +53,7 @@ namespace MindBodyAPITests.FavoritesRestCallsTests
             string startDate = "08/10/2013";
             string endDate = "08/20/2013";
 
-            FavoritesRestCalls favoritesRestCalls = new FavoritesRestCalls();
+            FavoritesRestCalls favoritesRestCalls = new FavoritesRestCalls(null, null);
 
             IRestResponse response = favoritesRestCalls.GetClassesFromUserFavoriteLocation(UserId, startDate, endDate);
 

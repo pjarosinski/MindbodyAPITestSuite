@@ -1,11 +1,16 @@
 ﻿using System.Globalization;
 using MindBodyAPI.RestRequestObjects;
+using MindBodyAPI.RestResponseObjects;
 using RestSharp;
 
 namespace MindBodyAPI.BillingInfoRestCalls
 {
     public class BillingInfoRestCalls : AbstractBaseRestSetup
     {
+        public BillingInfoRestCalls(RestResponseToken generatedToken, RestResponseToken userToken) : base(generatedToken, userToken)
+        {
+        }
+
         public IRestResponse GetUserBillingInfo(int userId)
         {
             var client = new RestClient("http://dev-mobile-connect.mbodev.me");
@@ -13,7 +18,7 @@ namespace MindBodyAPI.BillingInfoRestCalls
             var request = new RestRequest("/rest/user/{userId}/billinginfo", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken);
+            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken );
 
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
 
@@ -27,7 +32,7 @@ namespace MindBodyAPI.BillingInfoRestCalls
             var request = new RestRequest("/rest/user/{userId}/billinginfo", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken);
+            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken );
 
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
 
@@ -55,7 +60,7 @@ namespace MindBodyAPI.BillingInfoRestCalls
             var request = new RestRequest("/rest/user/{userId}/billinginfo/{cardId}", Method.DELETE) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken);
+            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken );
 
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("cardId", cardId.ToString(CultureInfo.InvariantCulture));
@@ -70,7 +75,7 @@ namespace MindBodyAPI.BillingInfoRestCalls
             var request = new RestRequest("/rest/user/{userId}/billinginfo/{cardId}", Method.PUT) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken);
+            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken );
 
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("cardId", cardId.ToString(CultureInfo.InvariantCulture));

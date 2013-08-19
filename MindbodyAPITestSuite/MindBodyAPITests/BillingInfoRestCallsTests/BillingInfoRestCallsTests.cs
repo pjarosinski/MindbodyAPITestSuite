@@ -10,7 +10,7 @@ namespace MindBodyAPITests.BillingInfoRestCallsTests
         [Test]
         public void GetUserBillingInfoTest()
         {
-            BillingInfoRestCalls billingInfoRestCalls = new BillingInfoRestCalls();
+            BillingInfoRestCalls billingInfoRestCalls = new BillingInfoRestCalls(null, null);
 
             IRestResponse response = billingInfoRestCalls.GetUserBillingInfo(UserId);
 
@@ -22,7 +22,7 @@ namespace MindBodyAPITests.BillingInfoRestCallsTests
         [Test]
         public void AddUsersBillingInfoTest()
         {
-            BillingInfoRestCalls billingInfoRestCalls = new BillingInfoRestCalls();
+            BillingInfoRestCalls billingInfoRestCalls = new BillingInfoRestCalls(null, null);
 
             IRestResponse response = billingInfoRestCalls.AddUserBillingInfo(UserId, BillingInfo);
 
@@ -34,7 +34,7 @@ namespace MindBodyAPITests.BillingInfoRestCallsTests
         [Test]
         public void RemoveUsersBillingInfoTest()
         {
-            BillingInfoRestCalls billingInfoRestCalls =  new BillingInfoRestCalls();
+            BillingInfoRestCalls billingInfoRestCalls = new BillingInfoRestCalls(null, null);
 
             IRestResponse response = billingInfoRestCalls.RemoveUserBillingInfo(UserId, CardId);
 
@@ -46,7 +46,7 @@ namespace MindBodyAPITests.BillingInfoRestCallsTests
         [Test]
         public void UpdateUsersBillingInfoTest()
         {
-            BillingInfoRestCalls billingInfoRestCalls = new BillingInfoRestCalls();
+            BillingInfoRestCalls billingInfoRestCalls = new BillingInfoRestCalls(null, null);
 
             IRestResponse response = billingInfoRestCalls.UpdateUserBillingInfo(UserId, CardId, BillingInfo);
 
