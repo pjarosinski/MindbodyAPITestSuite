@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 using MbUnit.Framework;
 using MindBodyAPITests;
 using OAuthAPI.TokensRestCalls;

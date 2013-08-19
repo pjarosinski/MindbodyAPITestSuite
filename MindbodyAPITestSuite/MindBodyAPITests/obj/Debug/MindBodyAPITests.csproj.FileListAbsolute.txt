@@ -24,3 +24,16 @@ C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\MindBodyAPITe
 C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\MindBodyAPITests\obj\Debug\MindBodyAPITests.csprojResolveAssemblyReference.cache
 C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\MindBodyAPITests\obj\Debug\MidBodyAPITests.dll
 C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\MindBodyAPITests\obj\Debug\MidBodyAPITests.pdb
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\bin\Debug\MidBodyAPITests.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\bin\Debug\MidBodyAPITests.pdb
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\bin\Debug\Gallio.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\bin\Debug\MbUnit.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\bin\Debug\MindBodyAPI.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\bin\Debug\RestSharp.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\bin\Debug\NHamcrest.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\bin\Debug\MindBodyAPI.pdb
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\bin\Debug\RestSharp.xml
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\bin\Debug\NHamcrest.pdb
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\obj\Debug\MindBodyAPITests.csprojResolveAssemblyReference.cache
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\obj\Debug\MidBodyAPITests.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\obj\Debug\MidBodyAPITests.pdb
