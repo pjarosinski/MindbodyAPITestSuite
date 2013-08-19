@@ -1,0 +1,1307 @@
+[
+	{
+	  "testName": "testGetStaffAppointments",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "StaffIDs",
+		  "value": "0",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+	  ]
+	},
+	{
+	  "testName": "testAddOrUpdateAppointments",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "Appointments",
+		  "value": "[
+		  {
+			'ID': '100046430'
+		  }]",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "UpdateAction",
+		  "value": "Fail",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},	
+	{
+	  "testName": "testAddOrUpdateAvailabilities",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "AvailabilityIDs",
+		  "value": "67877",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "UpdateAction",
+		  "value": "Fail",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "LocationIDs",
+		  "value": "1",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "StaffIDs",
+		  "value": "100000024",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "IsUnavailable",
+		  "value": "true",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "UnavailableDescription",
+		  "value": "Busy and stuff.",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "StartDateTime",
+		  "value": "10/2/2012 12:00 AM",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "EndDateTime",
+		  "value": "10/3/2012 12:00 AM",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},	
+	{
+	  "testName": "testGetBookableItems",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "SessionTypeIDs",
+		  "value": "23",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "LocationIDs",
+		  "value": "1",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "PageSize",
+		  "value": "10",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "CurrentPageIndex",
+		  "value": "0",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},{
+	  "testName": "testGetActiveSessionTimes",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "SessionTypeIDs",
+		  "value": "7",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "CurrentPageIndex",
+		  "value": "0",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "StartTime",
+		  "value": "12:00 AM",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "EndTime",
+		  "value": "11:59 PM",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "PageSize",
+		  "value": "10",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetScheduleItems",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "LocationIDs",
+		  "value": "0",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "StaffIDs",
+		  "value": "0",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "CurrentPageIndex",
+		  "value": "0",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "PageSize",
+		  "value": "10",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetAppointmentOptions",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ScheduleType",
+		  "value": "All",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "CurrentPageIndex",
+		  "value": "0",
+		  "isRequired": true,
+		  "requiredMembers": []
+		} 
+	  ]
+	},
+	{
+		"testName" : "testGetSemesters",
+		"argumentList" : [
+			{
+				"SOAPNodeName": "EndDate",
+				"value": "10/04/2016",
+				"isRequired": true,
+				"requiredMembers": []
+			}
+		]
+	},
+	{
+	  "testName": "testGetClasses",
+	  "argumentList": [
+		
+		{
+		  "SOAPNodeName": "HideCanceledClasses",
+		  "value": "false",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetTodaysClasses",
+	  "argumentList": [
+		
+		{
+		  "SOAPNodeName": "StartDateTime",
+		  "value": "8/26/2012",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "EndDateTime",
+		  "value": "8/27/2012",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		
+		{
+		  "SOAPNodeName": "HideCanceledClasses",
+		  "value": "false",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testUpdateClientVisits",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "Visit",
+		  "value": "[
+		  {
+			'ID' : '100015484',
+			'Execute' : 'cancel'
+		  }]",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetClientVisits",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClientID",
+		  "value": "100000060",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "StartDate",
+		  "value": "",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "EndDate",
+		  "value": "",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetClientPurchases",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClientID",
+		  "value": "100015484",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "StartDate",
+		  "value": "2012-01-01T01:00:00",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "EndDate",
+		  "value": "2012-08-01T01:00:00",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetClientSchedule",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClientID",
+		  "value": "100011665",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "StartDate",
+		  "value": "2012-01-01T01:00:00",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "EndDate",
+		  "value": "2013-08-01T01:00:00",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testValidateLogin",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "Username",
+		  "value": "validate@MBO.com",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "Password",
+		  "value": "happyfuntime1",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetEnrollments",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "StartDate",
+		  "value": "2012-08-22",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "EndDate",
+		  "value": "2012-12-22",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetWaitlistEntries",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClassScheduleIDs",
+		  "value": "2194",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetClassSchedules",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "StartDate",
+		  "value": "2012-08-20",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "EndDate",
+		  "value": "2012-12-20",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testAddClientsToClasses",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClientIDs",
+		  "value": "100013666",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+
+		  "SOAPNodeName": "ClassIDs",
+		  "value": "9564",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "Test",
+		  "value": "true",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "RequirePayment",
+		  "value": "true",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+		"testName" : "testRemoveClientsFromClasses",
+		"argumentList" : [
+			{
+				"SOAPNodeName" : "ClientIDs",
+				"value" : "100051366",
+				"isRequired" : "true",
+				"requiredMembers" : []
+			},
+			{
+				"SOAPNodeName" : "ClassIDs",
+				"value" : "2109397674",
+				"isRequired" : "true",
+				"requiredMembers" : []
+			},
+			{
+				"SOAPNodeName" : "Test",
+				"value" : "false",
+				"isRequired" : "true",
+				"requiredMembers" : []
+			},
+			{
+				"SOAPNodeName" : "SendEmail",
+				"value" : "false",
+				"isRequired" : "true",
+				"requiredMembers" : []
+			}
+		]
+	},
+	{
+		"testName": "testRemoveFromWaitlist",
+		"argumentList": [
+			{
+				"SOAPNodeName" : "WaitlistEntryIDs",
+				"value" : "2109398500",
+				"isRequired" : "true",
+				"requiredMembers" : []
+			}
+		]
+	},
+	{
+		"testName" : "testAddClientsToEnrollments",
+		"argumentList" : [
+			{
+				"SOAPNodeName" : "ClientIDs",
+				"value" : "100015484",
+				"isRequired" : "true",
+				"requiredMembers" : []
+			},
+			{
+				"SOAPNodeName" : "ClassScheduleIDs",
+				"value" : "2152",
+				"isRequired" : "true",
+				"requiredMembers" : []
+			},
+		]
+	},
+	{
+	  "testName": "testGetClassVisits",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClassID",
+		  "value": "2200",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetCourses",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "StartDate",
+		  "value": "9/15/2012", 
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "EndDate",
+		  "value": "12/8/2012",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+	  ]
+	},
+	{
+	  "testName": "testGetClassDescriptions",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ProgramIDs",
+		  "value": "23",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+	  ] 
+	},
+	{
+	  "testName": "testAddOrUpdateClients",
+	  "argumentList": [
+		{
+		  "fieldPath": "",
+		  "classPath": "",
+		  "memberName": "Boolean",
+		  "SOAPNodeName": "Test",
+		  "value": "true",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "fieldPath": "clientID",
+		  "classPath": "Client",
+		  "memberName": "Client",
+		  "SOAPNodeName": "Clients",
+		  "value": "SiteMap.getRandomClient(a",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "fieldPath": "clientID",
+		  "classPath": "Client",
+		  "memberName": "Client",
+		  "SOAPNodeName": "Clients",
+		  "value": "SiteMap.getRandomClient()",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "fieldPath": "clientID",
+		  "classPath": "Client",
+		  "memberName": "Client",
+		  "SOAPNodeName": "Clients",
+		  "value": "SiteMap.getRandomClient()",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "fieldPath": "clientID",
+		  "classPath": "Client",
+		  "memberName": "Client",
+		  "SOAPNodeName": "Clients",
+		  "value": "SiteMap.getRandomClient()",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetClientContracts",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClientID",
+		  "value": "100013640",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "LocationID",
+		  "value": "",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetActiveClientMemberships",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClientID",
+		  "value": "100014847",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "LocationID",
+		  "value": "1",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetClients",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClientIDs",
+		  "value": "100011720,100013432,100012933",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "SearchText",
+		  "value": "",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetClientContactLogs",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClientID",
+		  "value": "100015484",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "StartDate",
+		  "value": "",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "EndDate",
+		  "value": "",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "StaffIDs",
+		  "value": "",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "ShowSystemGenerated",
+		  "value": "",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "TypeIDs",
+		  "value": "",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "SubtypeIDs",
+		  "value": "",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testAddOrUpdateContactLogs",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ContactLogs",
+		  "value": "[
+		  {
+			'Client': {'ID': '100013666'},
+			'ContactMethod': 'Note',
+			'ID': '100000232',
+			'Types': [{
+			  'ID': '14'
+			}]
+		  }
+		  ]",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "UpdateAction",
+		  "value": "AddNew",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testUploadClientDocument",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClientID",
+		  "value": "7451599",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "FileName",
+		  "value": "test.pdf",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "Bytes",
+		  "value": "94227",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetClientAccountBalances",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClientIDs",
+		  "value": "100015112,002346",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "BalanceDate",
+		  "value": "",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "ClassID",
+		  "value": "",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetClientServices",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClientID",
+		  "value": "100014182",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "LocationIDs",
+		  "value": "1",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "SessionTypeID",
+		  "value": "",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "StartDate",
+		  "value": "2013-01-01T00:00:00",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "EndDate",
+		  "value": "2012-08-04T00:00:00",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "ProgramIDs",
+		  "value": "1,2,3,4,7,9,10,11,12",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "ShowActiveOnly",
+		  "value": "false",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testAddArrival",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "ClientID",
+		  "value": "100058210",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "LocationID",
+		  "value": "1",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetSales",
+	  "argumentList": [
+		{  
+		  "SOAPNodeName": "SaleID",
+		  "value": "100156365",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{	  
+		  "SOAPNodeName": "StartSaleDateTime",
+		  "value": "3/15/2013 8:00 am",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "EndSaleDateTime",
+		  "value": "3/15/2013 11:59 pm",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{		 
+		  "SOAPNodeName": "PaymentMethodID",
+		  "value": "1",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetServices",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "SellOnline",
+		  "value": false,
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testUpdateServices",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "Services",
+		  "value": "[
+		  {
+			'ID': '1186',
+			'Price': '150.00'
+		  }]",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetPackages",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "SellOnline",
+		  "value": "false",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testUpdateProducts",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "Products",
+		  "value": "[
+		  {
+			'ID': '509057',
+			'GroupID': '1238',
+			'Price': '5.00'
+		  }]",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "Test",
+		  "value": "false",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetSessionTypes",
+	  "argumentList": [
+		{
+		  "fieldPath": "programID",
+		  "classPath": "SessionType",
+		  "memberName": "id",
+		  "SOAPNodeName": "ProgramIDs",
+		  "value": "SiteMap.getRandomProgram().getId()",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "fieldPath": "",
+		  "classPath": "",
+		  "memberName": "Boolean",
+		  "SOAPNodeName": "OnlineOnly",
+		  "value": "false",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testCheckoutShoppingCart",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "CartItems",
+		  "value": "[
+		  {
+			'Service' : {
+				'ID' : 1364
+			},
+			'Quantity': '1',
+		  }]",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "Test",
+		  "value": true,
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "ClientID",
+		  "value": "100012154",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "Payments",
+		  "value": "[
+		  {		    
+			'Amount': '108.00',
+			'CreditCardNumber':'4111111111111111',
+			'BillingAddress': '123 Something',
+			'BillingCity': 'SLO',
+			'BillingState': 'CA',
+			'BillingPostalCode': '93405',
+			'BillingName': 'MindBody',
+			'ExpMonth': '07',
+			'ExpYear': '2016'
+		  }]",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+		"testName" : "testBuyServiceForAppointment",
+		"argumentList": [
+		{
+		  "SOAPNodeName": "CartItems",
+		  "value": "[
+		  {
+			'Quantity': '1',
+		  }]",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "Test",
+		  "value": "false",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "ClientID",
+		  "value": "100000000",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "Payments",
+		  "value": "[
+		  {		    
+			'Amount': '90.00',
+			'CreditCardNumber':'4111111111111111',
+			'BillingAddress': '123 Something',
+			'BillingCity': 'SLO',
+			'BillingState': 'CA',
+			'BillingPostalCode': '93405',
+			'BillingName': 'MindBody',
+			'ExpMonth': '07',
+			'ExpYear': '2016'
+		  }]",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+		"testName" : "bookAppointmentForClientWithPurchasedService",
+		"argumentList" : [
+			{
+				"SOAPNodeName" : "UpdateAction",
+				"value" : "AddNew",
+				"isRequired" : "true",
+				"requiredMembers" : []
+			},
+			{
+				"SOAPNodeName" : "Appointments",
+				"value" : "[
+				{
+					'StartDateTime' : '2012-09-08T10:00:00', 
+					'Location' : {'ID' : '1'}, 
+					'Staff' : {'ID' : '100000000'}, 
+					'Client' : {'ID' : '100000000'}, 
+					'SessionType' : {'ID' : '8'}
+				}]",
+				"isRequired" : "true",
+				"requiredMembers" : []
+			}
+		]
+	},
+	{
+	  "testName": "testGetPrograms",
+	  "argumentList": [
+		{
+		  "fieldPath": "scheduleType",
+		  "classPath": "Program",
+		  "memberName": "scheduleType",
+		  "SOAPNodeName": "ScheduleType",
+		  "value": "SiteMap.getRandomScheduleType()",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetAcceptedCardTypes",
+	  "argumentList": [
+	   {
+		 
+		  "SOAPNodeName": "CurPageIndex",
+		  "value": "0",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		 
+		  "SOAPNodeName": "PageSize",
+		  "value": "10",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetProducts",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "SellOnline",
+		  "value": false,
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetResources",
+	  "argumentList": [
+		{
+		  "fieldPath": "resourceID,resourceID,sessionTypeID",
+		  "classPath": "Resource.ResourceSessionType",
+		  "memberName": "id",
+		  "SOAPNodeName": "SessionTypeIDs",
+		  "value": "{SiteMap.getRandomSessionType().getId()}",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "fieldPath": "resourceID,resourceID,locationID",
+		  "classPath": "Resource.ResourceLocation",
+		  "memberName": "id",
+		  "SOAPNodeName": "LocationID",
+		  "value": "SiteMap.getRandomLocation().getId()",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "fieldPath": "resourceID,resourceID,startDateTime",
+		  "classPath": "Resource.Appointment",
+		  "memberName": "startDateTime",
+		  "SOAPNodeName": "StartDateTime",
+		  "value": "SiteMap.getRandomStartDateTime()",
+		  "isRequired": false,
+		  "requiredMembers": ["LocationID", "EndDateTime"]
+		},
+		{
+		  "fieldPath": "resourceID,resourceID,endDateTime",
+		  "classPath": "Resource.Appointment",
+		  "memberName": "endDateTime",
+		  "SOAPNodeName": "EndDateTime",
+		  "value": "SiteMap.getDefaultEndDate()",
+		  "isRequired": false,
+		  "requiredMembers": ["LocationID", "StartDateTime"]
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetRelationships",
+	  "argumentList": [ ]
+	},
+	{
+	  "testName": "testGetLocations",
+	  "argumentList": [ ]
+	},
+	{
+	  "testName": "testGetStaff",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "StaffCredentials",
+		  "value": "{
+			'Username': '',
+			'Password': '',
+			'SiteIDs': []
+		  }",
+		  "isRequired": false,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "Filters",
+		  "value": "",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetStaffPermissions",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "StaffID",
+		  "value": "100000002",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testAddOrUpdateStaff",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "UpdateAction",
+		  "value": "Fail",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "Test",
+		  "value": "false",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "Staff",
+		  "value": "[{
+			'ID': '100000059',
+			'FirstName' : 'Will P',
+            'LastName' : 'Yates',
+            'Email' : 'monkian@bt.com',
+            'MobilePhone' : '5555555555',
+            'HomePhone : '4444444444',
+            'WorkPhone' : '3333333333',
+            'Address' : '123 Thunder Lane',
+            'Address2' : 'Apt 4',
+            'City' : 'Thundera',
+            'State' : 'CA',
+            'Country' : 'US',
+            'PostalCode':'93401',
+            'ForeignZip' : '333'
+		  }]",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testSelectDataRequest",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "CurrentPageIndex",
+		  "value": "0",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "PageSize",
+		  "value": "10",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "SQLString",
+		  "value": "SELECT TOP 2 * FROM dbo.PRODUCTS",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testSelectAggregateDataRequest",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "CurrentPageIndex",
+		  "value": "0",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "PageSize",
+		  "value": "10",
+		  "isRequired": true,
+		  "requiredMembers": []
+		},
+		{
+		  "SOAPNodeName": "SQLString",
+		  "value": "SELECT TOP 2 * FROM autobots_tblAggregateclasses",
+		  "isRequired": true,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetSitesRequest",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "SearchText",
+		  "value": " ",
+		  "isRequired": false,
+		  "requiredMembers": []	
+		},
+		{
+		  "SOAPNodeName": "RelatedSiteID",
+		  "value": "-21020",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetLocationsRequest",
+	  "argumentList": []
+	},
+	{
+	  "testName": "testGetActivationCodeRequest",
+	  "argumentList": []
+	},
+	{
+	  "testName": "testGetProgramsRequest",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "OnlineOnly",
+		  "value": "false",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetSessionTypesRequest",
+	  "argumentList": [
+		{
+		  "SOAPNodeName": "OnlineOnly",
+		  "value": "false",
+		  "isRequired": false,
+		  "requiredMembers": []
+		}
+	  ]
+	},
+	{
+	  "testName": "testGetResourcesRequest",
+	  "argumentList": []
+	},
+	{
+	  "testName": "testGetRelationshipsRequest",
+	  "argumentList": []
+	},
+	{
+	  "testName": "testGetRequiredClientFields",
+	  "argumentList": []
+	},
+	{
+	  "testName": "testGetCustomClientFields",
+	  "argumentList": []
+	},
+	{
+	  "testName": "testGetClientIndexes",
+	  "argumentList": []
+	},
+	{
+	  "testName": "testGetContactLogTypes",
+	  "argumentList": []
+	},
+	{
+	  "testName": "testGetClientReferralTypes",
+	  "argumentList": []
+	}
+]

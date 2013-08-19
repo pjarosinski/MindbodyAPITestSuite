@@ -4,12 +4,12 @@ C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\OAuthAPI\bin\
 C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\OAuthAPI\obj\Debug\OAuthAPI.csprojResolveAssemblyReference.cache
 C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\OAuthAPI\obj\Debug\OAuthAPI.exe
 C:\Users\chris.essley\Documents\GitHub\RestLoadTests\RestLoadTests\OAuthAPI\obj\Debug\OAuthAPI.pdb
-C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\obj\Debug\OAuthAPI.csprojResolveAssemblyReference.cache
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Debug\OAuthAPI.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Debug\OAuthAPI.pdb
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Debug\MindBodyAPI.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Debug\RestSharp.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Debug\MindBodyAPI.pdb
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Debug\RestSharp.xml
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\obj\Debug\OAuthAPI.csprojResolveAssemblyReference.cache
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\obj\Debug\OAuthAPI.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\obj\Debug\OAuthAPI.pdb
