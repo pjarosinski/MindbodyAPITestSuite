@@ -8,7 +8,7 @@ namespace MindBodyAPI.UserRestCalls
     {
         public IRestResponse SetupUser(int userId)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/user/{id}/setup", Method.POST) {RequestFormat = DataFormat.Json};
 
@@ -22,7 +22,7 @@ namespace MindBodyAPI.UserRestCalls
 
         public IRestResponse GetUser(int userId)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/user/{id}", Method.GET) { RequestFormat = DataFormat.Json };
 
@@ -57,7 +57,7 @@ namespace MindBodyAPI.UserRestCalls
 
         public IRestResponse UpdateUser(int userId, RestRequestUserProfile userProfile)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/user/{id}", Method.PUT) {RequestFormat = DataFormat.Json};
 

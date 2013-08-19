@@ -7,7 +7,7 @@ namespace MindBodyAPI.VisitHistoryFutureScheduleRestCalls
     {
         public IRestResponse GetVisitHistoryFutureSchedule(int userId, string startDate, string endDate)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/user/{id}/visits?startrange={startDate}&endrange={endDate}", Method.GET) { RequestFormat = DataFormat.Json };
 

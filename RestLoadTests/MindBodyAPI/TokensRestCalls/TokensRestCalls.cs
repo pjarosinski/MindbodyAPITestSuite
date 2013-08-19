@@ -27,7 +27,7 @@ namespace MindBodyAPI.TokensRestCalls
 
         public IRestResponse GetUserToken()
         {
-            var client = new RestClient("https://dev-auth.mindbodyonline.com");
+            var client = new RestClient("https://auth.mbodev.me");
 
             var request = new RestRequest("/issue/oauth2/token", Method.POST) {RequestFormat = DataFormat.Json};
 

@@ -7,7 +7,7 @@ namespace MindBodyAPI.FavoritesRestCalls
     {
         public IRestResponse GetFavoriteUserLocations(int userId, int siteId)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/user/{id}/favoritelocations", Method.GET) { RequestFormat = DataFormat.Json };
 
@@ -22,7 +22,7 @@ namespace MindBodyAPI.FavoritesRestCalls
 
         public IRestResponse AddFavoriteLocation(int userId, int siteId, int masterLocationId)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/user/{id}/FavoriteLocations", Method.POST) { RequestFormat = DataFormat.Json };
 
@@ -42,7 +42,7 @@ namespace MindBodyAPI.FavoritesRestCalls
 
         public IRestResponse RemoveFavoriteLocation(int userId, int siteId, int masterLocationId)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/user/{id}/favoritelocations/{masterLocationId}", Method.DELETE) { RequestFormat = DataFormat.Json };
 
@@ -58,7 +58,7 @@ namespace MindBodyAPI.FavoritesRestCalls
 
         public IRestResponse GetClassesFromUserFavoriteLocation(int userId, string startDate, string endDate)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/user/{id}/favoritelocations/classes?startrange={startrange}&endrange={endrange}", Method.GET) { RequestFormat = DataFormat.Json };
 

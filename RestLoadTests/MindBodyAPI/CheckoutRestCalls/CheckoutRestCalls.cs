@@ -8,7 +8,7 @@ namespace MindBodyAPI.CheckoutRestCalls
     {
         public IRestResponse CheckoutShoppingCart(int siteId, RestRequestShoppingCart cart)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/sale/Checkout", Method.POST) { RequestFormat = DataFormat.Json };
 

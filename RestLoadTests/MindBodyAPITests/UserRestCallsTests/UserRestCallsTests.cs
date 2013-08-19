@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using MbUnit.Framework;
 using MindBodyAPI.RestRequestObjects;
 using MindBodyAPI.UserRestCalls;
@@ -33,17 +34,21 @@ namespace MindBodyAPITests.UserRestCallsTests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Factory("GetRandomUser")]
-        public void CreateUserTest(RestRequestUser user)
+        [Test]
+        public void CreateUserTest()
         {
-            User = user;
+            int content;
+            IRestResponse mockResponse = BaseMockResponse;
+                
             UserRestCalls userRestCalls = new UserRestCalls();
 
             IRestResponse response = userRestCalls.CreateUser(User);
 
             Console.WriteLine(response.Content);
 
-            Assert.AreNotEqual(0, response.ContentLength);
+            Assert.IsTrue(BaseAssert(mockResponse, response));
+            Assert.AreEqual(Int32.TryParse(response.Content, out content), true);
+            
         }
 
         [Test, Factory("GetRandomUser")]

@@ -8,7 +8,7 @@ namespace MindBodyAPI.TaxRestCalls
     {
         public IRestResponse GetTaxRates(int locationId, int siteId)
         {
-            var client = new RestClient("http://dev-mobile-rest.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/Settings/TaxTables/{LocationID}", Method.GET) { RequestFormat = DataFormat.Json };
 
@@ -23,7 +23,7 @@ namespace MindBodyAPI.TaxRestCalls
 
         public IRestResponse UpdateTaxRates(int locationId, int siteId, RestRequestTaxes taxes)
         {
-            var client = new RestClient("http://dev-mobile-rest.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/Settings/TaxTables/{LocationID}", Method.PUT) { RequestFormat = DataFormat.Json };
 

@@ -7,7 +7,7 @@ namespace MindBodyAPI.LocationsAndClassesRestCalls
     {
         public IRestResponse GetSpecificLocationBasedOnId(int locationId)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/Location/{id}", Method.GET) { RequestFormat = DataFormat.Json };
 
@@ -21,7 +21,7 @@ namespace MindBodyAPI.LocationsAndClassesRestCalls
 
         public IRestResponse SearchForLocationBasedOnSearchText(string searchText)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/Location?searchText={searchText}", Method.GET) { RequestFormat = DataFormat.Json };
 
@@ -35,7 +35,7 @@ namespace MindBodyAPI.LocationsAndClassesRestCalls
 
         public IRestResponse GetLocationsWithinRadiusBasedOnLatLong(double latitude, double longitude, double miles)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/location/GetLocationsWithinRadius?latitude={lat}&longitude={long}&radius={miles}", Method.GET) { RequestFormat = DataFormat.Json };
 
@@ -51,7 +51,7 @@ namespace MindBodyAPI.LocationsAndClassesRestCalls
 
         public IRestResponse GetClassesForSpecificLocationWithinSpecificDateRange(string startDate, string endDate, int locationId, int userId, int siteId)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/class?startRange={startDate}&endRange={endDate}&locationId={locationId}&userid={UserId}", Method.GET) { RequestFormat = DataFormat.Json };
 
@@ -69,7 +69,7 @@ namespace MindBodyAPI.LocationsAndClassesRestCalls
 
         public IRestResponse GetClassInformationBasedOnClassId(int classInstanceId, int userId, int siteId)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/class/{classInstanceId}?userid={userId}", Method.GET) { RequestFormat = DataFormat.Json };
 
@@ -85,7 +85,7 @@ namespace MindBodyAPI.LocationsAndClassesRestCalls
 
         public IRestResponse AddClientToClass(int userId, int siteId, int classId)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/user/{userid}/visits", Method.POST) { RequestFormat = DataFormat.Json };
 
@@ -105,7 +105,7 @@ namespace MindBodyAPI.LocationsAndClassesRestCalls
 
         public IRestResponse RemoveClientFromClass(int userId, int visitId, int siteId)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/user/{UserId}/visits/{visitId}", Method.DELETE) { RequestFormat = DataFormat.Json };
 
@@ -121,7 +121,7 @@ namespace MindBodyAPI.LocationsAndClassesRestCalls
 
         public IRestResponse AddClientToWaitList(int userId, int siteId, int classId)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/user/{userid}/waitlist", Method.POST) { RequestFormat = DataFormat.Json };
 

@@ -8,7 +8,7 @@ namespace MindBodyAPI.SeriesRestCalls
     {
         public IRestResponse GetPricingOptionsForSpecificClass(int siteId, int classInstanceId)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/series?classid={ClassInstanceId}", Method.GET) { RequestFormat = DataFormat.Json };
 
@@ -23,7 +23,7 @@ namespace MindBodyAPI.SeriesRestCalls
 
         public IRestResponse AddSeries(int siteId, RestRequestSeries series)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/series", Method.POST) { RequestFormat = DataFormat.Json };
 
@@ -51,7 +51,7 @@ namespace MindBodyAPI.SeriesRestCalls
 
         public IRestResponse UpdateSeries(int siteId, RestRequestSeries series)
         {
-            var client = new RestClient("http://dev2-connect.mbodev.me");
+            var client = new RestClient("http://dev-mobile-connect.mbodev.me");
 
             var request = new RestRequest("/rest/series/15", Method.POST) { RequestFormat = DataFormat.Json };
 
