@@ -1,4 +1,4 @@
-RestLoadTests
+Mindbody API Tests
 =============
 
-This repository is for testing the feasibility or using MBUnit as a load testing framework for REST api's
+This repo contains tests for the Mindbody REST API as well as the SOAP API
