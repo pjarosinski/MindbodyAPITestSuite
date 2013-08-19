@@ -1,4 +1,5 @@
 ﻿using MindBodyAPI;
+using OAuthAPI.OAuthModels;
 using RestSharp;
 
 namespace OAuthAPI.TokensRestCalls
@@ -7,6 +8,8 @@ namespace OAuthAPI.TokensRestCalls
     {
         public IRestResponse GenerateToken()
         {
+            var user = new RestAuthUser {Username = "api_user", Password = "user1234"};
+
             var client = new RestClient("https://auth.mbodev.me");
 
             var request = new RestRequest("/issue/oauth2/token", Method.POST) { RequestFormat = DataFormat.Json };
@@ -17,16 +20,16 @@ namespace OAuthAPI.TokensRestCalls
             request.AddBody(
                 new
                 {
-                    username = "api_user",
-                    password = "user1234",
-                    scope = "urn:mboframeworkapi",
-                    grant_type = "password"
+                    username = user.Username,
+                    password = user.Password,
+                    scope = user.Scope,
+                    grant_type = user.GrantType
                 });
 
             return client.Execute(request);
         }
 
-        public IRestResponse GetUserToken()
+        public IRestResponse GetUserToken(RestAuthUser user)
         {
             var client = new RestClient("https://auth.mbodev.me");
 
@@ -38,10 +41,10 @@ namespace OAuthAPI.TokensRestCalls
             request.AddBody(
                 new
                 {
-                    username = "jim3.joneson@mindbodyonline.com",
-                    password = "owner1234",
-                    scope = "urn:mboframeworkapi",
-                    grant_type = "password"
+                    username = user.Username,
+                    password = user.Password,
+                    scope = user.Scope,
+                    grant_type = user.GrantType
                 });
 
             return client.Execute(request);
