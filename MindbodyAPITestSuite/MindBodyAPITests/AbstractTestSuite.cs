@@ -62,7 +62,7 @@ namespace MindBodyAPITests
             User User = new User(GeneratedToken, null);
 
             //create useres here, maybe just check if they have been created already and do refresh tokens.
-            var userList = GetRandomUsers(3);
+            var userList = GetRandomUsers(1);
 
             foreach (var user in userList)
             {
