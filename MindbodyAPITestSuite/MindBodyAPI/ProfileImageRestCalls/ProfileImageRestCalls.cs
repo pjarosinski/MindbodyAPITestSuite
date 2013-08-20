@@ -17,7 +17,7 @@ namespace MindBodyAPI.ProfileImageRestCalls
             var request = new RestRequest("/rest/user/{userId}/profileimage", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken );
+            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken);
 
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture)); 
 
@@ -31,7 +31,7 @@ namespace MindBodyAPI.ProfileImageRestCalls
             var request = new RestRequest("/rest/user/{userId}/profileimage", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken );
+            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken);
 
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
 

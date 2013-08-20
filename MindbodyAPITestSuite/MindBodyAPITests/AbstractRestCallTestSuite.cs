@@ -7,7 +7,7 @@ using MindBodyAPI.RestRequestObjects;
 using MindBodyAPI.RestResponseObjects;
 using MindBodyAPI.UserRestCalls;
 using OAuthAPI.OAuthModels;
-using OAuthAPI.TokensRestCalls;
+using OAuthAPI.TokenRestCalls;
 using RestSharp;
 
 namespace MindBodyAPITests
@@ -53,7 +53,7 @@ namespace MindBodyAPITests
         [FixtureSetUp]
         public virtual void FixtureSetUp()
         {
-            TokensRestCalls tokenCalls = new TokensRestCalls();
+            TokenRestCalls tokenCalls = new TokenRestCalls();
 
             IRestResponse response = tokenCalls.GenerateToken();
 
@@ -99,7 +99,7 @@ namespace MindBodyAPITests
             //delete users.
         }
 
-        public bool BaseAssert(IRestResponse mockResponse, IRestResponse response)
+        public bool BaseCompare(IRestResponse mockResponse, IRestResponse response)
         {
             return response.ContentLength != 0 &&
                     mockResponse.ErrorException == response.ErrorException &&
@@ -116,9 +116,11 @@ namespace MindBodyAPITests
 
         public IEnumerable<RestRequestUser> GetRandomUsers(int howManyUsers)
         {
+            Random randomGenerator = new Random();
+
             for (int user = 0; user < howManyUsers; user++)
             {
-                yield return new RestRequestUser { Username = "joey445" + user + ".joneson@mindbodyonline.com", Password = "owner1234", Firstname = "jim", Lastname = "joneson" };
+                yield return new RestRequestUser { Username = "jim" + randomGenerator.Next(1000) + user + ".joneson@mindbodyonline.com", Password = "owner1234", Firstname = "jim", Lastname = "joneson" };
             }
         }
     }

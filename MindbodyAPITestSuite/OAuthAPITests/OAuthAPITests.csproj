@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="AbstractOAuthRestCallsSuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TokensRestCallsTests\TokensRestCallsTests.cs" />
+    <Compile Include="TokenRestCallsTests\TokenRestCallsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MindBodyAPITests\MindBodyAPITests.csproj">

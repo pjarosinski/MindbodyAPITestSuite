@@ -1,18 +1,17 @@
 ﻿using System;
 using MbUnit.Framework;
-using MindBodyAPITests;
 using OAuthAPI.OAuthModels;
-using OAuthAPI.TokensRestCalls;
+using OAuthAPI.TokenRestCalls;
 using RestSharp;
 
-namespace OAuthAPITests.TokensRestCallsTests
+namespace OAuthAPITests.TokenRestCallsTests
 {
-    public class TokensRestCallsTests : AbstractOAuthRestCallsSuite
+    public class TokenRestCallsTests : AbstractOAuthRestCallsSuite
     {
         [Test]
         public void GenerateTokenTest()
         {
-            TokensRestCalls tokenRestCalls = new TokensRestCalls();
+            TokenRestCalls tokenRestCalls = new TokenRestCalls();
 
             IRestResponse response = tokenRestCalls.GenerateToken();
 
@@ -26,7 +25,7 @@ namespace OAuthAPITests.TokensRestCallsTests
         {
             var user = new RestAuthUser {Username = "jim.joneson3@gmail.com", Password = "jimjoneson1234"};
 
-            TokensRestCalls tokensRestCalls = new TokensRestCalls();
+            TokenRestCalls tokensRestCalls = new TokenRestCalls();
 
             IRestResponse response = tokensRestCalls.GetUserToken(user);
 

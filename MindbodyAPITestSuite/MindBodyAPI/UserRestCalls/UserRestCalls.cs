@@ -18,7 +18,7 @@ namespace MindBodyAPI.UserRestCalls
             var request = new RestRequest("/rest/user/{id}/setup", Method.POST) {RequestFormat = DataFormat.Json};
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken );
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
 
             request.AddUrlSegment("id", userId.ToString(CultureInfo.InvariantCulture));
 
@@ -32,7 +32,7 @@ namespace MindBodyAPI.UserRestCalls
             var request = new RestRequest("/rest/user", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken );
+            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken);
 
             return client.Execute(request);
         }
@@ -44,7 +44,7 @@ namespace MindBodyAPI.UserRestCalls
             var request = new RestRequest("/rest/user", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken );
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
 
             request.AddBody(
                 new

@@ -1,10 +1,9 @@
-﻿using MindBodyAPI;
-using OAuthAPI.OAuthModels;
+﻿using OAuthAPI.OAuthModels;
 using RestSharp;
 
-namespace OAuthAPI.TokensRestCalls
+namespace OAuthAPI.TokenRestCalls
 {
-    public class TokensRestCalls
+    public class TokenRestCalls
     {
         public IRestResponse GenerateToken()
         {

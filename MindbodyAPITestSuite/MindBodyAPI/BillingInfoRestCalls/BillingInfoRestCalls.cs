@@ -18,7 +18,7 @@ namespace MindBodyAPI.BillingInfoRestCalls
             var request = new RestRequest("/rest/user/{userId}/billinginfo", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken );
+            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken);
 
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
 
@@ -32,7 +32,7 @@ namespace MindBodyAPI.BillingInfoRestCalls
             var request = new RestRequest("/rest/user/{userId}/billinginfo", Method.POST) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken );
+            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken);
 
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
 
@@ -60,7 +60,7 @@ namespace MindBodyAPI.BillingInfoRestCalls
             var request = new RestRequest("/rest/user/{userId}/billinginfo/{cardId}", Method.DELETE) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken );
+            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken);
 
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("cardId", cardId.ToString(CultureInfo.InvariantCulture));
@@ -75,7 +75,7 @@ namespace MindBodyAPI.BillingInfoRestCalls
             var request = new RestRequest("/rest/user/{userId}/billinginfo/{cardId}", Method.PUT) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken );
+            request.AddHeader("Authorization", "Bearer " + UserToken.AccessToken);
 
             request.AddUrlSegment("userId", userId.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("cardId", cardId.ToString(CultureInfo.InvariantCulture));

@@ -46,7 +46,7 @@ namespace MindBodyAPITests.UserRestCallsTests
 
             Console.WriteLine(response.Content);
 
-            Assert.IsTrue(BaseAssert(mockResponse, response));
+            Assert.IsTrue(BaseCompare(mockResponse, response));
             Assert.AreEqual(Int32.TryParse(response.Content, out content), true);
             
         }

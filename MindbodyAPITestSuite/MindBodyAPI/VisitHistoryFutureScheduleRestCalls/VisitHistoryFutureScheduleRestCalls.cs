@@ -17,7 +17,7 @@ namespace MindBodyAPI.VisitHistoryFutureScheduleRestCalls
             var request = new RestRequest("/rest/user/{id}/visits?startrange={startDate}&endrange={endDate}", Method.GET) { RequestFormat = DataFormat.Json };
 
             request.AddHeader("Content-Type", "application/json");
-            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken );
+            request.AddHeader("Authorization", "Bearer " + GeneratedToken.AccessToken);
 
             request.AddUrlSegment("id", userId.ToString(CultureInfo.InvariantCulture));
             request.AddUrlSegment("startDate", startDate);
