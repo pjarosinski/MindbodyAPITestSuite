@@ -6,6 +6,7 @@ using RestSharp;
 
 namespace MindBodyAPITests.Tests
 {
+    [Parallelizable]
     public class CheckoutTests : AbstractTestSuite
     {
         [Test]

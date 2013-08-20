@@ -9,7 +9,7 @@ namespace MindBodyAPITests.Tests
 {
     public class UserTests : AbstractTestSuite
     {
-        [Test]
+        [Test, Parallelizable]
         public void SetupUserTest()
         {
             User userCalls = new User(null, null);
@@ -21,7 +21,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void GetUserTest()
         {
             IRestResponse mockResponse = BaseMockResponse;
@@ -63,7 +63,7 @@ namespace MindBodyAPITests.Tests
             Console.WriteLine(user.Username);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void UpdateUserTest()
         {
             User userCalls = new User(null, null);

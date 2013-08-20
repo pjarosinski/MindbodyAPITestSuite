@@ -12,7 +12,7 @@ using RestSharp;
 
 namespace MindBodyAPITests
 {
-    [TestFixture, Parallelizable]
+    [TestFixture]
     //[ThreadedRepeat(1)]
     //I think that using a factory with parallelizable will do what threaded reapeat does.
     public abstract class AbstractTestSuite
