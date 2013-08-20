@@ -61,18 +61,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AbstractRestCallTestSuite.cs" />
-    <Compile Include="BillingInfoRestCallsTests\BillingInfoRestCallsTests.cs" />
-    <Compile Include="CheckoutRestCallsTests\CheckoutRestCallsTests.cs" />
-    <Compile Include="FavoritesRestCallsTests\FavoritesRestCallsTests.cs" />
-    <Compile Include="LocationAndClassesRestCallsTests\LocationsAndClassesRestCallsTests.cs" />
-    <Compile Include="ProfileImageRestCallsTests\ProfileImageRestCallsTests.cs" />
-    <Compile Include="SeriesRestCallsTests\SeriesRestCallsTests.cs" />
-    <Compile Include="StaffRestCallsTests\StaffRestCallsTests.cs" />
-    <Compile Include="TaxRestCallsTests\TaxRestCallsTests.cs" />
-    <Compile Include="UserRestCallsTests\UserRestCallsTests.cs" />
+    <Compile Include="AbstractTestSuite.cs" />
+    <Compile Include="Tests\BillingInfoTests.cs" />
+    <Compile Include="Tests\CheckoutTests.cs" />
+    <Compile Include="Tests\FavoritesTests.cs" />
+    <Compile Include="Tests\LocationsAndClassesTests.cs" />
+    <Compile Include="Tests\ProfileImageTests.cs" />
+    <Compile Include="Tests\SeriesTests.cs" />
+    <Compile Include="Tests\StaffTests.cs" />
+    <Compile Include="Tests\TaxTests.cs" />
+    <Compile Include="Tests\UserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VisitHistoryFutureScheduleRestCallsTests\VisitHistoryFutureScheduleRestCallsTests.cs" />
+    <Compile Include="Tests\VisitHistoryFutureScheduleTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
