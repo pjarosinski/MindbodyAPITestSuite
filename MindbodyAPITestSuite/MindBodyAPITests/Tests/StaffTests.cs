@@ -9,7 +9,7 @@ namespace MindBodyAPITests.Tests
     [Parallelizable]
     public class StaffTests : AbstractTestSuite
     {
-        [Test]
+        [Test, Parallelizable]
         public void StaffTokenTest()
         {
             StaffInfoDataModel staff = new StaffInfoDataModel
@@ -30,7 +30,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void AddStaffTest()
         {
             StaffDataModel staff = new StaffDataModel
@@ -54,7 +54,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void UpdateStaffTest()
         {
             StaffDataModel staff = new StaffDataModel
@@ -80,7 +80,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void StaffPhotoTest()
         {
             string file = "3452w34523452345dfgsdfg";

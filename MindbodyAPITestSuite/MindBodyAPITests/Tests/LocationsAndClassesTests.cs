@@ -8,7 +8,7 @@ namespace MindBodyAPITests.Tests
     [Parallelizable]
     public class LocationsAndClassesTests : AbstractTestSuite
     {
-        [Test]
+        [Test, Parallelizable]
         public void GetSpecificLocationBasedOnIdTest()
         {
             int locationId = 5;
@@ -22,7 +22,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void SearchForLocationBasedOnSearchText()
         {
             string searchText = "in San Luis Obispo";
@@ -36,7 +36,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void GetLocationsWithinRadiusBasedOnLatLongTest()
         {
             double lat = 5.43452345;
@@ -53,7 +53,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void GetClassesForSpecificLocationWithinSpecificDateRangeTest()
         {
             string startDate = "08/18/2013";
@@ -73,7 +73,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void GetClassInformationBasedOnClassIdTest()
         {
             int classInstanceId = 3;
@@ -88,7 +88,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void AddClientToClassTest()
         {
             int siteId = -40000;
@@ -103,7 +103,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void RemoveClientFromClassTest()
         {
             int visitId = 5435;
@@ -118,7 +118,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void AddClientToWaitlistTest()
         {
             int siteId = -40000;

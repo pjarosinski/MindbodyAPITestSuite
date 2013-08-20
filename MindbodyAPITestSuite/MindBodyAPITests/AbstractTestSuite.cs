@@ -72,13 +72,13 @@ namespace MindBodyAPITests
             UserToken = TokenModel.Parse(SetupUsers[0].Content);
         }
 
-        [SetUp]
+        [SetUp, Parallelizable]
         public virtual void SetUp()
         {
             _runTime.Start();
         }
 
-        [TearDown]
+        [TearDown, Parallelizable]
         public virtual void TearDown()
         {
             _runTime.Stop();

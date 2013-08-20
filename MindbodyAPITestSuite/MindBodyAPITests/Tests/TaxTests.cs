@@ -9,7 +9,7 @@ namespace MindBodyAPITests.Tests
     [Parallelizable]
     public class TaxTests : AbstractTestSuite
     {
-        [Test]
+        [Test, Parallelizable]
         public void GetTaxRatesTest()
         {
             int locationId = 4;
@@ -24,7 +24,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void UpdateTaxRates()
         {
             int locationId = 4;

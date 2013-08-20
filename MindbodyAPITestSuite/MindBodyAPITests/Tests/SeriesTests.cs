@@ -8,7 +8,7 @@ namespace MindBodyAPITests.Tests
     [Parallelizable]
     public class SeriesTests : AbstractTestSuite
     {
-        [Test]
+        [Test, Parallelizable]
         public void GetPricingOptionsForSpecificClassTest()
         {
             int siteId = -40000;
@@ -23,7 +23,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void AddSeriesTest()
         {
             int siteId = -40000;
@@ -37,7 +37,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void UpdateSeriesTest()
         {
             int siteId = -40000;

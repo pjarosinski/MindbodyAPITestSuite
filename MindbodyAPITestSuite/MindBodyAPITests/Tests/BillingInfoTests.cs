@@ -8,7 +8,7 @@ namespace MindBodyAPITests.Tests
     [Parallelizable]
     public class BillingInfoTests : AbstractTestSuite
     {
-        [Test]
+        [Test, Parallelizable]
         public void GetUserBillingInfoTest()
         {
             BillingInfo billingInfoCalls = new BillingInfo(null, null);
@@ -20,7 +20,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void AddUsersBillingInfoTest()
         {
             BillingInfo billingInfoCalls = new BillingInfo(null, null);
@@ -32,7 +32,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void RemoveUsersBillingInfoTest()
         {
             BillingInfo billingInfoCalls = new BillingInfo(null, null);
@@ -44,7 +44,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void UpdateUsersBillingInfoTest()
         {
             BillingInfo billingInfoCalls = new BillingInfo(null, null);

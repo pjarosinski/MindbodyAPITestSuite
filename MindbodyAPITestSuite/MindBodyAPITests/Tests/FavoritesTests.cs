@@ -8,6 +8,7 @@ namespace MindBodyAPITests.Tests
     [Parallelizable]
     public class FavoritesTests : AbstractTestSuite
     {
+        [Test, Parallelizable]
         public void GetFavoriteUserLocationsTests()
         {
             int siteId = -40000;
@@ -21,6 +22,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
+        [Test, Parallelizable]
         public void AddFavoriteLocationTests()
         {
             int siteId = -40000;
@@ -35,6 +37,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
+        [Test, Parallelizable]
         public void RemoveFavoriteLocationTests()
         {
             int siteId = -40000;
@@ -49,6 +52,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
+        [Test, Parallelizable]
         public void GetClassesFromUserFavoriteLocation()
         {
             string startDate = "08/10/2013";

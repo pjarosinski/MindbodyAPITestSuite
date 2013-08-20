@@ -9,7 +9,7 @@ namespace MindBodyAPITests.Tests
     [Parallelizable]
     public class CheckoutTests : AbstractTestSuite
     {
-        [Test]
+        [Test, Parallelizable]
         public void CheckoutShoppingCartTest()
         {
             int siteId = -40000;

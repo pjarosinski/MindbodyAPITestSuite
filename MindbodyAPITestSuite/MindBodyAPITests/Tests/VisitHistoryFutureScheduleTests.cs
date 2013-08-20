@@ -8,7 +8,7 @@ namespace MindBodyAPITests.Tests
     [Parallelizable]
     public class VisitHistoryFutureScheduleTests : AbstractTestSuite
     {
-        [Test]
+        [Test, Parallelizable]
         public void GetVisitHistoryFutureScheduleTest()
         {
             string startDate = "08/10/2013";

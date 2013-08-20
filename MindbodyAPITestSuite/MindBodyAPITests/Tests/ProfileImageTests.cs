@@ -8,7 +8,7 @@ namespace MindBodyAPITests.Tests
     [Parallelizable]
     public class ProfileImageTests : AbstractTestSuite
     {
-        [Test]
+        [Test, Parallelizable]
         public void GetUserProfileImageTest()
         {
             ProfileImage profileImageCalls = new ProfileImage(null, null);
@@ -20,7 +20,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [Test, Parallelizable]
         public void AddUserProfileImageTest()
         {
             string base64File = "324234234234234";
