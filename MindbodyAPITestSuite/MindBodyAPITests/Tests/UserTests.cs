@@ -1,6 +1,7 @@
 ﻿using System;
 using MbUnit.Framework;
 using MindBodyAPI.RequestDataModels;
+using MindBodyAPI.ResponseModels;
 using MindBodyAPI.RestCalls;
 using RestSharp;
 
@@ -23,13 +24,21 @@ namespace MindBodyAPITests.Tests
         [Test]
         public void GetUserTest()
         {
+            IRestResponse mockResponse = BaseMockResponse;
+
             User userCalls = new User(GeneratedToken, UserToken);
 
             IRestResponse response = userCalls.GetUser();
 
             Console.WriteLine(response.Content);
 
-            Assert.AreNotEqual(0, response.ContentLength);
+            var responseId = GetUserModel.Parse(response.Content).Id;
+            var expectedId = Int32.Parse(CreatedUsers[0].Content);
+
+            Console.WriteLine("responseId: " + responseId + " expectedId: " + expectedId);
+
+            Assert.IsTrue(BaseCompare(mockResponse, response));
+            Assert.IsTrue(responseId.Equals(expectedId));
         }
 
         [Test]

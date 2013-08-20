@@ -19,7 +19,6 @@ namespace MindBodyAPI.ResponseModels
 
         public static TokenModel Parse(string json)
         {
-            Console.WriteLine("JSON output: " + json);
             TokenModel token = JsonConvert.DeserializeObject<TokenModel>(json);
             return token;
         } 

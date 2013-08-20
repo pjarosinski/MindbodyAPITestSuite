@@ -17,7 +17,7 @@ namespace MindBodyAPITests
     //I think that using a factory with parallelizable will do what threaded reapeat does.
     public abstract class AbstractTestSuite
     {
-        public UserDataModel UserData = new UserDataModel { Firstname = "joe", Lastname = "joneson2", Password = "joejoe1234", Username = "joe.joneson444@gmail.com" };
+        public UserDataModel UserData = new UserDataModel { Firstname = "joe", Lastname = "joneson2", Password = "joejoe1234", Username = "joe.joneson44454@gmail.com" };
 
         public UserProfileDataModel UserProfileData = new UserProfileDataModel { FirstName = "jim", LastName = "joneson", Address = "123 fake st", City = "SLO", State = "CA", Zip = "93405" };
 
@@ -39,8 +39,6 @@ namespace MindBodyAPITests
                     ErrorException = null,
                     ErrorMessage = null,
                     ResponseStatus = ResponseStatus.Completed,
-                    StatusCode = HttpStatusCode.Created,
-                    StatusDescription = "Created"
                 };
 
         //This will need to be updated to the real value - chris 7/15/2013
@@ -59,14 +57,14 @@ namespace MindBodyAPITests
 
             GeneratedToken = TokenModel.Parse(response.Content);
 
-            User User = new User(GeneratedToken, null);
+            User userCalls = new User(GeneratedToken, null);
 
             //create useres here, maybe just check if they have been created already and do refresh tokens.
             var userList = GetRandomUsers(1);
 
             foreach (var user in userList)
             {
-                CreatedUsers.Add(User.CreateUser(user));
+                CreatedUsers.Add(userCalls.CreateUser(user));
                 RestAuthUser authUser = new RestAuthUser { Username = user.Username, Password = user.Password};
                 SetupUsers.Add(tokenCalls.GetUserToken(authUser));
             }
@@ -101,11 +99,9 @@ namespace MindBodyAPITests
         public bool BaseCompare(IRestResponse mockResponse, IRestResponse response)
         {
             return response.ContentLength != 0 &&
-                    mockResponse.ErrorException == response.ErrorException &&
-                    mockResponse.ErrorMessage == response.ErrorMessage &&
-                    mockResponse.ResponseStatus.Equals(response.ResponseStatus) &&
-                    mockResponse.StatusCode.Equals(response.StatusCode) &&
-                    mockResponse.StatusDescription.Equals(response.StatusDescription);
+                   mockResponse.ErrorException == response.ErrorException &&
+                   mockResponse.ErrorMessage == response.ErrorMessage &&
+                   mockResponse.ResponseStatus.Equals(response.ResponseStatus);
         }
 
         private void DeleteUser()
@@ -119,7 +115,7 @@ namespace MindBodyAPITests
 
             for (int user = 0; user < howManyUsers; user++)
             {
-                yield return new UserDataModel { Username = "jim" + randomGenerator.Next(1000) + user + ".joneson@mindbodyonline.com", Password = "owner1234", Firstname = "jim", Lastname = "joneson" };
+                yield return new UserDataModel { Username = "jim" + randomGenerator.Next(1000) + user + ".joneson@mindbodyonline.com", Password = "jimmybob1234", Firstname = "jim", Lastname = "joneson" };
             }
         }
     }
