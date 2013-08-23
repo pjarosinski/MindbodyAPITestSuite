@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using MbUnit.Framework;
 using MindBodyAPI.RequestDataModels;
@@ -17,9 +18,9 @@ namespace MindBodyAPITests
     //I think that using a factory with parallelizable will do what threaded reapeat does.
     public abstract class AbstractTestSuite
     {
-        public UserDataModel UserData = new UserDataModel { Firstname = "joe", Lastname = "joneson2", Password = "joejoe1234", Username = "joe.joneson44454@gmail.com" };
+        public UserDataModel UserData { get; set; }
 
-        public UserProfileDataModel UserProfileData = new UserProfileDataModel { FirstName = "jim", LastName = "joneson", Address = "123 fake st", City = "SLO", State = "CA", Zip = "93405" };
+        public UserProfileDataModel UserProfileData { get; set; }
 
         public BillingInfoDataModel BillingInfoData = new BillingInfoDataModel { Name = "jimjoneson", StreetAddress = "123 fake st", City = "SLO", State = "CA", PostalCode = "93405", CardNumber = "4111111111111111", ExpirationMonth = "06", ExpirationYear = "2020", Cvv = "111", PrimaryCard = "true" };
 
@@ -44,7 +45,7 @@ namespace MindBodyAPITests
         //This will need to be updated to the real value - chris 7/15/2013
         public readonly int CardId = 111;
 
-        public readonly int UserId = 287; 
+        public int UserId; 
 
         private readonly Stopwatch _runTime = new Stopwatch();
 
@@ -60,7 +61,9 @@ namespace MindBodyAPITests
             User userCalls = new User(GeneratedToken, null);
 
             //create useres here, maybe just check if they have been created already and do refresh tokens.
-            var userList = GetRandomUsers(1);
+            var userList = GetRandomUsers(1).ToList();
+
+            UserProfileData = new UserProfileDataModel { FirstName = userList[0].Firstname, LastName = userList[0].Lastname };
 
             foreach (var user in userList)
             {
@@ -69,7 +72,9 @@ namespace MindBodyAPITests
                 SetupUsers.Add(tokenCalls.GetUserToken(authUser));
             }
 
+            UserId = Int32.Parse(CreatedUsers[0].Content);
             UserToken = TokenModel.Parse(SetupUsers[0].Content);
+            
         }
 
         [SetUp, Parallelizable]

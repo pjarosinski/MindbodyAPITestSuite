@@ -11,11 +11,15 @@ namespace OAuthAPITests.Tests
         [Test]
         public void GenerateTokenTest()
         {
+            IRestResponse mockResposne = BaseMockResponse;
+
             Tokens tokenRestCalls = new Tokens();
 
             IRestResponse response = tokenRestCalls.GenerateToken();
 
             Console.WriteLine(response.Content);
+
+            Assert.IsTrue(BaseCompare(mockResposne, response));
 
             Assert.AreNotEqual(0, response.ContentLength);
         }

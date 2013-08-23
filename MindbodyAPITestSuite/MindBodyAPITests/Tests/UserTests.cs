@@ -67,12 +67,22 @@ namespace MindBodyAPITests.Tests
         [Test, Parallelizable]
         public void UpdateUserTest()
         {
+            UserProfileDataModel userProfileData = UserProfileData;
+
+            userProfileData.State = "CA";
+            userProfileData.Address = "4051 Broad Street";
+            userProfileData.Zip = "93405";
+            userProfileData.City = "San Luis Obispo";
+
+            IRestResponse mockResposne = BaseMockResponse;
+
             User userCalls = new User(null, null);
 
-            IRestResponse response = userCalls.UpdateUser(UserId, UserProfileData);
+            IRestResponse response = userCalls.UpdateUser(UserId, userProfileData);
 
             Console.WriteLine(response.Content);
 
+            Assert.IsTrue(BaseCompare(mockResposne, response));
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
