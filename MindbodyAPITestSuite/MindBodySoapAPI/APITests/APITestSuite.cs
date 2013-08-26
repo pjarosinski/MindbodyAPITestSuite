@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using MbUnit.Framework;
@@ -7,6 +8,7 @@ using MindbodySoapAPI.APITests.Models;
 using MindbodySoapAPI.APITests.Utils;
 using MindbodySoapAPI.APITests.Utils.DiffTools;
 using MindbodySoapAPI.APITests.Utils.ParsingTools;
+using MindbodySoapAPI.APITests.SideSwipe;
 using Test = MindbodySoapAPI.APITests.Utils.ParsingTools.Test;
 
 namespace MindbodySoapAPI.APITests
@@ -23,6 +25,9 @@ namespace MindbodySoapAPI.APITests
         protected static string DefaultDevDomain = OhCanada;
         protected static string DomainOne = DefaultProductionDomain;
         protected static string DomainTwo = Clients;
+        protected static string SiteName = "API Sandbox Site";
+        protected SideSwipeWebsite SideSwipeWebsite { get; set; }
+        
         //protected string DomainOneOutput = Environment.NewLine + DomainOne + " results:";
         //protected string DomainTwoOutput = Environment.NewLine + DomainTwo + " results:";
 
@@ -57,7 +62,6 @@ namespace MindbodySoapAPI.APITests
 
         public Tuple<string, string> Domains { get { return new Tuple<string, string>(DomainOne, DomainTwo);}} 
 
-        
         private readonly ThreadLocal<Stopwatch> _StopWatch = new ThreadLocal<Stopwatch>();
 
         private Stopwatch Stopwatch
@@ -66,10 +70,19 @@ namespace MindbodySoapAPI.APITests
             set { _StopWatch.Value = value; }
         }
 
+        [FixtureSetUp]
+        public virtual void FixtureSetUp()
+        {
+            SideSwiper sideSwipe = new SideSwiper(reusable: false, freshcopy: true);
+
+            SideSwipeWebsite = sideSwipe.GetCopy(SiteName);
+            NormalSiteID = SideSwipeWebsite.StudioId;
+            DestructiveSiteID = SideSwipeWebsite.StudioId;
+        }
+
         [SetUp, Parallelizable]
         public virtual void TestSetup()
         {
-
             Stopwatch = Stopwatch.StartNew();
             VerfiyAndSetDomain(Settings.SubDomain);
         }

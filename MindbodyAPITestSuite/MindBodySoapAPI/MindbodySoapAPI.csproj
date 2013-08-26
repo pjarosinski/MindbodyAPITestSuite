@@ -299,6 +299,8 @@
   <ItemGroup>
     <Compile Include="APITests\APITestSuite.cs" />
     <Compile Include="APITests\Models\TestSettings.cs" />
+    <Compile Include="APITests\SideSwipe\SideSwiper.cs" />
+    <Compile Include="APITests\SideSwipe\SideSwipeWebsite.cs" />
     <Compile Include="APITests\Utils\NoSuchTestInJSONException.cs" />
     <Compile Include="APITests\Utils\ParsingTools\Argument.cs" />
     <Compile Include="APITests\Requests\ClassRequests.cs" />

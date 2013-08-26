@@ -22,7 +22,8 @@ namespace MindBodyAPITests
 
         public UserProfileDataModel UserProfileData { get; set; }
 
-        public BillingInfoDataModel BillingInfoData = new BillingInfoDataModel { Name = "jimjoneson", StreetAddress = "123 fake st", City = "SLO", State = "CA", PostalCode = "93405", CardNumber = "4111111111111111", ExpirationMonth = "06", ExpirationYear = "2020", Cvv = "111", PrimaryCard = "true" };
+        public BillingInfoDataModel BillingInfoData { get; set; }
+        //= new BillingInfoDataModel { Name = "jimjoneson", StreetAddress = "123 fake st", City = "SLO", State = "CA", PostalCode = "93405", CardNumber = "4111111111111111", ExpirationMonth = "06", ExpirationYear = "2020", Cvv = "111", PrimaryCard = "true" };
 
         public SeriesDataModel SeriesData = new SeriesDataModel { Name = "REST Series", Price = 5.00, ProgramId = 25, SeriesTypeId = 1, CategoryId = -1, Count = 4, Duration = 365, SessionTypeIds = new int[3, 5], OnlinePrice = 2.00, EnableTax1 = true, EnableTax2 = true };
 
@@ -36,10 +37,10 @@ namespace MindBodyAPITests
 
         public List<IRestResponse> SetupUsers = new List<IRestResponse>(); 
 
-        public IRestResponse BaseMockResponse = new RestResponse{
+        public IRestResponse BaseMockResponse = new RestResponse {
                     ErrorException = null,
                     ErrorMessage = null,
-                    ResponseStatus = ResponseStatus.Completed,
+                    ResponseStatus = ResponseStatus.Completed
                 };
 
         //This will need to be updated to the real value - chris 7/15/2013
@@ -64,6 +65,7 @@ namespace MindBodyAPITests
             var userList = GetRandomUsers(1).ToList();
 
             UserProfileData = new UserProfileDataModel { FirstName = userList[0].Firstname, LastName = userList[0].Lastname };
+            BillingInfoData = new BillingInfoDataModel { Name = userList[0].Firstname + userList[0].Lastname };
 
             foreach (var user in userList)
             {
@@ -74,7 +76,6 @@ namespace MindBodyAPITests
 
             UserId = Int32.Parse(CreatedUsers[0].Content);
             UserToken = TokenModel.Parse(SetupUsers[0].Content);
-            
         }
 
         [SetUp, Parallelizable]
