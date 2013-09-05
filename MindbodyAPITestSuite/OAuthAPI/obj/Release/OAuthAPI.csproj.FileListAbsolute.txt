@@ -1,0 +1,11 @@
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Release\OAuthAPI.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Release\OAuthAPI.pdb
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Release\MindBodyAPI.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Release\RestSharp.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Release\Newtonsoft.Json.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Release\MindBodyAPI.pdb
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Release\RestSharp.xml
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\bin\Release\Newtonsoft.Json.xml
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\obj\Release\OAuthAPI.csprojResolveAssemblyReference.cache
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\obj\Release\OAuthAPI.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPI\obj\Release\OAuthAPI.pdb

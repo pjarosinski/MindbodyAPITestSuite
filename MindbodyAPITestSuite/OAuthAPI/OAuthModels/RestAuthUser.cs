@@ -11,12 +11,8 @@ namespace OAuthAPI.OAuthModels
         public string Username { get; set; }
         public string Password { get; set; }
         
-        public string Scope {
-            get { return "urn:mboframeworkapi"; }
-        }
-
-        public string GrantType { 
-            get { return "password"; } 
-        }
+        public string Scope = "urn:mboframeworkapi"; 
+        
+        public string GrantType  = "password"; 
     }
 }

@@ -13,7 +13,7 @@ namespace MindBodyAPITests.Tests
         {
             int locationId = 5;
 
-            LocationAndClasses locationAndClassesCalls = new LocationAndClasses(null, null);
+            LocationsAndClasses locationAndClassesCalls = new LocationsAndClasses(null, null);
 
             IRestResponse response = locationAndClassesCalls.GetSpecificLocationBasedOnId(locationId);
 
@@ -27,7 +27,7 @@ namespace MindBodyAPITests.Tests
         {
             string searchText = "in San Luis Obispo";
 
-            LocationAndClasses locationAndClassesCalls = new LocationAndClasses(null, null);
+            LocationsAndClasses locationAndClassesCalls = new LocationsAndClasses(null, null);
 
             IRestResponse response = locationAndClassesCalls.SearchForLocationBasedOnSearchText(searchText);
 
@@ -43,7 +43,7 @@ namespace MindBodyAPITests.Tests
             double longitude = 3.4546345346;
             double miles = 7.0;
 
-            LocationAndClasses locationAndClassesCalls = new LocationAndClasses(null, null);
+            LocationsAndClasses locationAndClassesCalls = new LocationsAndClasses(null, null);
 
             IRestResponse response = locationAndClassesCalls.GetLocationsWithinRadiusBasedOnLatLong(lat, longitude,
                                                                                                         miles);
@@ -61,7 +61,7 @@ namespace MindBodyAPITests.Tests
             int locationId = 5;
             int siteId = -40000;
 
-            LocationAndClasses locationAndClassesCalls = new LocationAndClasses(null, null);
+            LocationsAndClasses locationAndClassesCalls = new LocationsAndClasses(null, null);
 
             IRestResponse response =
                 locationAndClassesCalls.GetClassesForSpecificLocationWithinSpecificDateRange(startDate, endDate,
@@ -79,7 +79,7 @@ namespace MindBodyAPITests.Tests
             int classInstanceId = 3;
             int siteId = -40000;
 
-            LocationAndClasses locationAndClassesCalls = new LocationAndClasses(null, null);
+            LocationsAndClasses locationAndClassesCalls = new LocationsAndClasses(null, null);
 
             IRestResponse response = locationAndClassesCalls.GetClassInformationBasedOnClassId(classInstanceId, UserId, siteId);
 
@@ -94,7 +94,7 @@ namespace MindBodyAPITests.Tests
             int siteId = -40000;
             int classId = 34;
 
-            LocationAndClasses locationAndClassesCalls = new LocationAndClasses(null, null);
+            LocationsAndClasses locationAndClassesCalls = new LocationsAndClasses(null, null);
 
             IRestResponse response = locationAndClassesCalls.AddClientToClass(UserId, siteId, classId);
 
@@ -109,7 +109,7 @@ namespace MindBodyAPITests.Tests
             int visitId = 5435;
             int siteId = -40000;
 
-            LocationAndClasses locationAndClassesCalls = new LocationAndClasses(null, null);
+            LocationsAndClasses locationAndClassesCalls = new LocationsAndClasses(null, null);
 
             IRestResponse response = locationAndClassesCalls.RemoveClientFromClass(UserId, visitId, siteId);
 
@@ -124,7 +124,7 @@ namespace MindBodyAPITests.Tests
             int siteId = -40000;
             int classId = -34;
 
-            LocationAndClasses locationAndClassesCalls = new LocationAndClasses(null, null);
+            LocationsAndClasses locationAndClassesCalls = new LocationsAndClasses(null, null);
 
             IRestResponse response = locationAndClassesCalls.AddClientToWaitList(UserId, siteId, classId);
 

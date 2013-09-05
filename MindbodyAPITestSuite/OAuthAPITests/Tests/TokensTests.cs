@@ -27,7 +27,7 @@ namespace OAuthAPITests.Tests
         [Test]
         public void GetUserTokenTest()
         {
-            var user = new RestAuthUser {Username = "jim.joneson3@gmail.com", Password = "jimjoneson1234"};
+            var user = new RestAuthUser { Username = "jim.joneson5436543@gmail.com", Password = "jimjoneson1234", GrantType = "password", Scope = "urn:mboframeworkapi" };
 
             Tokens tokensRestCalls = new Tokens();
 
