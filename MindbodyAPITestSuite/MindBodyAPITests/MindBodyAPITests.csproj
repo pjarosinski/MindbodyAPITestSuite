@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MindBodyAPITests</RootNamespace>
-    <AssemblyName>MidBodyAPITests</AssemblyName>
+    <AssemblyName>MindBodyAPITests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -43,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\MBUnit\MbUnit.dll</HintPath>
     </Reference>
+    <Reference Include="PostSharp">
+      <HintPath>..\InternalParallelReflectiveTestRunner\bin\Debug\PostSharp.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
     </Reference>
@@ -62,6 +65,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AbstractTestSuite.cs" />
+    <Compile Include="ParallelAttribute\ForParallel.cs" />
     <Compile Include="Tests\BillingInfoTests.cs" />
     <Compile Include="Tests\CheckoutTests.cs" />
     <Compile Include="Tests\FavoritesTests.cs" />

@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthAPITests", "OAuthAPITe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindbodySoapAPI", "MindBodySoapAPI\MindbodySoapAPI.csproj", "{97AE930F-AF06-44DD-B938-F0BE9F53A5F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternalParallelReflectiveTestRunner", "InternalParallelReflectiveTestRunner\InternalParallelReflectiveTestRunner.csproj", "{92387294-6D5A-4BA2-BE54-2EB74095870C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternalParallelReflectiveTestRunnerTests", "InternalParallelReflectiveTestRunnerTests\InternalParallelReflectiveTestRunnerTests.csproj", "{C546D01A-C0F8-4811-8E01-C4E60F44E679}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,14 @@ Global
 		{97AE930F-AF06-44DD-B938-F0BE9F53A5F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97AE930F-AF06-44DD-B938-F0BE9F53A5F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97AE930F-AF06-44DD-B938-F0BE9F53A5F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92387294-6D5A-4BA2-BE54-2EB74095870C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92387294-6D5A-4BA2-BE54-2EB74095870C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92387294-6D5A-4BA2-BE54-2EB74095870C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92387294-6D5A-4BA2-BE54-2EB74095870C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C546D01A-C0F8-4811-8E01-C4E60F44E679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C546D01A-C0F8-4811-8E01-C4E60F44E679}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C546D01A-C0F8-4811-8E01-C4E60F44E679}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C546D01A-C0F8-4811-8E01-C4E60F44E679}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

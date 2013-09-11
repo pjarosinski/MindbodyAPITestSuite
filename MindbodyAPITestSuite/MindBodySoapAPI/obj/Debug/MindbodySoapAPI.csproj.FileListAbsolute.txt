@@ -12,3 +12,4 @@ C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodySoapAPI\bin\Debug\Gallio.XmlSerializers.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodySoapAPI\obj\Debug\MindbodySoapAPI.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodySoapAPI\obj\Debug\MindbodySoapAPI.pdb
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodySoapAPI\obj\Debug\MindbodySoapAPI.csprojResolveAssemblyReference.cache

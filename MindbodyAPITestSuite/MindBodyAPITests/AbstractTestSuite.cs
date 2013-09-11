@@ -28,15 +28,21 @@ namespace MindBodyAPITests
 
         public SeriesDataModel SeriesData = new SeriesDataModel { Name = "REST Series", Price = 5.00, ProgramId = 25, SeriesTypeId = 1, CategoryId = -1, Count = 4, Duration = 365, SessionTypeIds = new int[3, 5], OnlinePrice = 2.00, EnableTax1 = true, EnableTax2 = true };
 
-        public TokenModel GeneratedToken = new TokenModel { AccessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXV0aC5tYm9kZXYubWUvdHJ1c3QvdjIiLCJhdWQiOiJ1cm46bWJvZnJhbWV3b3JrYXBpIiwibmJmIjoxMzc4MzE2MzI3LCJleHAiOjEzNzgzMjM1MjcsIm5hbWVpZCI6ImFwaV91c2VyIiwidW5pcXVlX25hbWUiOiJhcGlfdXNlciIsImF1dGhtZXRob2QiOiJPQXV0aDIiLCJhdXRoX3RpbWUiOiIyMDEzLTA5LTA0VDE3OjM4OjQ3LjI5MFoiLCJodHRwOi8vaWRlbnRpdHlzZXJ2ZXIudGhpbmt0ZWN0dXJlLmNvbS9jbGFpbXMvY2xpZW50IjoiVGVzdENsaWVudCIsImh0dHA6Ly9pZGVudGl0eXNlcnZlci50aGlua3RlY3R1cmUuY29tL2NsYWltcy9zY29wZSI6InVybjptYm9mcmFtZXdvcmthcGkiLCJyb2xlIjoiTWluZGJvZHlBcGlDbGllbnQifQ.8_rIyf1Elk5VdvqqxWKaJMKQpw3CaMm45QDbqAKgQtg",
-                                                            ExpiresIn = "7199",
-                                                            RefreshToken = "f0fdd19172074b8da00f3a094e51f387",
-                                                            TokenType = "urn:ietf:params:oauth:token-type:jwt" };
+        public TokenModel GeneratedToken = new TokenModel
+        {
+            AccessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXV0aC5tYm9kZXYubWUvdHJ1c3QvdjIiLCJhdWQiOiJ1cm46bWJvZnJhbWV3b3JrYXBpIiwibmJmIjoxMzc4OTI5NTQ2LCJleHAiOjEzNzg5MzY3NDYsIm5hbWVpZCI6ImFwaV91c2VyIiwidW5pcXVlX25hbWUiOiJhcGlfdXNlciIsImF1dGhtZXRob2QiOiJPQXV0aDIiLCJhdXRoX3RpbWUiOiIyMDEzLTA5LTExVDE5OjU5OjA2LjY4MFoiLCJodHRwOi8vaWRlbnRpdHlzZXJ2ZXIudGhpbmt0ZWN0dXJlLmNvbS9jbGFpbXMvY2xpZW50IjoiVGVzdENsaWVudCIsImh0dHA6Ly9pZGVudGl0eXNlcnZlci50aGlua3RlY3R1cmUuY29tL2NsYWltcy9zY29wZSI6InVybjptYm9mcmFtZXdvcmthcGkiLCJyb2xlIjoiTWluZGJvZHlBcGlDbGllbnQifQ.ieNftfKCu5CGDF62R4ZkPB0g5JCmUuDzI54SxW9Gi2s",
+            ExpiresIn = "7199",
+            RefreshToken = "deda596367594946a861dba28ed70e37",
+            TokenType = "urn:ietf:params:oauth:token-type:jwt"
+        };
 
-        public TokenModel UserToken = new TokenModel { AccessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXV0aC5tYm9kZXYubWUvdHJ1c3QvdjIiLCJhdWQiOiJ1cm46bWJvZnJhbWV3b3JrYXBpIiwibmJmIjoxMzc4MzIwMzM1LCJleHAiOjEzNzgzMjc1MzUsIm5hbWVpZCI6ImppbS5qb25lc29uNTQzNjU0M0BnbWFpbC5jb20iLCJ1bmlxdWVfbmFtZSI6ImppbS5qb25lc29uNTQzNjU0M0BnbWFpbC5jb20iLCJhdXRobWV0aG9kIjoiT0F1dGgyIiwiYXV0aF90aW1lIjoiMjAxMy0wOS0wNFQxODo0NTozNS4yMzdaIiwiaHR0cDovL2lkZW50aXR5c2VydmVyLnRoaW5rdGVjdHVyZS5jb20vY2xhaW1zL2NsaWVudCI6IlRlc3RDbGllbnQiLCJodHRwOi8vaWRlbnRpdHlzZXJ2ZXIudGhpbmt0ZWN0dXJlLmNvbS9jbGFpbXMvc2NvcGUiOiJ1cm46bWJvZnJhbWV3b3JrYXBpIiwiZW1haWwiOiJqaW0uam9uZXNvbjU0MzY1NDNAZ21haWwuY29tIn0.vXMmEqxAOZI_qf34bWTElQHcoMf4T0u_JLBVvtR6Eb4",
-                                                       ExpiresIn = "7199",
-                                                       RefreshToken = "eafe01e21c334175838893dcc7d7b736",
-                                                       TokenType = "urn:ietf:params:oauth:token-type:jwt" };
+        public TokenModel UserToken = new TokenModel
+        {
+            AccessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXV0aC5tYm9kZXYubWUvdHJ1c3QvdjIiLCJhdWQiOiJ1cm46bWJvZnJhbWV3b3JrYXBpIiwibmJmIjoxMzc4OTI5NjQ5LCJleHAiOjEzNzg5MzY4NDksIm5hbWVpZCI6ImppbS5qb25lc29uNTQzNjU0M0BnbWFpbC5jb20iLCJ1bmlxdWVfbmFtZSI6ImppbS5qb25lc29uNTQzNjU0M0BnbWFpbC5jb20iLCJhdXRobWV0aG9kIjoiT0F1dGgyIiwiYXV0aF90aW1lIjoiMjAxMy0wOS0xMVQyMDowMDo0OS45MjdaIiwiaHR0cDovL2lkZW50aXR5c2VydmVyLnRoaW5rdGVjdHVyZS5jb20vY2xhaW1zL2NsaWVudCI6IlRlc3RDbGllbnQiLCJodHRwOi8vaWRlbnRpdHlzZXJ2ZXIudGhpbmt0ZWN0dXJlLmNvbS9jbGFpbXMvc2NvcGUiOiJ1cm46bWJvZnJhbWV3b3JrYXBpIiwiZW1haWwiOiJqaW0uam9uZXNvbjU0MzY1NDNAZ21haWwuY29tIn0.SkN3wcb5Qit-_RjG-MaKT5qtKIggqQZzlCde6tQbDfI",
+            ExpiresIn = "7199",
+            RefreshToken = "a46b973799bc4afb9606ec1ba903d2b7",
+            TokenType = "urn:ietf:params:oauth:token-type:jwt"
+        };
 
         public TokenModel StaffToken;
 

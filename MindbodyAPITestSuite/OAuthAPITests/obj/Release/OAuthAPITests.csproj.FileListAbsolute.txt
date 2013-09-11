@@ -2,13 +2,11 @@ C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\OAuthAPITests.pdb
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\Gallio.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\MbUnit.dll
-C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\MidBodyAPITests.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\MindBodyAPI.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\OAuthAPI.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\RestSharp.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\Newtonsoft.Json.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\NHamcrest.dll
-C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\MidBodyAPITests.pdb
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\MindBodyAPI.pdb
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\OAuthAPI.pdb
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\Gallio.pdb
@@ -22,3 +20,7 @@ C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\obj\Release\OAuthAPITests.csprojResolveAssemblyReference.cache
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\obj\Release\OAuthAPITests.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\obj\Release\OAuthAPITests.pdb
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\PostSharp.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\PostSharp.xml
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\MindBodyAPITests.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\MindBodyAPITests.pdb

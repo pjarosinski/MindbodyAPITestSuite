@@ -3,6 +3,7 @@ using MbUnit.Framework;
 using MindBodyAPI.RequestDataModels;
 using MindBodyAPI.ResponseModels;
 using MindBodyAPI.RestCalls;
+using MindBodyAPITests.ParallelAttribute;
 using RestSharp;
 
 namespace MindBodyAPITests.Tests
@@ -22,7 +23,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [Test, ForParallel]
         public void GetUserTest()
         {
             IRestResponse mockResponse = BaseMockResponse;
@@ -30,6 +31,8 @@ namespace MindBodyAPITests.Tests
             User userCalls = new User(GeneratedToken, UserToken);
 
             IRestResponse response = userCalls.GetUser();
+
+            Console.WriteLine(response);
 
             Console.WriteLine(response.Content);
 
