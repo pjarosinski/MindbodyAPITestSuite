@@ -15,24 +15,26 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
         private ITestFixtureManager TestFixtureManager { get; set; }
         private IList<IClassMethodInfo> TestInfos { get; set; }
         private string FixtureName { get; set; }
-        private IList<ITest> Tests { get; set; }
-        private IList<ITest> PreparedTests { get; set; }
+        private IList<Test> PreparedTests { get; set; }
 
         public TestEnvironment(IList<IClassMethodInfo> testInfos)
         {
             TestInfos = testInfos;
-            PrepareTestFixtures(TestInfos.Select(info => info.Class).ToList());
+            TestFixtureManager = PrepareTestFixtures(TestInfos.Select(info => info.Class).ToList());
+            PreparedTests = PrepareTests(testInfos);
         }
 
         public TestEnvironment(string fixtureName)
         {
             FixtureName = fixtureName;
-            PrepareTestFixture(FixtureName);
+            TestFixtureManager = PrepareTestFixture(FixtureName);
+            PreparedTests = PrepareTests(fixtureName);
         }
 
         public TestEnvironment()
         {
-            PrepareAllTestFixtures();
+            TestFixtureManager = PrepareAllTestFixtures();
+            PreparedTests = PrepareTests();
         }
 
         public IList<ITestResult> RunTestsInParallel()
@@ -42,25 +44,42 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
             return results;
         }
 
-        private void PrepareTestFixtures(IList<string> fixtures)
+        private TestFixtureManager PrepareTestFixtures(IList<string> fixtures)
         {
-            TestFixtureManager.CreateFixtures(fixtures);
+            return new TestFixtureManager(fixtures);
         } 
 
-        private void PrepareTestFixture(string fixture)
+        private TestFixtureManager PrepareTestFixture(string fixture)
         {
-            TestFixtureManager.CreateFixture(fixture);
+            return new TestFixtureManager(fixture);
         }
 
-        private void PrepareAllTestFixtures()
+        private TestFixtureManager PrepareAllTestFixtures()
         {
-            TestFixtureManager.CreateAllFixtures();
+            return new TestFixtureManager();
         }
 
-        private IList<ITest> PrepareTests(IEnumerable<IClassMethodInfo> testInfos)
+        private IList<Test> PrepareTests(IList<IClassMethodInfo> testInfos)
         {
-            IList<string> fixtures = testInfos.Select(fixture => fixture.Class).ToList();
-            fixtures.Select(fixture => TestFixtureManager.Setup(fixture));
+            List<string> fixtures = testInfos.Select(fixture => fixture.Class).ToList();
+            fixtures.ForEach(TestFixtureManager.Setup);
+
+            IList<Test> tests = testInfos.Select(testInfo => new Test(TestFixtureManager.GetFixture(testInfo.Class), testInfo.Method)).ToList();
+            return tests;
         }
+
+        private IList<Test> PrepareTests(string fixtureName)
+        {
+            TestFixtureManager.Setup();
+            IEnumerable<string> testNames = TestFixtureManager.GetAllTestsInFixture(fixtureName);
+            ITestFixture testFixture = TestFixtureManager.GetFixture(fixtureName);
+
+            return testNames.Select(testName => new Test(testFixture.Instance, testName)).ToList();
+        } 
+
+        private IList<Test> PrepareTests()
+        {
+            TestFixtureManager.Setup();
+        } 
     }
 }

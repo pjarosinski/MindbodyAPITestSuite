@@ -56,6 +56,8 @@ namespace MindBodyAPITests
 
         private readonly Stopwatch _runTime = new Stopwatch();
 
+        
+
         [ClassInitialize]
         public virtual void FixtureSetUp()
         {

@@ -11,11 +11,13 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Interfaces
         IMethodResult InvokeMethod(object instantiadetClass, MethodInfo method, object[] args);
         IEnumerable<IMethodResult> InvokeAllMethodsInClass(string className);
         IEnumerable<IEnumerable<IMethodResult>> InvokeAllMethodsInAssembly();
-        public IEnumerable<IMethodResult> InvokeAllMethodsInObjects(IList<object> objects);
+        IEnumerable<IMethodResult> InvokeAllMethodsInObjects(IList<object> objects);
         object Instantiate(string className);
         IEnumerable<object> Instantiate(IEnumerable<string> classNames);
         IEnumerable<object> InstantiateAllClassesInAssembly();
         IEnumerable<Type> GetAllTypesInAssembly();
+        IEnumerable<MethodInfo> GetAllMethodsInObject(object instantiatedObject);
+        MethodInfo GetMethodInfo(string method, object instantiatedObject);
     }
 }
 

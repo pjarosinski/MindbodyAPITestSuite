@@ -27,6 +27,16 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return _testAssembly.GetTypes();
         }
 
+        public IEnumerable<MethodInfo> GetAllMethodsInObject(object instantiatedObject)
+        {
+            return GetAllMethodInfosFromObject(instantiatedObject);
+        }
+
+        public MethodInfo GetMethodInfo(string method, object instantiatedObject)
+        {
+            return GetMethodInfoFromObject(instantiatedObject, method);
+        }
+
         //returns new instance of classname
         public object Instantiate(string className)
         {
@@ -46,19 +56,22 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
         //if you only have the string names of the class and method
         public IMethodResult InvokeMethod(IClassMethodInfo info)
         {
-            object instantiatedTestClass = InstantiateClass(info.Class);
-            return new MethodResult { Exception = RunMethod(instantiatedTestClass, info.Method) };
+            object instantiatedClass = InstantiateClass(info.Class);
+            return new MethodResult { ClassName = instantiatedClass.GetType().Name, MethodName = info.Method,
+                Exception = RunMethod(instantiatedClass, info.Method) };
         }
 
         //if you have the object and methodinfo already
         public IMethodResult InvokeMethod(object instantiatedClass, MethodInfo method)
         {
-            return new MethodResult { Exception = RunMethod(instantiatedClass, method) };
+            return new MethodResult { ClassName = instantiatedClass.GetType().Name, MethodName = method.Name,
+                Exception = RunMethod(instantiatedClass, method) };
         }
 
         public IMethodResult InvokeMethod(object instantiatedClass, MethodInfo method, object[] args)
         {
-            return new MethodResult { Exception = RunMethod(instantiatedClass, method, args) };
+            return new MethodResult { ClassName = instantiatedClass.GetType().Name, MethodName = method.Name,
+                Exception = RunMethod(instantiatedClass, method, args) };
         }
 
         public IEnumerable<IMethodResult> InvokeAllMethodsInObjects(IList<object> objects)
@@ -86,6 +99,16 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return RunAllMethodsInAssembly();
         }
 
+        private IEnumerable<MethodInfo> GetAllMethodInfosFromObject(object obj)
+        {
+            return obj.GetType().GetMethods();
+        } 
+
+        private MethodInfo GetMethodInfoFromObject(object obj, string method)
+        {
+            return obj.GetType().GetMethod(method);
+        }
+
         private IEnumerable<IEnumerable<IMethodResult>> RunAllMethodsInAssembly()
         {
             IList<Type> types = _testAssembly.GetTypes().Where(type => type.Name.Contains("Tests")).ToList();
@@ -97,7 +120,8 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
         private IEnumerable<IMethodResult> RunAllMethodsInClass(object instantiatedClass)
         {
             IEnumerable<string> methods = instantiatedClass.GetType().GetMethods().Where(method => method.Name.Contains("Test")).Select(name => name.Name);
-            return methods.Select(methodName => new MethodResult { Exception = RunMethod(instantiatedClass, methodName) }).Cast<IMethodResult>().ToList();
+            return methods.Select(methodName => new MethodResult { ClassName = instantiatedClass.GetType().Name, MethodName = methodName, 
+                Exception = RunMethod(instantiatedClass, methodName) }).Cast<IMethodResult>().ToList();
         }
 
         private object InstantiateClass(Type typeOfClass)
@@ -136,8 +160,5 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
 
             return null;
         }
-
-        //private RunTestSetup
-        //private RuNTestTeardown
     }
 }

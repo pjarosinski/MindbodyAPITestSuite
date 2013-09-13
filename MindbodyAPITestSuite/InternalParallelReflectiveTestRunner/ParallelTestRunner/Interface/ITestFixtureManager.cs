@@ -8,10 +8,9 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface
 {
     public interface ITestFixtureManager
     {
-        void CreateFixture(string fixture);
-        void CreateFixtures(IList<string> fixtures);
-        void CreateAllFixtures();
-        void Setup(string fixtureName);
-        void Teardown(string fixtureName);
+        ITestFixture GetFixture(string fixtureName);
+        void Setup();
+        void Teardown();
+        IEnumerable<string> GetAllTestsInFixture(string fixtureName);
     }
 }

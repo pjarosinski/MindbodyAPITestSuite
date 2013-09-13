@@ -13,36 +13,47 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
         private IList<ITestFixture> Fixtures { get; set; }
 
-        public TestFixtureManager()
+        private ITestFixture BaseFixture { get; set; }
+
+        public TestFixtureManager(string fixtureName)
         {
             Factory = new TestFixtureFactory();
             Fixtures = new List<ITestFixture>();
+            Fixtures.Add(Factory.Create(fixtureName));
         }
 
-        public void CreateFixture(string fixture)
+        public TestFixtureManager(IList<string> fixtures)
         {
-            Fixtures.Add(Factory.Create(fixture));
+            Factory = new TestFixtureFactory();
+            Fixtures = Factory.Create(fixtures);
         }
 
-        public void CreateFixtures(IList<string> fixtures)
+        public TestFixtureManager()
         {
-            Fixtures= Factory.Create(fixtures);
-        }
-
-        public void CreateAllFixtures()
-        {
+            Factory = new TestFixtureFactory();
             Fixtures = Factory.Create();
         }
 
-        public void Setup(string fixtureName)
+        public ITestFixture GetFixture(string fixtureName)
+        {
+            return Fixtures.First(fixture => fixture.Instance.GetType().Name.Contains(fixtureName));
+        }
+
+        public void Setup()
         {
             throw new NotImplementedException();
         }
 
-        public void Teardown(string fixtureName)
+        public void Teardown()
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<string> GetAllTestsInFixture(string fixtureName)
+        {
+            ITestFixture testFixture = Fixtures.First(fixture => fixture.Instance.GetType().Name.Contains(fixtureName));
+            return testFixture.GetType().GetMethods().Select(method => method.Name);
+        } 
 
         private ITestFixture CreateBaseFixture()
         {
