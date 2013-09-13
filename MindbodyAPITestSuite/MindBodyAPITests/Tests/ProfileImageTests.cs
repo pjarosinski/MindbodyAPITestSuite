@@ -1,14 +1,14 @@
 ﻿using System;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MindBodyAPI.RestCalls;
 using RestSharp;
 
 namespace MindBodyAPITests.Tests
 {
-    [Parallelizable]
-    public class ProfileImageTests : AbstractTestSuite
+
+    public class ProfileImageTests : BaseTestSuite
     {
-        [Test, Parallelizable]
+        [TestMethod]
         public void GetUserProfileImageTest()
         {
             ProfileImage profileImageCalls = new ProfileImage(null, null);
@@ -20,7 +20,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void AddUserProfileImageTest()
         {
             string base64File = "324234234234234";

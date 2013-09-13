@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestSharp;
 
 namespace OAuthAPITests
@@ -20,13 +20,13 @@ namespace OAuthAPITests
                 ResponseStatus = ResponseStatus.Completed,
             };
 
-        [SetUp]
+        [TestInitialize]
         public virtual void SetUp()
         {
             _runTime.Start();
         }
 
-        [TearDown]
+        [TestCleanup]
         public virtual void TearDown()
         {
             _runTime.Stop();

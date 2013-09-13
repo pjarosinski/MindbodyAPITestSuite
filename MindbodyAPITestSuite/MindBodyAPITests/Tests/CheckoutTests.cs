@@ -1,15 +1,14 @@
 ﻿using System;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MindBodyAPI.RequestDataModels;
 using MindBodyAPI.RestCalls;
 using RestSharp;
 
 namespace MindBodyAPITests.Tests
 {
-    [Parallelizable]
-    public class CheckoutTests : AbstractTestSuite
+    public class CheckoutTests : BaseTestSuite
     {
-        [Test, Parallelizable]
+        [TestMethod]
         public void CheckoutShoppingCartTest()
         {
             int siteId = -40000;

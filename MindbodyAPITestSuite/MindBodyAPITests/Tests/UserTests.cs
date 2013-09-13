@@ -1,17 +1,15 @@
 ﻿using System;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MindBodyAPI.RequestDataModels;
 using MindBodyAPI.ResponseModels;
 using MindBodyAPI.RestCalls;
-using MindBodyAPITests.ParallelAttribute;
 using RestSharp;
 
 namespace MindBodyAPITests.Tests
 {
-    [Parallelizable]
-    public class UserTests : AbstractTestSuite
+    public class UserTests : BaseTestSuite
     {
-        [Test, Parallelizable]
+        [TestMethod]
         public void SetupUserTest()
         {
             User userCalls = new User(null, null);
@@ -23,7 +21,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, ForParallel]
+        [TestMethod]
         public void GetUserTest()
         {
             IRestResponse mockResponse = BaseMockResponse;
@@ -45,7 +43,7 @@ namespace MindBodyAPITests.Tests
             Assert.IsTrue(responseId.Equals(expectedId));
         }
 
-        [Test]
+        [TestMethod]
         public void CreateUserTest()
         {
             int content;
@@ -61,13 +59,13 @@ namespace MindBodyAPITests.Tests
             Assert.AreEqual(Int32.TryParse(response.Content, out content), true);
         }
 
-        [Test, Factory("GetRandomUser")]
+        [TestMethod]
         public void TestGetRandomUser(UserDataModel user)
         {
             Console.WriteLine(user.Username);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void UpdateUserTest()
         {
             UserProfileDataModel userProfileData = UserProfileData;
@@ -88,7 +86,5 @@ namespace MindBodyAPITests.Tests
             Assert.IsTrue(BaseCompare(mockResposne, response));
             Assert.AreNotEqual(0, response.ContentLength);
         }
-
-        
     }
 }

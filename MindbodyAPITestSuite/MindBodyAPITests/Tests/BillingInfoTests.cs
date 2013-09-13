@@ -1,14 +1,13 @@
 ﻿using System;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MindBodyAPI.RestCalls;
 using RestSharp;
 
 namespace MindBodyAPITests.Tests
 {
-    [Parallelizable]
-    public class BillingInfoTests : AbstractTestSuite
+    public class BillingInfoTests : BaseTestSuite
     {
-        [Test, Parallelizable]
+        [TestMethod]
         public void GetUserBillingInfoTest()
         {
             BillingInfo billingInfoCalls = new BillingInfo(null, null);
@@ -20,7 +19,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void AddUsersBillingInfoTest()
         {
             BillingInfo billingInfoCalls = new BillingInfo(null, null);
@@ -32,7 +31,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void RemoveUsersBillingInfoTest()
         {
             BillingInfo billingInfoCalls = new BillingInfo(null, null);
@@ -44,7 +43,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void UpdateUsersBillingInfoTest()
         {
             BillingInfo billingInfoCalls = new BillingInfo(null, null);

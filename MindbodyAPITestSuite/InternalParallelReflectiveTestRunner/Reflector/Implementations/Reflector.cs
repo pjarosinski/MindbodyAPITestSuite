@@ -6,16 +6,19 @@ using InternalParallelReflectiveTestRunner.Reflector.Interfaces;
 
 namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
 {
+    //To make reflector more dynamic make a type qualifier for class instantiation.
+
     public class Reflector : IReflector
     {
-        private const string Path =
-            @"C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\bin\Release\MindBodyAPITests.dll";
+        private readonly string _path =
+            @"\MindBodyAPITests.dll";
 
         private readonly Assembly _testAssembly;
 
-        public Reflector()
+        public Reflector(string path = @"\MindBodyAPITests.dll")
         {
-            _testAssembly = Assembly.LoadFrom(Path);
+            _path = path;
+            _testAssembly = Assembly.LoadFrom(_path);
         }
 
         //if someone wanted to get all the types and choose which ones to instantiate
@@ -30,6 +33,16 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return InstantiateClass(className);
         }
 
+        public IEnumerable<object> Instantiate(IEnumerable<string> classNames)
+        {
+            return classNames.Select(InstantiateClass);
+        } 
+
+        public IEnumerable<object> InstantiateAllClassesInAssembly()
+        {
+            return GetAllTypesInAssembly().Where(type => type.Name.Contains("Tests")).Select(InstantiateClass);
+        } 
+
         //if you only have the string names of the class and method
         public IMethodResult InvokeMethod(IClassMethodInfo info)
         {
@@ -43,6 +56,23 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return new MethodResult { Exception = RunMethod(instantiatedClass, method) };
         }
 
+        public IMethodResult InvokeMethod(object instantiatedClass, MethodInfo method, object[] args)
+        {
+            return new MethodResult { Exception = RunMethod(instantiatedClass, method, args) };
+        }
+
+        public IEnumerable<IMethodResult> InvokeAllMethodsInObjects(IList<object> objects)
+        {
+            List<IMethodResult> results = new List<IMethodResult>();
+
+            foreach (object instantiatedObject in objects)
+            {
+                results.AddRange(RunAllMethodsInClass(instantiatedObject).ToList());
+            }
+
+            return results;
+        } 
+
         //if you only have the string name of the class and need to invoke all methods
         public IEnumerable<IMethodResult> InvokeAllMethodsInClass(string className)
         {
@@ -51,7 +81,6 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return results;
         }
 
-        //for running all tests in an assembly
         public IEnumerable<IEnumerable<IMethodResult>> InvokeAllMethodsInAssembly()
         {
             return RunAllMethodsInAssembly();
@@ -71,6 +100,11 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return methods.Select(methodName => new MethodResult { Exception = RunMethod(instantiatedClass, methodName) }).Cast<IMethodResult>().ToList();
         }
 
+        private object InstantiateClass(Type typeOfClass)
+        {
+            return Activator.CreateInstance(typeOfClass);
+        }
+
         private object InstantiateClass(string className)
         {
             string fullyQualifiedName = "";
@@ -83,17 +117,17 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return _testAssembly.CreateInstance(fullyQualifiedName);
         }
 
-        private Exception RunMethod(object instantiatedClass, string methodName)
+        private Exception RunMethod(object instantiatedClass, string methodName, object[] args = null)
         {
             MethodInfo method = instantiatedClass.GetType().GetMethod(methodName);
-            return RunMethod(instantiatedClass, method);
+            return RunMethod(instantiatedClass, method, args);
         }
 
-        private Exception RunMethod(object instantiatedClass, MethodInfo method)
+        private Exception RunMethod(object instantiatedClass, MethodInfo method, object[] args = null)
         {
             try
             {
-                method.Invoke(instantiatedClass, null);
+                method.Invoke(instantiatedClass, args);
             }
             catch (Exception exception)
             {
@@ -102,5 +136,8 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
 
             return null;
         }
+
+        //private RunTestSetup
+        //private RuNTestTeardown
     }
 }

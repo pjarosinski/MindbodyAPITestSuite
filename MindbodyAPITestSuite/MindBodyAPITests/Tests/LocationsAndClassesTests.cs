@@ -1,14 +1,13 @@
 ﻿using System;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MindBodyAPI.RestCalls;
 using RestSharp;
 
 namespace MindBodyAPITests.Tests
 {
-    [Parallelizable]
-    public class LocationsAndClassesTests : AbstractTestSuite
+    public class LocationsAndClassesTests : BaseTestSuite
     {
-        [Test, Parallelizable]
+        [TestMethod]
         public void GetSpecificLocationBasedOnIdTest()
         {
             int locationId = 5;
@@ -22,7 +21,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void SearchForLocationBasedOnSearchText()
         {
             string searchText = "in San Luis Obispo";
@@ -36,7 +35,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void GetLocationsWithinRadiusBasedOnLatLongTest()
         {
             double lat = 5.43452345;
@@ -53,7 +52,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void GetClassesForSpecificLocationWithinSpecificDateRangeTest()
         {
             string startDate = "08/18/2013";
@@ -73,7 +72,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void GetClassInformationBasedOnClassIdTest()
         {
             int classInstanceId = 3;
@@ -88,7 +87,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void AddClientToClassTest()
         {
             int siteId = -40000;
@@ -103,7 +102,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void RemoveClientFromClassTest()
         {
             int visitId = 5435;
@@ -118,7 +117,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void AddClientToWaitlistTest()
         {
             int siteId = -40000;

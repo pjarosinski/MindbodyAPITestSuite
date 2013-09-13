@@ -1,14 +1,14 @@
 ﻿using System;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MindBodyAPI.RestCalls;
 using RestSharp;
 
 namespace MindBodyAPITests.Tests
 {
-    [Parallelizable]
-    public class SeriesTests : AbstractTestSuite
+
+    public class SeriesTests : BaseTestSuite
     {
-        [Test, Parallelizable]
+        [TestMethod]
         public void GetPricingOptionsForSpecificClassTest()
         {
             int siteId = -40000;
@@ -23,7 +23,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void AddSeriesTest()
         {
             int siteId = -40000;
@@ -37,7 +37,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void UpdateSeriesTest()
         {
             int siteId = -40000;

@@ -1,5 +1,5 @@
 ﻿using System;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OAuthAPI.OAuthModels;
 using OAuthAPI.RestCalls;
 using RestSharp;
@@ -8,7 +8,7 @@ namespace OAuthAPITests.Tests
 {
     public class TokensTests : AbstractTestSuite
     {
-        [Test]
+        [TestMethod]
         public void GenerateTokenTest()
         {
             IRestResponse mockResposne = BaseMockResponse;
@@ -24,7 +24,7 @@ namespace OAuthAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test]
+        [TestMethod]
         public void GetUserTokenTest()
         {
             var user = new RestAuthUser { Username = "jim.joneson5436543@gmail.com", Password = "jimjoneson1234", GrantType = "password", Scope = "urn:mboframeworkapi" };

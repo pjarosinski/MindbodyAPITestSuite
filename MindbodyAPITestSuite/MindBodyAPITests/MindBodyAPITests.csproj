@@ -35,17 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gallio, Version=3.4.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MBUnit\Gallio.dll</HintPath>
-    </Reference>
-    <Reference Include="MbUnit, Version=3.4.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MBUnit\MbUnit.dll</HintPath>
-    </Reference>
-    <Reference Include="PostSharp">
-      <HintPath>..\InternalParallelReflectiveTestRunner\bin\Debug\PostSharp.dll</HintPath>
-    </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
     </Reference>
@@ -64,8 +53,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AbstractTestSuite.cs" />
-    <Compile Include="ParallelAttribute\ForParallel.cs" />
+    <Compile Include="BaseTestSuite.cs" />
+    <Compile Include="TestSuiteArguments.cs" />
     <Compile Include="Tests\BillingInfoTests.cs" />
     <Compile Include="Tests\CheckoutTests.cs" />
     <Compile Include="Tests\FavoritesTests.cs" />

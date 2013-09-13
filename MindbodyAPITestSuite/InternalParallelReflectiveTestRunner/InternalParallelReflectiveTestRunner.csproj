@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PostSharp">
-      <HintPath>..\packages\PostSharp.3.0.35\lib\net20\PostSharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,7 +41,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ParallelTestRunner\Implementation\ParallelTestRunner.cs" />
+    <Compile Include="ParallelTestRunner\Implementation\Test.cs" />
+    <Compile Include="ParallelTestRunner\Implementation\TestEnvironment.cs" />
+    <Compile Include="ParallelTestRunner\Implementation\TestFixture.cs" />
+    <Compile Include="ParallelTestRunner\Implementation\TestFixtureFactory.cs" />
+    <Compile Include="ParallelTestRunner\Implementation\TestFixtureManager.cs" />
+    <Compile Include="ParallelTestRunner\Implementation\TestResult.cs" />
     <Compile Include="ParallelTestRunner\Interface\IParallelTestRunner.cs" />
+    <Compile Include="ParallelTestRunner\Interface\ITest.cs" />
+    <Compile Include="ParallelTestRunner\Interface\ITestEnvironment.cs" />
+    <Compile Include="ParallelTestRunner\Interface\ITestFixture.cs" />
+    <Compile Include="ParallelTestRunner\Interface\ITestFixtureFactory.cs" />
+    <Compile Include="ParallelTestRunner\Interface\ITestFixtureManager.cs" />
+    <Compile Include="ParallelTestRunner\Interface\ITestResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflector\Implementations\ClassMethodInfo.cs" />
     <Compile Include="Reflector\Implementations\MethodResult.cs" />
@@ -52,7 +61,6 @@
     <Compile Include="Reflector\Interfaces\IClassMethodInfo.cs" />
     <Compile Include="Reflector\Interfaces\IMethodResult.cs" />
     <Compile Include="Reflector\Interfaces\IReflector.cs" />
-    <Compile Include="RequiresPostSharp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,14 +1,13 @@
 ﻿using System;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MindBodyAPI.RestCalls;
 using RestSharp;
 
 namespace MindBodyAPITests.Tests
 {
-    [Parallelizable]
-    public class FavoritesTests : AbstractTestSuite
+    public class FavoritesTests : BaseTestSuite
     {
-        [Test, Parallelizable]
+        [TestMethod]
         public void GetFavoriteUserLocationsTests()
         {
             int siteId = -40000;
@@ -22,7 +21,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void AddFavoriteLocationTests()
         {
             int siteId = -40000;
@@ -37,7 +36,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void RemoveFavoriteLocationTests()
         {
             int siteId = -40000;
@@ -52,7 +51,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void GetClassesFromUserFavoriteLocation()
         {
             string startDate = "08/10/2013";

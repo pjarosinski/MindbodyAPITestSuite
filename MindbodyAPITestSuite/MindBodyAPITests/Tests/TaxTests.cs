@@ -1,15 +1,15 @@
 ﻿using System;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MindBodyAPI.RequestDataModels;
 using MindBodyAPI.RestCalls;
 using RestSharp;
 
 namespace MindBodyAPITests.Tests
 {
-    [Parallelizable]
-    public class TaxTests : AbstractTestSuite
+
+    public class TaxTests : BaseTestSuite
     {
-        [Test, Parallelizable]
+        [TestMethod]
         public void GetTaxRatesTest()
         {
             int locationId = 4;
@@ -24,7 +24,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void UpdateTaxRates()
         {
             int locationId = 4;

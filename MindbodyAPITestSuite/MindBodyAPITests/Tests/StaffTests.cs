@@ -1,15 +1,15 @@
 ﻿using System;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MindBodyAPI.RequestDataModels;
 using MindBodyAPI.RestCalls;
 using RestSharp;
 
 namespace MindBodyAPITests.Tests
 {
-    [Parallelizable]
-    public class StaffTests : AbstractTestSuite
+
+    public class StaffTests : BaseTestSuite
     {
-        [Test, Parallelizable]
+        [TestMethod]
         public void StaffTokenTest()
         {
             StaffInfoDataModel staff = new StaffInfoDataModel
@@ -30,7 +30,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void AddStaffTest()
         {
             StaffDataModel staff = new StaffDataModel
@@ -54,7 +54,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void UpdateStaffTest()
         {
             StaffDataModel staff = new StaffDataModel
@@ -80,7 +80,7 @@ namespace MindBodyAPITests.Tests
             Assert.AreNotEqual(0, response.ContentLength);
         }
 
-        [Test, Parallelizable]
+        [TestMethod]
         public void StaffPhotoTest()
         {
             string file = "3452w34523452345dfgsdfg";

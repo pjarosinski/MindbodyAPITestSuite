@@ -1,14 +1,13 @@
 ﻿using System;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MindBodyAPI.RestCalls;
 using RestSharp;
 
 namespace MindBodyAPITests.Tests
 {
-    [Parallelizable]
-    public class VisitHistoryFutureScheduleTests : AbstractTestSuite
+    public class VisitHistoryFutureScheduleTests : BaseTestSuite
     {
-        [Test, Parallelizable]
+        [TestMethod]
         public void GetVisitHistoryFutureScheduleTest()
         {
             string startDate = "08/10/2013";
