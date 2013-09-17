@@ -75,14 +75,15 @@ namespace InternalParallelReflectiveTestRunnerTests
 
             foreach (ITestResult result in results)
             {
-                //if (result.MethodResult.Exception != null)
-                    //Console.WriteLine(result.MethodResult.Exception);
 
+                Console.WriteLine("Fixture: " + result.MethodResult.ClassName);
+                Console.WriteLine("Test: " + result.MethodResult.MethodName);
+                if (result.MethodResult.Exception != null)
+                    Console.WriteLine("Test Exception: " + result.MethodResult.Exception);
+
+                Console.WriteLine("Duration: " + result.TestDuration);
+                Console.WriteLine("\n");
                 
-                Console.WriteLine(result.MethodResult.ClassName);
-                Console.WriteLine(result.MethodResult.MethodName);
-                //Console.WriteLine("\n");
-                //Console.WriteLine(result.TestDuration);
             }
         }
     }

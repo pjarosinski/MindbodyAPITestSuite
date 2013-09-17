@@ -39,21 +39,6 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
             return RunAllTestsInParallel();
         }
 
-        private IList<ITestResult> RunAllTestsInParallel()
-        {
-            IList<ITestResult> results = new List<ITestResult>();
-
-            ITestFixture baseFixture = TestFixtureManager.GetBaseFixture();
-
-            baseFixture.FixtureSetup();
-
-            PreparedTests.AsParallel().ForAll(test => results.Add(test.Run()));
-
-            baseFixture.FixtureTeardown();
-
-            return results;
-        } 
-
         private TestFixtureManager PrepareTestFixture(string fixture)
         {
             return new TestFixtureManager(fixture);
@@ -103,5 +88,20 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
             return new List<Test>{new Test(baseFixture, testFixture, method)};
         }
+
+        private IList<ITestResult> RunAllTestsInParallel()
+        {
+            IList<ITestResult> results = new List<ITestResult>();
+
+            ITestFixture baseFixture = TestFixtureManager.GetBaseFixture();
+
+            baseFixture.FixtureSetup();
+
+            PreparedTests.AsParallel().ForAll(test => results.Add(test.Run()));
+
+            baseFixture.FixtureTeardown();
+
+            return results;
+        } 
     }
 }

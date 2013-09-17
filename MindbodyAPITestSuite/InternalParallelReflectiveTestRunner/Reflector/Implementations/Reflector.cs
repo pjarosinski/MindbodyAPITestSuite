@@ -22,6 +22,18 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             _testAssembly = Assembly.LoadFrom(_path);
         }
 
+        public bool CheckForFactoryMethod(string method, object instance)
+        {
+            try
+            {
+                return instance.GetType().GetMethod(method).GetCustomAttributes(typeof(DataFactory)).Any();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         //if someone wanted to get all the types and choose which ones to instantiate
         public IEnumerable<Type> GetAllTypesInAssembly()
         {
@@ -38,33 +50,10 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return GetMethodInfoFromObject(instance, method);
         }
 
-        public object PropertyCopy(object fromInstance, object toInstance)
-        {
-            toInstance = CopyProperties(fromInstance, toInstance);
-            return CopyFields(fromInstance, toInstance);
-        }
-
-        public bool CheckForFactoryMethod(string method, object instance)
-        {
-            try
-            {
-                return instance.GetType().GetMethod(method).GetCustomAttributes(typeof (DataFactory)).Any();
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
         public DataFactory GetDataFactoryMethod(string method, object instance)
         {
             MethodInfo methodInfo = instance.GetType().GetMethod(method);
             return (DataFactory)methodInfo.GetCustomAttribute(typeof(DataFactory));
-        }
-
-        public object InvokeDataFactoryMethod(object instance, MethodInfo method, object[] args)
-        {
-            return method.Invoke(instance, args);
         }
 
         //returns new instance of classname
@@ -81,7 +70,12 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
         public IEnumerable<object> InstantiateAllClassesInAssembly()
         {
             return GetAllTypesInAssembly().Select(InstantiateClass);
-        } 
+        }
+
+        public object InvokeDataFactoryMethod(object instance, MethodInfo method, object[] args)
+        {
+            return method.Invoke(instance, args);
+        }
 
         //if you have the object and methodinfo already
         public IMethodResult InvokeMethod(object instance, MethodInfo method)
@@ -94,6 +88,12 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
         {
             return new MethodResult { ClassName = instance.GetType().Name, MethodName = method.Name,
                 Exception = RunMethod(instance, method, args) };
+        }
+
+        public object PropertyCopy(object fromInstance, object toInstance)
+        {
+            toInstance = CopyProperties(fromInstance, toInstance);
+            return CopyFields(fromInstance, toInstance);
         }
 
         //end public api

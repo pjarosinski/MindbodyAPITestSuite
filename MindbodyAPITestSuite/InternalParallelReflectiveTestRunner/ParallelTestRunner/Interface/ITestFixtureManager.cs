@@ -5,8 +5,8 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface
     public interface ITestFixtureManager
     {
         ITestFixture GetFixture(string fixtureName);
-        IEnumerable<string> GetAllTestsInFixture(string fixtureName);
-        ITestFixture GetBaseFixture();
         IList<ITestFixture> GetAllFixtures();
+        ITestFixture GetBaseFixture();
+        IEnumerable<string> GetAllTestsInFixture(string fixtureName); 
     }
 }

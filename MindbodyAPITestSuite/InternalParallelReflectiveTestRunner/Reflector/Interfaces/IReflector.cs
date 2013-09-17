@@ -12,12 +12,12 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Interfaces
         IEnumerable<MethodInfo> GetAllMethodsInObject(object instance);
         DataFactory GetDataFactoryMethod(string method, object instance);
         MethodInfo GetMethodInfo(string method, object instance);
-        object InvokeDataFactoryMethod(object instance, MethodInfo method, object[] args);
-        IMethodResult InvokeMethod(object instance, MethodInfo method);
-        IMethodResult InvokeMethod(object instance, MethodInfo method, object[] args);
         object Instantiate(string className); 
         object Instantiate(Type typeOfClass);
         IEnumerable<object> InstantiateAllClassesInAssembly();
+        IMethodResult InvokeMethod(object instance, MethodInfo method);
+        IMethodResult InvokeMethod(object instance, MethodInfo method, object[] args);
+        object InvokeDataFactoryMethod(object instance, MethodInfo method, object[] args);
         object PropertyCopy(object fromInstance, object toInstance);       
     }
 }

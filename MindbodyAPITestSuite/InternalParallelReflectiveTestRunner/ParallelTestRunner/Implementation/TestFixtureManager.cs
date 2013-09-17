@@ -42,10 +42,9 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
             return Fixtures.First(fixture => fixture.Name.Contains(fixtureName));
         }
 
-        public IEnumerable<string> GetAllTestsInFixture(string fixtureName)
+        public IList<ITestFixture> GetAllFixtures()
         {
-            ITestFixture testFixture = Fixtures.First(fixture => fixture.Name.Contains(fixtureName));
-            return Reflector.GetAllMethodsInObject(testFixture.Instance).Where(method => method.Name.Contains("Test")).Select(method => method.Name);
+            return Fixtures;
         }
 
         public ITestFixture GetBaseFixture()
@@ -53,9 +52,10 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
             return BaseFixture;
         }
 
-        public IList<ITestFixture> GetAllFixtures()
+        public IEnumerable<string> GetAllTestsInFixture(string fixtureName)
         {
-            return Fixtures;
+            ITestFixture testFixture = Fixtures.First(fixture => fixture.Name.Contains(fixtureName));
+            return Reflector.GetAllMethodsInObject(testFixture.Instance).Where(method => method.Name.Contains("Test")).Select(method => method.Name);
         }
 
         private ITestFixture CreateBaseFixture()

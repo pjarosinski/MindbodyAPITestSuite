@@ -22,16 +22,9 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
             Name = instance.GetType().Name;
         }
 
-        public void TestSetup()
+        public bool CheckForDataFactory(string method)
         {
-            MethodInfo fixtureSetup = Reflector.GetAllMethodsInObject(Instance).First(method => method.Name.Equals("Setup"));
-            Reflector.InvokeMethod(Instance, fixtureSetup);
-        }
-
-        public void TestTeardown()
-        {
-            MethodInfo fixtureSetup = Reflector.GetAllMethodsInObject(Instance).First(method => method.Name.Equals("Teardown"));
-            Reflector.InvokeMethod(Instance, fixtureSetup);
+            return Reflector.CheckForFactoryMethod(method, Instance);
         }
 
         public void FixtureSetup()
@@ -46,9 +39,16 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
             Reflector.InvokeMethod(Instance, fixtureTeardown);
         }
 
-        public bool CheckForDataFactory(string method)
+        public void TestSetup()
         {
-            return Reflector.CheckForFactoryMethod(method, Instance);
+            MethodInfo fixtureSetup = Reflector.GetAllMethodsInObject(Instance).First(method => method.Name.Equals("Setup"));
+            Reflector.InvokeMethod(Instance, fixtureSetup);
+        }
+
+        public void TestTeardown()
+        {
+            MethodInfo fixtureSetup = Reflector.GetAllMethodsInObject(Instance).First(method => method.Name.Equals("Teardown"));
+            Reflector.InvokeMethod(Instance, fixtureSetup);
         }
 
         public IEnumerable<object> RunDataFactoryForMethod(string testMethod)

@@ -6,11 +6,11 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface
     {
         object Instance { get; set; }
         string Name { get; set; }
-        void TestSetup();
-        void TestTeardown();
+        bool CheckForDataFactory(string method);
         void FixtureSetup();
         void FixtureTeardown();
-        bool CheckForDataFactory(string method);
+        void TestSetup();
+        void TestTeardown();
         IEnumerable<object> RunDataFactoryForMethod(string testMethod);
     }
 }
