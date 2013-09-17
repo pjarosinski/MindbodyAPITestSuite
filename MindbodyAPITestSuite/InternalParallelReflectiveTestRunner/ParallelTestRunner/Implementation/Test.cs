@@ -35,19 +35,12 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
             InstantiatedTestFixture.Instance = SetInstanceProperties(InstantiatedBaseTestFixture.Instance,
                                                                      InstantiatedTestFixture.Instance);
-
             InstantiatedTestFixture.TestSetup();
-
             StopWatch.Start();
-
             testResult.MethodResult = Reflector.InvokeMethod(InstantiatedTestFixture.Instance, TestMethod, TestArguments);
-
             StopWatch.Stop();
-
             InstantiatedTestFixture.TestTeardown();
-
             testResult.TestDuration = StopWatch.Elapsed.ToString();
-
             return testResult;
         }
 
