@@ -67,7 +67,7 @@ namespace MindBodyAPITests
 
             UserToken = userToken;
 
-            Console.WriteLine("Fixture Setup Executed");
+            //Console.WriteLine("Fixture Setup Executed");
 
             //I will finish this one day when the API works. Until then error log gen yay!
             /*Tokens tokenCalls = new Tokens();
@@ -98,19 +98,19 @@ namespace MindBodyAPITests
         [TestInitialize]
         public virtual void Setup()
         {
-            Console.WriteLine("Test Setup Executed");
+            //Console.WriteLine("Test Setup Executed");
         }
 
         [TestCleanup]
         public virtual void Teardown()
         {
-            Console.WriteLine("Test Teardown Executed");
+            //Console.WriteLine("Test Teardown Executed");
         }
 
         [ClassCleanup]
         public virtual void FixtureTeardown()
         {
-            Console.WriteLine("Fixture Teardown Executed");
+            //Console.WriteLine("Fixture Teardown Executed");
         }
 
         public bool BaseCompare(IRestResponse mockResponse, IRestResponse response)

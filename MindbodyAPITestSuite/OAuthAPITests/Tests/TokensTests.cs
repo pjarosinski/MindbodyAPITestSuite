@@ -19,6 +19,8 @@ namespace OAuthAPITests.Tests
 
             Console.WriteLine(response.Content);
 
+            Console.WriteLine("fuck is it in here");
+
             Assert.IsTrue(BaseCompare(mockResposne, response));
 
             Assert.AreNotEqual(0, response.ContentLength);
@@ -34,6 +36,8 @@ namespace OAuthAPITests.Tests
             IRestResponse response = tokensRestCalls.GetUserToken(user);
 
             Console.WriteLine(response.Content);
+
+            Console.WriteLine("fuck is it in here");
 
             Assert.AreNotEqual(0, response.ContentLength);
         }

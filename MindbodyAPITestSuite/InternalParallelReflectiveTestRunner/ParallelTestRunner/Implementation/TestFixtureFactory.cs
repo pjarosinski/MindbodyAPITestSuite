@@ -29,7 +29,7 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
         public IList<ITestFixture> Create()
         {
-            IList<object> objects = Reflector.InstantiateAllClassesInAssembly().ToList();
+            IList<object> objects = Reflector.InstantiateAllClassesInAssembly().Where(obj => obj.GetType().Name.Contains("Tests")).ToList();
             IList<ITestFixture> fixtures = objects.Select(obj => new TestFixture(obj)).Cast<ITestFixture>().ToList();
             return fixtures;
         } 

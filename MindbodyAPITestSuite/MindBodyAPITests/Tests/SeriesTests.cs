@@ -48,8 +48,6 @@ namespace MindBodyAPITests.Tests
 
             Console.WriteLine(response.Content);
 
-            Console.WriteLine(response);
-
             Assert.AreNotEqual(0, response.ContentLength);
         }
     }

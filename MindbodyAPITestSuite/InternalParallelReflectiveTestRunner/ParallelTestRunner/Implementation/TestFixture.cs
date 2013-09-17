@@ -36,13 +36,13 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
         public void FixtureSetup()
         {
-            MethodInfo fixtureSetup = Reflector.GetAllMethodsInObject(Instance).First(method => method.Name.Contains("FixtureSetup"));
+            MethodInfo fixtureSetup = Reflector.GetAllMethodsInObject(Instance).First(method => method.Name.Equals("FixtureSetup"));
             Reflector.InvokeMethod(Instance, fixtureSetup);
         }
 
         public void FixtureTeardown()
         {
-            MethodInfo fixtureTeardown = Reflector.GetAllMethodsInObject(Instance).First(method => method.Name.Contains("FixtureTeardown"));
+            MethodInfo fixtureTeardown = Reflector.GetAllMethodsInObject(Instance).First(method => method.Name.Equals("FixtureTeardown"));
             Reflector.InvokeMethod(Instance, fixtureTeardown);
         }
 

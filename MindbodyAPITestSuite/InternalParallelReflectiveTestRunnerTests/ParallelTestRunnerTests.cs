@@ -71,14 +71,18 @@ namespace InternalParallelReflectiveTestRunnerTests
 
             stopwatch.Stop();
 
-            Console.WriteLine("Time: " + stopwatch.Elapsed);
+            //Console.WriteLine("Time: " + stopwatch.Elapsed);
 
             foreach (ITestResult result in results)
             {
-                if (result.MethodResult.Exception != null)
-                    Console.WriteLine(result.MethodResult.Exception);
+                //if (result.MethodResult.Exception != null)
+                    //Console.WriteLine(result.MethodResult.Exception);
 
-                Assert.IsTrue(result.MethodResult.Exception == null);
+                
+                Console.WriteLine(result.MethodResult.ClassName);
+                Console.WriteLine(result.MethodResult.MethodName);
+                //Console.WriteLine("\n");
+                //Console.WriteLine(result.TestDuration);
             }
         }
     }

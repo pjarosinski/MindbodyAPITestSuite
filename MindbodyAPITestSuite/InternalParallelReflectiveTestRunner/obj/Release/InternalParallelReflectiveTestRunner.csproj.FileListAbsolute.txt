@@ -2,4 +2,3 @@ C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\InternalParallelReflectiveTestRunner\bin\Release\InternalParallelReflectiveTestRunner.pdb
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\InternalParallelReflectiveTestRunner\obj\Release\InternalParallelReflectiveTestRunner.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\InternalParallelReflectiveTestRunner\obj\Release\InternalParallelReflectiveTestRunner.pdb
-C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\InternalParallelReflectiveTestRunner\obj\Release\InternalParallelReflectiveTestRunner.csprojResolveAssemblyReference.cache

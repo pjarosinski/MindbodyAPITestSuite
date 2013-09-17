@@ -25,7 +25,7 @@ namespace MindBodyAPITests.Tests
 
             IRestResponse response = staffCalls.StaffToken(staff);
 
-            Console.WriteLine(response.Content);
+            //Console.WriteLine(response.Content);
 
             Assert.AreNotEqual(0, response.ContentLength);
         }
@@ -49,7 +49,7 @@ namespace MindBodyAPITests.Tests
 
             IRestResponse response = staffCalls.AddStaff(siteId, staff);
             
-            Console.WriteLine(response.Content);
+            //Console.WriteLine(response.Content);
 
             Assert.AreNotEqual(0, response.ContentLength);
         }
@@ -75,7 +75,7 @@ namespace MindBodyAPITests.Tests
 
             IRestResponse response = staffCalls.UpdateStaff(siteId, staffId, staff);
 
-            Console.WriteLine(response.Content);
+            //Console.WriteLine(response.Content);
 
             Assert.AreNotEqual(0, response.ContentLength);
         }
@@ -93,7 +93,7 @@ namespace MindBodyAPITests.Tests
 
             IRestResponse response = staffCalls.StaffPhoto(siteId, staffId, file);
 
-            Console.WriteLine(response.Content);
+            //Console.WriteLine(response.Content);
 
             Assert.AreNotEqual(0, response.ContentLength);
         }

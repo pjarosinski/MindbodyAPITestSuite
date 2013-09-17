@@ -1,19 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface;
+using InternalParallelReflectiveTestRunner.Reflector.Interfaces;
 
 namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 {
     public class TestFixtureManager : ITestFixtureManager
     {
         private ITestFixtureFactory Factory { get; set; }
-
         private IList<ITestFixture> Fixtures { get; set; }
-
         private ITestFixture BaseFixture { get; set; }
+        private IReflector Reflector { get; set; }
 
         public TestFixtureManager(string fixtureName)
         {
+            Reflector = new Reflector.Implementations.Reflector();
             Factory = new TestFixtureFactory();
             Fixtures = new List<ITestFixture>();
             Fixtures.Add(Factory.Create(fixtureName));
@@ -22,6 +23,7 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
         public TestFixtureManager(IList<string> fixtures)
         {
+            Reflector = new Reflector.Implementations.Reflector();
             Factory = new TestFixtureFactory();
             Fixtures = Factory.Create(fixtures);
             BaseFixture = CreateBaseFixture();
@@ -29,6 +31,7 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
         public TestFixtureManager()
         {
+            Reflector = new Reflector.Implementations.Reflector();
             Factory = new TestFixtureFactory();
             Fixtures = Factory.Create();
             BaseFixture = CreateBaseFixture();
@@ -42,7 +45,7 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
         public IEnumerable<string> GetAllTestsInFixture(string fixtureName)
         {
             ITestFixture testFixture = Fixtures.First(fixture => fixture.Name.Contains(fixtureName));
-            return testFixture.GetType().GetMethods().Select(method => method.Name);
+            return Reflector.GetAllMethodsInObject(testFixture.Instance).Where(method => method.Name.Contains("Test")).Select(method => method.Name);
         }
 
         public ITestFixture GetBaseFixture()

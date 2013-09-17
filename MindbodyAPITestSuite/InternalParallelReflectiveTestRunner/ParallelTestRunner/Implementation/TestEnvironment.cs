@@ -7,15 +7,13 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
     public class TestEnvironment : ITestEnvironment 
     {
         private ITestFixtureManager TestFixtureManager { get; set; }
-        private ITestInfo TestInfo { get; set; }
         private string FixtureName { get; set; }
         private IList<Test> PreparedTests { get; set; }
 
         public TestEnvironment(ITestInfo testInfo)
         {
-            TestInfo = testInfo;
-            TestFixtureManager = PrepareTestFixture(TestInfo.Class);
-            PreparedTests = PrepareTest(TestInfo.Class, TestInfo.Method);
+            TestFixtureManager = PrepareTestFixture(testInfo.Class);
+            PreparedTests = PrepareTest(testInfo.Class, testInfo.Method);
         }
 
         public TestEnvironment(string fixtureName)

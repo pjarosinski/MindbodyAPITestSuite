@@ -46,7 +46,14 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
 
         public bool CheckForFactoryMethod(string method, object instance)
         {
-            return instance.GetType().GetMethod(method).GetCustomAttributes(typeof(DataFactory)).Any();
+            try
+            {
+                return instance.GetType().GetMethod(method).GetCustomAttributes(typeof (DataFactory)).Any();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public DataFactory GetDataFactoryMethod(string method, object instance)
@@ -71,23 +78,10 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return InstantiateClass(typeOfClass);
         }
 
-        public IEnumerable<object> Instantiate(IEnumerable<string> classNames)
-        {
-            return classNames.Select(InstantiateClass);
-        } 
-
         public IEnumerable<object> InstantiateAllClassesInAssembly()
         {
-            return GetAllTypesInAssembly().Where(type => type.Name.Contains("Tests")).Select(InstantiateClass);
+            return GetAllTypesInAssembly().Select(InstantiateClass);
         } 
-
-        //if you only have the string names of the class and method
-        public IMethodResult InvokeMethod(string className, string method)
-        {
-            object instance = InstantiateClass(className);
-            return new MethodResult { ClassName = instance.GetType().Name, MethodName = method,
-                Exception = RunMethod(instance, method) };
-        }
 
         //if you have the object and methodinfo already
         public IMethodResult InvokeMethod(object instance, MethodInfo method)
@@ -101,32 +95,6 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return new MethodResult { ClassName = instance.GetType().Name, MethodName = method.Name,
                 Exception = RunMethod(instance, method, args) };
         }
-
-        public IEnumerable<IMethodResult> InvokeAllMethodsInObjects(IList<object> objects)
-        {
-            List<IMethodResult> results = new List<IMethodResult>();
-
-            foreach (object obj in objects)
-            {
-                results.AddRange(RunAllMethodsInClass(obj).ToList());
-            }
-
-            return results;
-        } 
-
-        //if you only have the string name of the class and need to invoke all methods
-        public IEnumerable<IMethodResult> InvokeAllMethodsInClass(string className)
-        {
-            object instantiatedClass = InstantiateClass(className);
-            IEnumerable<IMethodResult> results = RunAllMethodsInClass(instantiatedClass);
-            return results;
-        }
-
-        public IEnumerable<IEnumerable<IMethodResult>> InvokeAllMethodsInAssembly()
-        {
-            return RunAllMethodsInAssembly();
-        }
-
 
         //end public api
         private object CopyProperties(object fromInstance, object toInstance)
@@ -175,21 +143,6 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return methods.FirstOrDefault(info => info.Name.Contains(method));
         }
 
-        private IEnumerable<IEnumerable<IMethodResult>> RunAllMethodsInAssembly()
-        {
-            IList<Type> types = _testAssembly.GetTypes().Where(type => type.Name.Contains("Tests")).ToList();
-            IList<object> instantiatedClasses = types.Select(instance => InstantiateClass(instance.Name)).ToList();
-            IEnumerable<IEnumerable<IMethodResult>> methodResults = instantiatedClasses.Select(RunAllMethodsInClass);
-            return methodResults;
-        }
-
-        private IEnumerable<IMethodResult> RunAllMethodsInClass(object instance)
-        {
-            IEnumerable<string> methods = instance.GetType().GetMethods().Where(method => method.Name.Contains("Test")).Select(name => name.Name);
-            return methods.Select(methodName => new MethodResult { ClassName = instance.GetType().Name, MethodName = methodName, 
-                Exception = RunMethod(instance, methodName) }).Cast<IMethodResult>().ToList();
-        }
-
         private object InstantiateClass(Type typeOfClass)
         {
             return Activator.CreateInstance(typeOfClass);
@@ -205,12 +158,6 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             }
 
             return _testAssembly.CreateInstance(fullyQualifiedName);
-        }
-
-        private Exception RunMethod(object instance, string methodName, object[] args = null)
-        {
-            MethodInfo method = instance.GetType().GetMethod(methodName);
-            return RunMethod(instance, method, args);
         }
 
         private Exception RunMethod(object instance, MethodInfo method, object[] args = null)
