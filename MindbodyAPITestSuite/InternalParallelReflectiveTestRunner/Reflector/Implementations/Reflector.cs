@@ -8,7 +8,6 @@ using InternalParallelReflectiveTestRunner.Reflector.Interfaces;
 namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
 {
     //To make reflector more dynamic make a type qualifier for class instantiation.
-
     public class Reflector : IReflector
     {
         private readonly string _path =
@@ -34,7 +33,6 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             }
         }
 
-        //if someone wanted to get all the types and choose which ones to instantiate
         public IEnumerable<Type> GetAllTypesInAssembly()
         {
             return _testAssembly.GetTypes();
@@ -56,7 +54,6 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return (DataFactory)methodInfo.GetCustomAttribute(typeof(DataFactory));
         }
 
-        //returns new instance of classname
         public object Instantiate(string className)
         {
             return InstantiateClass(className);
@@ -77,7 +74,6 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return method.Invoke(instance, args);
         }
 
-        //if you have the object and methodinfo already
         public IMethodResult InvokeMethod(object instance, MethodInfo method)
         {
             return new MethodResult { ClassName = instance.GetType().Name, MethodName = method.Name,
@@ -96,7 +92,6 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return CopyFields(fromInstance, toInstance);
         }
 
-        //end public api
         private object CopyProperties(object fromInstance, object toInstance)
         {
             IEnumerable<PropertyInfo> propertyInfos = fromInstance.GetType().GetProperties();
