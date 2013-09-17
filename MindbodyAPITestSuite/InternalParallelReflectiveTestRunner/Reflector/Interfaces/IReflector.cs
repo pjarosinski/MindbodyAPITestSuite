@@ -23,7 +23,7 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Interfaces
         object PropertyCopy(object fromInstance, object toInstance);
         bool CheckForFactoryMethod(string method, object instance);
         DataFactory GetDataFactoryMethod(string method, object instance);
-        object InvokeFactoryMethod(object instance, MethodInfo method, object[] args);
+        object InvokeDataFactoryMethod(object instance, MethodInfo method, object[] args);
         //analyze if method has attribute attached for data factory
     }
 }

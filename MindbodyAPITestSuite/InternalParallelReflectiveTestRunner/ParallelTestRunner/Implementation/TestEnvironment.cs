@@ -103,13 +103,13 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
             if (testFixture.CheckForDataFactory(testInfo.Method))
             {
-                testFixture.RunDataFactoryForMethod(testInfo.Method);
-
-
+                IEnumerable<object> testData = testFixture.RunDataFactoryForMethod(testInfo.Method);
+                return testData.Select(argument => new Test(baseFixture, testFixture, testInfo.Method) {TestArguments = new[] {argument}}).ToList();
             }
-
-            return new List<Test>();
-            //return new Test(baseFixture, TestFixtureManager.GetFixture(testInfo.Class), testInfo.Method);
+            else
+            {
+                return new List<Test>{new Test(baseFixture, testFixture, testInfo.Method)};    
+            }
         }
 
         private IList<Test> PrepareTests(string fixtureName)

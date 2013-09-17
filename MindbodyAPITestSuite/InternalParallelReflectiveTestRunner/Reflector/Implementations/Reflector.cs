@@ -62,7 +62,7 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return (DataFactory)methodInfo.GetCustomAttribute(typeof(DataFactory));
         }
 
-        public object InvokeFactoryMethod(object instance, MethodInfo method, object[] args)
+        public object InvokeDataFactoryMethod(object instance, MethodInfo method, object[] args)
         {
             return method.Invoke(instance, args);
         }
@@ -134,6 +134,8 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return RunAllMethodsInAssembly();
         }
 
+
+        //end public api
         private IEnumerable<MethodInfo> GetAllMethodInfosFromObject(object obj)
         {
             return obj.GetType().GetMethods();

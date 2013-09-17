@@ -65,7 +65,7 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
         private IEnumerable<object> InvokeFactoryMethod(string factoryMethod, object[] factoryMethodArgs)
         {
             MethodInfo factoryMethodInfo = Reflector.GetMethodInfo(factoryMethod, Instance);
-            return (IEnumerable<object>) Reflector.InvokeFactoryMethod(Instance, factoryMethodInfo, factoryMethodArgs);
+            return (IEnumerable<object>) Reflector.InvokeDataFactoryMethod(Instance, factoryMethodInfo, factoryMethodArgs);
         } 
     }
 }
