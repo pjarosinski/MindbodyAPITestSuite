@@ -134,7 +134,6 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
         private MethodInfo GetMethodInfoFromObject(object obj, string method)
         {
             MethodInfo[] methods = obj.GetType().GetMethods();
-
             return methods.FirstOrDefault(info => info.Name.Contains(method));
         }
 
