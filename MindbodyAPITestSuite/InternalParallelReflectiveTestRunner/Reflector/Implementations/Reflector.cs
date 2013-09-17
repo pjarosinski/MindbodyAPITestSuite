@@ -7,7 +7,7 @@ using InternalParallelReflectiveTestRunner.Reflector.Interfaces;
 
 namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
 {
-    //To make reflector more dynamic make a type qualifier for class instantiation.
+    //make it find the relative path to the test dll
     public class Reflector : IReflector
     {
         private readonly string _path =
