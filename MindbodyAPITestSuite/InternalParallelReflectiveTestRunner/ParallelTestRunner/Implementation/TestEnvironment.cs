@@ -92,13 +92,10 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
         private IList<ITestResult> RunAllTestsInParallel()
         {
             IList<ITestResult> results = new List<ITestResult>();
-
             ITestFixture baseFixture = TestFixtureManager.GetBaseFixture();
 
             baseFixture.FixtureSetup();
-
             PreparedTests.AsParallel().ForAll(test => results.Add(test.Run()));
-
             baseFixture.FixtureTeardown();
 
             return results;
