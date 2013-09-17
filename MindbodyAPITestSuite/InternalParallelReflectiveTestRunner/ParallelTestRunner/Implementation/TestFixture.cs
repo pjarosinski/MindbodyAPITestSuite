@@ -51,13 +51,12 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
         public bool CheckForDataFactory(string method)
         {
-            return Instance.GetType().GetMethod(method).GetCustomAttributes(typeof(DataFactory)).Any();
+            return Reflector.CheckForFactoryMethod(method, Instance);
         }
 
-        public IEnumerable<object> RunDataFactoryMethod(string testMethod)
+        public IEnumerable<object> RunDataFactoryForMethod(string testMethod)
         {
-            MethodInfo method = Instance.GetType().GetMethod(testMethod);
-            DataFactory attr = (DataFactory) method.GetCustomAttribute(typeof(DataFactory));
+            DataFactory attr = Reflector.GetDataFactoryMethod(testMethod, Instance);
             string factoryMethod = attr.MethodToRun;
             object[] factoryMethodArgs = attr.MethodArgs;
             return InvokeFactoryMethod(factoryMethod, factoryMethodArgs);
@@ -65,7 +64,8 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
         private IEnumerable<object> InvokeFactoryMethod(string factoryMethod, object[] factoryMethodArgs)
         {
-            return (IEnumerable<object>) Instance.GetType().GetMethod(factoryMethod).Invoke(Instance, factoryMethodArgs);
+            MethodInfo factoryMethodInfo = Reflector.GetMethodInfo(factoryMethod, Instance);
+            return (IEnumerable<object>) Reflector.InvokeFactoryMethod(Instance, factoryMethodInfo, factoryMethodArgs);
         } 
     }
 }

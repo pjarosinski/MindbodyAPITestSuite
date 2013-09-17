@@ -15,6 +15,6 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface
         void FixtureSetup();
         void FixtureTeardown();
         bool CheckForDataFactory(string method);
-        IEnumerable<object> RunDataFactoryMethod(string factoryMethod);
+        IEnumerable<object> RunDataFactoryForMethod(string testMethod);
     }
 }

@@ -103,9 +103,9 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
             if (testFixture.CheckForDataFactory(testInfo.Method))
             {
-                
-  
-                
+                testFixture.RunDataFactoryForMethod(testInfo.Method);
+
+
             }
 
             return new List<Test>();
