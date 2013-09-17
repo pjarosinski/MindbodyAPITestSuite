@@ -33,17 +33,10 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
         {
             ITestResult testResult = new TestResult();
 
+            InstantiatedTestFixture.Instance = SetInstanceProperties(InstantiatedBaseTestFixture.Instance,
+                                                                     InstantiatedTestFixture.Instance);
+
             InstantiatedTestFixture.TestSetup();
-
-            //copy properties from one fixture into the other
-
-            //do logic for data factory
-            //if tests has attribute of type datafactory,
-            //invoke method using stringname from attribute in base test fixture
-            //if its an enum hopefully it behaves good parallized
-            //then pass value to method to run
-           // InstantiatedTestFixture.Instance = SetInstanceProperties(InstantiatedBaseTestFixture.Instance,
-             //                                                        InstantiatedTestFixture.Instance);
 
             StopWatch.Start();
 

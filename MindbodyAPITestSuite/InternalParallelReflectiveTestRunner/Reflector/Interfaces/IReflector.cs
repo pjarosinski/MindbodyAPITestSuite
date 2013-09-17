@@ -7,9 +7,9 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Interfaces
 {
     public interface IReflector
     {
-        IMethodResult InvokeMethod(IClassMethodInfo info);
         IMethodResult InvokeMethod(object instance, MethodInfo method);
         IMethodResult InvokeMethod(object instance, MethodInfo method, object[] args);
+        IMethodResult InvokeMethod(string className, string method);
         IEnumerable<IMethodResult> InvokeAllMethodsInClass(string className);
         IEnumerable<IEnumerable<IMethodResult>> InvokeAllMethodsInAssembly();
         IEnumerable<IMethodResult> InvokeAllMethodsInObjects(IList<object> objects);

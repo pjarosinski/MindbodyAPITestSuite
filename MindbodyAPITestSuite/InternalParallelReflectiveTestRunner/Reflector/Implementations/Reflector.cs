@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using InternalParallelReflectiveTestRunner.DataFactoryAttribute;
+using InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface;
 using InternalParallelReflectiveTestRunner.Reflector.Interfaces;
 
 namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
@@ -40,15 +41,8 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
 
         public object PropertyCopy(object fromInstance, object toInstance)
         {
-            foreach (PropertyInfo prop in toInstance.GetType().GetProperties())
-            {
-                if (prop.GetValue(toInstance) == null)
-                {
-                    prop.SetValue(toInstance, fromInstance.GetType().GetProperties().First(propName => propName.Name == prop.Name));
-                }
-            }
-
-            return toInstance;
+            toInstance = CopyProperties(fromInstance, toInstance);
+            return CopyFields(fromInstance, toInstance);
         }
 
         public bool CheckForFactoryMethod(string method, object instance)
@@ -89,11 +83,11 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
         } 
 
         //if you only have the string names of the class and method
-        public IMethodResult InvokeMethod(IClassMethodInfo info)
+        public IMethodResult InvokeMethod(string className, string method)
         {
-            object instantiatedClass = InstantiateClass(info.Class);
-            return new MethodResult { ClassName = instantiatedClass.GetType().Name, MethodName = info.Method,
-                Exception = RunMethod(instantiatedClass, info.Method) };
+            object instance = InstantiateClass(className);
+            return new MethodResult { ClassName = instance.GetType().Name, MethodName = method,
+                Exception = RunMethod(instance, method) };
         }
 
         //if you have the object and methodinfo already
@@ -136,6 +130,40 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
 
 
         //end public api
+        private object CopyProperties(object fromInstance, object toInstance)
+        {
+            IEnumerable<PropertyInfo> propertyInfos = fromInstance.GetType().GetProperties();
+
+            foreach (PropertyInfo prop in propertyInfos)
+            {
+                if (prop.GetValue(toInstance) == null)
+                {
+                    PropertyInfo info =
+                        fromInstance.GetType().GetProperties().First(propName => propName.Name == prop.Name);
+                    prop.SetValue(toInstance, info.GetValue(fromInstance));
+                }
+            }
+
+            return toInstance;
+        }
+
+        private object CopyFields(object fromInstance, object toInstance)
+        {
+            IEnumerable<FieldInfo> fieldInfos = fromInstance.GetType().GetFields();
+
+            foreach (FieldInfo field in fieldInfos)
+            {
+                if (field.GetValue(toInstance) == null)
+                {
+                    FieldInfo info =
+                        fromInstance.GetType().GetFields().First(fieldName => fieldName.Name == field.Name);
+                    field.SetValue(toInstance, info.GetValue(fromInstance));
+                }
+            }
+
+            return toInstance;
+        }
+
         private IEnumerable<MethodInfo> GetAllMethodInfosFromObject(object obj)
         {
             return obj.GetType().GetMethods();

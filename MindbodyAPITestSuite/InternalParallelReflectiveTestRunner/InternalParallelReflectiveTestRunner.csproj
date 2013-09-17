@@ -56,10 +56,10 @@
     <Compile Include="ParallelTestRunner\Interface\ITestFixtureManager.cs" />
     <Compile Include="ParallelTestRunner\Interface\ITestResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reflector\Implementations\ClassMethodInfo.cs" />
+    <Compile Include="ParallelTestRunner\Implementation\TestInfo.cs" />
     <Compile Include="Reflector\Implementations\MethodResult.cs" />
     <Compile Include="Reflector\Implementations\Reflector.cs" />
-    <Compile Include="Reflector\Interfaces\IClassMethodInfo.cs" />
+    <Compile Include="ParallelTestRunner\Interface\ITestInfo.cs" />
     <Compile Include="Reflector\Interfaces\IMethodResult.cs" />
     <Compile Include="Reflector\Interfaces\IReflector.cs" />
   </ItemGroup>

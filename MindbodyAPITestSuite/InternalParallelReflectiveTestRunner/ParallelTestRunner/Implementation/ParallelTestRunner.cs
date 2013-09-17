@@ -11,7 +11,7 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
     public class ParallelTestRunner : IParallelTestRunner
     {
         //if you want to run a certain subset of tests parallelizable
-        public IList<ITestResult> RunTestParallel(IClassMethodInfo test)
+        public IList<ITestResult> RunTestParallel(ITestInfo test)
         {
             return RunParallel(test);
         }
@@ -28,7 +28,7 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
             return RunParallel();
         }
 
-        private IList<ITestResult> RunParallel(IClassMethodInfo test)
+        private IList<ITestResult> RunParallel(ITestInfo test)
         {
             ITestEnvironment environment = new TestEnvironment(test);
 

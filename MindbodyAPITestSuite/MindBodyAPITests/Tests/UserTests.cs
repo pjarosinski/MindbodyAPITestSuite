@@ -46,6 +46,7 @@ namespace MindBodyAPITests.Tests
 
             Assert.IsTrue(BaseCompare(mockResponse, response));
             Assert.IsTrue(responseId.Equals(expectedId));
+            Assert.Fail();
         }
 
         [TestMethod]

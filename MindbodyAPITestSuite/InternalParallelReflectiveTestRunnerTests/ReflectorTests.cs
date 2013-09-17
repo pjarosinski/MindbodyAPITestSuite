@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation;
+using InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface;
 using InternalParallelReflectiveTestRunner.Reflector.Implementations;
 using InternalParallelReflectiveTestRunner.Reflector.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -20,13 +22,11 @@ namespace InternalParallelReflectiveTestRunnerTests
             string className = "UserTests";
             string methodName = "GetUserTest";
 
-            IClassMethodInfo classMethodInfo = new ClassMethodInfo {Class = className, Method = methodName};
-
             Stopwatch stopwatch = new Stopwatch();
 
             stopwatch.Start();
 
-            IMethodResult result = reflector.InvokeMethod(classMethodInfo);
+            IMethodResult result = reflector.InvokeMethod(className, methodName);
 
             stopwatch.Stop();
 

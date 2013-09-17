@@ -12,7 +12,7 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 {
     public class TestFixture : ITestFixture
     {
-        public object Instance { get; private set; }
+        public object Instance { get; set; }
 
         public string Name { get; set; }
 
