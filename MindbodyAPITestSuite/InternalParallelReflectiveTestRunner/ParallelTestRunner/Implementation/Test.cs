@@ -26,6 +26,11 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
         public ITestResult Run()
         {
+            return RunTest();
+        }
+
+        private ITestResult RunTest()
+        {
             ITestResult testResult = new TestResult();
 
             InstantiatedTestFixture.Instance = SetInstanceProperties(InstantiatedBaseTestFixture.Instance,
@@ -36,7 +41,7 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
             StopWatch.Start();
 
             testResult.MethodResult = Reflector.InvokeMethod(InstantiatedTestFixture.Instance, TestMethod, TestArguments);
-            
+
             StopWatch.Stop();
 
             InstantiatedTestFixture.TestTeardown();

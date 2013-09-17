@@ -54,7 +54,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BaseTestSuite.cs" />
-    <Compile Include="TestSuiteArguments.cs" />
     <Compile Include="Tests\BillingInfoTests.cs" />
     <Compile Include="Tests\CheckoutTests.cs" />
     <Compile Include="Tests\FavoritesTests.cs" />

@@ -18,7 +18,7 @@ namespace MindBodyAPITests.Tests
 
             IRestResponse response = userCalls.SetupUser(UserId);
 
-            //Console.WriteLine(response.Content);
+            Console.WriteLine(response.Content);
 
             Assert.AreNotEqual(0, response.ContentLength);
         }
@@ -33,14 +33,14 @@ namespace MindBodyAPITests.Tests
 
             IRestResponse response = userCalls.GetUser();
 
-            //Console.WriteLine(response.Content);
+            Console.WriteLine(response.Content);
 
             
 
             var responseId = GetUserModel.Parse(response.Content).Id;
             var expectedId = 577;//Int32.Parse(CreatedUsers[0].Content);
 
-            //Console.WriteLine("responseId: " + responseId + " expectedId: " + expectedId);
+            Console.WriteLine("responseId: " + responseId + " expectedId: " + expectedId);
 
             Assert.IsTrue(BaseCompare(mockResponse, response));
             Assert.IsTrue(responseId.Equals(expectedId));
@@ -57,7 +57,7 @@ namespace MindBodyAPITests.Tests
 
             IRestResponse response = userCalls.CreateUser(UserData);
 
-            //Console.WriteLine(response.Content);
+            Console.WriteLine(response.Content);
 
             Assert.IsTrue(BaseCompare(mockResponse, response));
             Assert.AreEqual(Int32.TryParse(response.Content, out content), true);
@@ -79,7 +79,7 @@ namespace MindBodyAPITests.Tests
 
             IRestResponse response = userCalls.UpdateUser(UserId, userProfileData);
 
-            //Console.WriteLine(response.Content);
+            Console.WriteLine(response.Content);
 
             Assert.IsTrue(BaseCompare(mockResposne, response));
             Assert.AreNotEqual(0, response.ContentLength);

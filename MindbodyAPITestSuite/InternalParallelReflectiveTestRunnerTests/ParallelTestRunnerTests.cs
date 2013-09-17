@@ -71,7 +71,7 @@ namespace InternalParallelReflectiveTestRunnerTests
 
             stopwatch.Stop();
 
-            //Console.WriteLine("Time: " + stopwatch.Elapsed);
+            Console.WriteLine("Time: " + stopwatch.Elapsed);
 
             foreach (ITestResult result in results)
             {

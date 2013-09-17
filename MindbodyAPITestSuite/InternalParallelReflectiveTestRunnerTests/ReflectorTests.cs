@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation;
@@ -21,70 +22,23 @@ namespace InternalParallelReflectiveTestRunnerTests
             IReflector reflector = new Reflector();
             string className = "UserTests";
             string methodName = "GetUserTest";
+            object instance = reflector.Instantiate(className);
+            MethodInfo method = instance.GetType().GetMethod(methodName);
 
             Stopwatch stopwatch = new Stopwatch();
 
             stopwatch.Start();
 
-            //IMethodResult result = reflector.InvokeMethod(className, methodName);
+            IMethodResult result = reflector.InvokeMethod(className, method);
 
             stopwatch.Stop();
 
             Console.WriteLine("Time: " + stopwatch.Elapsed);
 
-            //if (result.Exception != null)
-               // Console.WriteLine(result.Exception);
+            if (result.Exception != null)
+               Console.WriteLine(result.Exception);
 
-            //Assert.IsTrue(result.Exception == null);
-        }
-
-        [TestMethod]
-        public void InvokeAllMethodsOfClassTest()
-        {
-            IReflector reflector = new Reflector();
-            string className = "UserTests";
-
-            Stopwatch stopwatch = new Stopwatch();
-
-            stopwatch.Start();
-
-            //IEnumerable<IMethodResult> results = reflector.InvokeAllMethodsInClass(className);
-
-            stopwatch.Stop();
-
-            Console.WriteLine("Time: " + stopwatch.Elapsed);
-
-            //foreach (IMethodResult result in results)
-            //{
-               // if (result.Exception != null)
-               //     Console.WriteLine(result.Exception);
-
-               // Assert.IsTrue(result.Exception == null);
-           // }
-        }
-
-        [TestMethod]
-        public void InvokeAllMethodsInAssemblyTest()
-        {
-            IReflector reflector = new Reflector();
-
-            Stopwatch stopwatch = new Stopwatch();
-
-            stopwatch.Start();
-
-            //IEnumerable<IEnumerable<IMethodResult>> results = reflector.InvokeAllMethodsInAssembly();
-
-            stopwatch.Stop();
-
-            Console.WriteLine("Time: " + stopwatch.Elapsed);
-
-            //foreach (IMethodResult result in results.SelectMany(resultBatch => resultBatch))
-            //{
-                //if (result.Exception != null)
-                    //Console.WriteLine(result.Exception);
-
-                //Assert.IsTrue(result.Exception == null);
-           // }
+            Assert.IsTrue(result.Exception == null);
         }
 
         [TestMethod]
