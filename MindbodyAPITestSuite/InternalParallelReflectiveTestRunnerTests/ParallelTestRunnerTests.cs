@@ -17,28 +17,25 @@ namespace InternalParallelReflectiveTestRunnerTests
         {
             IParallelTestRunner parallelRunner = new ParallelTestRunner();
 
-            IList<IClassMethodInfo> testInfo = new List<IClassMethodInfo>();
+            IClassMethodInfo testInfo = new ClassMethodInfo{ Class = "UserTests", Method = "GetUserTest" };
 
-            testInfo.Add(new ClassMethodInfo { Class = "UserTests", Method = "GetUserTest" });
-            testInfo.Add(new ClassMethodInfo { Class = "UserTests", Method = "GetUserTest" });
-            testInfo.Add(new ClassMethodInfo { Class = "UserTests", Method = "GetUserTest" });
-
+            
             Stopwatch stopwatch = new Stopwatch();
 
             stopwatch.Start();
 
-            IList<IMethodResult> results = parallelRunner.RunTestsParallel(testInfo);
+            IList<ITestResult> results = parallelRunner.RunTestParallel(testInfo);
 
             stopwatch.Stop();
 
             Console.WriteLine("Time: " + stopwatch.Elapsed);
 
-            foreach (IMethodResult result in results)
+            foreach (ITestResult result in results)
             {
-                if (result.Exception != null)
-                    Console.WriteLine(result.Exception);
+                if (result.MethodResult.Exception != null)
+                    Console.WriteLine(result.MethodResult.Exception);
 
-                Assert.IsTrue(result.Exception == null);
+                Assert.IsTrue(result.MethodResult.Exception == null);
             }
         }
 
@@ -51,18 +48,20 @@ namespace InternalParallelReflectiveTestRunnerTests
 
             stopwatch.Start();
 
-            IList<IMethodResult> results = parallelRunner.RunTestsInClassParallel("UserTests");
+            
+
+            IList<ITestResult> results = parallelRunner.RunTestsInClassParallel("UserTests");
 
             stopwatch.Stop();
 
             Console.WriteLine("Time: " + stopwatch.Elapsed);
 
-            foreach (IMethodResult result in results)
+            foreach (ITestResult result in results)
             {
-                if (result.Exception != null)
-                    Console.WriteLine(result.Exception);
+                if (result.MethodResult.Exception != null)
+                    Console.WriteLine(result.MethodResult.Exception);
 
-                Assert.IsTrue(result.Exception == null);
+                Assert.IsTrue(result.MethodResult.Exception == null);
             }
         }
 
@@ -75,18 +74,18 @@ namespace InternalParallelReflectiveTestRunnerTests
 
             stopwatch.Start();
 
-            IList<IMethodResult> results = parallelRunner.RunAllTestsInAssemblyParallel();
+            IList<ITestResult> results = parallelRunner.RunAllTestsInAssemblyParallel();
 
             stopwatch.Stop();
 
             Console.WriteLine("Time: " + stopwatch.Elapsed);
 
-            foreach (IMethodResult result in results)
+            foreach (ITestResult result in results)
             {
-                if (result.Exception != null)
-                    Console.WriteLine(result.Exception);
+                if (result.MethodResult.Exception != null)
+                    Console.WriteLine(result.MethodResult.Exception);
 
-                Assert.IsTrue(result.Exception == null);
+                Assert.IsTrue(result.MethodResult.Exception == null);
             }
         }
     }

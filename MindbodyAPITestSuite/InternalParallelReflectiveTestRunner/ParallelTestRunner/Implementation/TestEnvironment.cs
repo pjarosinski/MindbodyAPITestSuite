@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using InternalParallelReflectiveTestRunner.DataFactoryAttribute;
 using InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface;
 using InternalParallelReflectiveTestRunner.Reflector.Implementations;
 using InternalParallelReflectiveTestRunner.Reflector.Interfaces;
@@ -13,15 +16,15 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
     public class TestEnvironment : ITestEnvironment 
     {
         private ITestFixtureManager TestFixtureManager { get; set; }
-        private IList<IClassMethodInfo> TestInfos { get; set; }
+        private IClassMethodInfo TestInfo { get; set; }
         private string FixtureName { get; set; }
         private IList<Test> PreparedTests { get; set; }
 
-        public TestEnvironment(IList<IClassMethodInfo> testInfos)
+        public TestEnvironment(IClassMethodInfo testInfo)
         {
-            TestInfos = testInfos;
-            TestFixtureManager = PrepareTestFixtures(TestInfos.Select(info => info.Class).ToList());
-            PreparedTests = PrepareTests(testInfos);
+            TestInfo = testInfo;
+            TestFixtureManager = PrepareTestFixture(TestInfo.Class);
+            PreparedTests = PrepareTest(testInfo);
         }
 
         public TestEnvironment(string fixtureName)
@@ -39,10 +42,33 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
         public IList<ITestResult> RunTestsInParallel()
         {
-            IList<ITestResult> results = new List<ITestResult>();
-            PreparedTests.AsParallel().ForAll(test => results.Add(test.Run()));
-            return results;
+            return RunAllTestsInParallel();
         }
+
+        public IList<ITestResult> RunTestInParallel()
+        {
+            return null;
+        }
+
+        private IList<ITestResult> RunAllTestsInParallel()
+        {
+            IList<ITestResult> results = new List<ITestResult>();
+
+            ITestFixture baseFixture = TestFixtureManager.GetBaseFixture();
+
+            baseFixture.FixtureSetup();
+
+            PreparedTests.AsParallel().ForAll(test => results.Add(test.Run()));
+
+            baseFixture.FixtureTeardown();
+
+            return results;
+        } 
+
+        private IList<ITestResult> RunFactoryTestInParallel()
+        {
+            return null;
+        } 
 
         private TestFixtureManager PrepareTestFixtures(IList<string> fixtures)
         {
@@ -61,25 +87,56 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
         private IList<Test> PrepareTests(IList<IClassMethodInfo> testInfos)
         {
-            List<string> fixtures = testInfos.Select(fixture => fixture.Class).ToList();
-            fixtures.ForEach(TestFixtureManager.Setup);
+            ITestFixture baseFixture = TestFixtureManager.GetBaseFixture();
 
-            IList<Test> tests = testInfos.Select(testInfo => new Test(TestFixtureManager.GetFixture(testInfo.Class), testInfo.Method)).ToList();
+            
+
+            IList<Test> tests = testInfos.Select(testInfo => new Test(baseFixture, 
+                TestFixtureManager.GetFixture(testInfo.Class), testInfo.Method)).ToList();
             return tests;
+        }
+
+        private IList<Test> PrepareTest(IClassMethodInfo testInfo)
+        {
+            ITestFixture baseFixture = TestFixtureManager.GetBaseFixture();
+            ITestFixture testFixture = TestFixtureManager.GetFixture(testInfo.Class);
+
+            if (testFixture.CheckForDataFactory(testInfo.Method))
+            {
+                
+  
+                
+            }
+
+            return new List<Test>();
+            //return new Test(baseFixture, TestFixtureManager.GetFixture(testInfo.Class), testInfo.Method);
         }
 
         private IList<Test> PrepareTests(string fixtureName)
         {
-            TestFixtureManager.Setup();
             IEnumerable<string> testNames = TestFixtureManager.GetAllTestsInFixture(fixtureName);
             ITestFixture testFixture = TestFixtureManager.GetFixture(fixtureName);
+            ITestFixture baseFixture = TestFixtureManager.GetBaseFixture();
 
-            return testNames.Select(testName => new Test(testFixture.Instance, testName)).ToList();
+            return testNames.Select(testName => new Test(baseFixture, testFixture, testName)).ToList();
         } 
 
         private IList<Test> PrepareTests()
         {
-            TestFixtureManager.Setup();
+            IList<ITestFixture> fixtures = TestFixtureManager.GetAllFixtures();
+            ITestFixture baseFixture = TestFixtureManager.GetBaseFixture();
+            return (from fixture in fixtures from testName in TestFixtureManager.GetAllTestsInFixture(fixture.Name) 
+                    select new Test(baseFixture, fixture, testName)).ToList();
         } 
+
+        //if test has annotation data factory, create data and pass to tests
+        //public User getUsers() {
+        //   yeild return Users }
+
+
+        //DataFactory[("UserFactory")]
+        //public void GetUser(User user)
+        
+
     }
 }

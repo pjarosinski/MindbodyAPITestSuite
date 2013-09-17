@@ -21,13 +21,13 @@ namespace OAuthAPITests
             };
 
         [TestInitialize]
-        public virtual void SetUp()
+        public virtual void Setup()
         {
             _runTime.Start();
         }
 
         [TestCleanup]
-        public virtual void TearDown()
+        public virtual void Teardown()
         {
             _runTime.Stop();
             Console.WriteLine("Runtime: " + _runTime.Elapsed);

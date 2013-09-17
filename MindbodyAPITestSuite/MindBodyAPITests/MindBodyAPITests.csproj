@@ -71,6 +71,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\InternalParallelReflectiveTestRunner\InternalParallelReflectiveTestRunner.csproj">
+      <Project>{92387294-6D5A-4BA2-BE54-2EB74095870C}</Project>
+      <Name>InternalParallelReflectiveTestRunner</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MindBodyAPI\MindBodyAPI.csproj">
       <Project>{5F905ACE-FCF7-4D75-BD8F-42147BACA60D}</Project>
       <Name>MindBodyAPI</Name>

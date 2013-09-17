@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataFactoryAttribute\DataFactory.cs" />
     <Compile Include="ParallelTestRunner\Implementation\ParallelTestRunner.cs" />
     <Compile Include="ParallelTestRunner\Implementation\Test.cs" />
     <Compile Include="ParallelTestRunner\Implementation\TestEnvironment.cs" />

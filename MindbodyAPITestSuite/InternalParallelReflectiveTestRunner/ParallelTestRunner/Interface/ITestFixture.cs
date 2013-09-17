@@ -8,10 +8,13 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface
 {
     public interface ITestFixture
     {
-        object Instance { get; set; }
+        object Instance { get; }
+        string Name { get; set; }
         void TestSetup();
         void TestTeardown();
         void FixtureSetup();
         void FixtureTeardown();
+        bool CheckForDataFactory(string method);
+        IEnumerable<object> RunDataFactoryMethod(string factoryMethod);
     }
 }

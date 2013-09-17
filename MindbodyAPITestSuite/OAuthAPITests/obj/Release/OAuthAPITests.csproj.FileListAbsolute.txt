@@ -13,3 +13,5 @@ C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\obj\Release\OAuthAPITests.pdb
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\MindBodyAPITests.dll
 C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\MindBodyAPITests.pdb
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\InternalParallelReflectiveTestRunner.dll
+C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\OAuthAPITests\bin\Release\InternalParallelReflectiveTestRunner.pdb

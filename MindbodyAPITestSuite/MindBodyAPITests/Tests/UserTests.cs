@@ -1,4 +1,5 @@
 ﻿using System;
+using InternalParallelReflectiveTestRunner.DataFactoryAttribute;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MindBodyAPI.RequestDataModels;
 using MindBodyAPI.ResponseModels;
@@ -7,6 +8,7 @@ using RestSharp;
 
 namespace MindBodyAPITests.Tests
 {
+    [TestClass]
     public class UserTests : BaseTestSuite
     {
         [TestMethod]
@@ -22,9 +24,12 @@ namespace MindBodyAPITests.Tests
         }
 
         [TestMethod]
-        public void GetUserTest()
+        [DataFactory("GetRandomUsers", new object[]{4})]
+        public void GetUserTest(UserDataModel user)
         {
             IRestResponse mockResponse = BaseMockResponse;
+
+            Console.WriteLine(user);
 
             User userCalls = new User(GeneratedToken, UserToken);
 

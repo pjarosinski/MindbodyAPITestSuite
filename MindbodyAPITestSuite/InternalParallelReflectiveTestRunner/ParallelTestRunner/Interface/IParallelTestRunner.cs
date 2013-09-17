@@ -5,8 +5,8 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface
 {
     public interface IParallelTestRunner
     {
-        IList<IMethodResult> RunTestsParallel(IList<IClassMethodInfo> tests);
-        IList<IMethodResult> RunTestsInClassParallel(string className);
-        IList<IMethodResult> RunAllTestsInAssemblyParallel();
+        IList<ITestResult> RunTestParallel(IClassMethodInfo tests);
+        IList<ITestResult> RunTestsInClassParallel(string className);
+        IList<ITestResult> RunAllTestsInAssemblyParallel();
     }
 }

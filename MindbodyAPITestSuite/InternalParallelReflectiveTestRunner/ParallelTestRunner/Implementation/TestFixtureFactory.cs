@@ -20,21 +20,27 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
         public ITestFixture Create(string name)
         {
-            ITestFixture newFixture = new TestFixture();
-            newFixture.Instance = Reflector.Instantiate(name);
+            object instance = Reflector.Instantiate(name);
+            ITestFixture newFixture = new TestFixture(instance);
             return newFixture;
         }
 
         public IList<ITestFixture> Create(IList<string> fixtures)
         {
-            return fixtures.Select(fixture => new TestFixture {Instance = Reflector.Instantiate(fixture)}).Cast<ITestFixture>().ToList();
+            return fixtures.Select(fixture => new TestFixture(Reflector.Instantiate(fixture))).Cast<ITestFixture>().ToList();
         }
 
         public IList<ITestFixture> Create()
         {
             IList<object> objects = Reflector.InstantiateAllClassesInAssembly().ToList();
-            IList<ITestFixture> fixtures = objects.Select(obj => new TestFixture {Instance = obj}).Cast<ITestFixture>().ToList();
+            IList<ITestFixture> fixtures = objects.Select(obj => new TestFixture(obj)).Cast<ITestFixture>().ToList();
             return fixtures;
         } 
+
+        public ITestFixture CreateBaseFixture()
+        {
+            Type baseFixtureType = Reflector.GetAllTypesInAssembly().First(type => type.Name.Contains("BaseTestSuite"));
+            return new TestFixture (Reflector.Instantiate(baseFixtureType));
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -21,21 +22,9 @@ namespace MindBodyAPITests
 
         public SeriesDataModel SeriesData = new SeriesDataModel { Name = "REST Series", Price = 5.00, ProgramId = 25, SeriesTypeId = 1, CategoryId = -1, Count = 4, Duration = 365, SessionTypeIds = new int[3, 5], OnlinePrice = 2.00, EnableTax1 = true, EnableTax2 = true };
 
-        public TokenModel GeneratedToken = new TokenModel
-        {
-            AccessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXV0aC5tYm9kZXYubWUvdHJ1c3QvdjIiLCJhdWQiOiJ1cm46bWJvZnJhbWV3b3JrYXBpIiwibmJmIjoxMzc4OTI5NTQ2LCJleHAiOjEzNzg5MzY3NDYsIm5hbWVpZCI6ImFwaV91c2VyIiwidW5pcXVlX25hbWUiOiJhcGlfdXNlciIsImF1dGhtZXRob2QiOiJPQXV0aDIiLCJhdXRoX3RpbWUiOiIyMDEzLTA5LTExVDE5OjU5OjA2LjY4MFoiLCJodHRwOi8vaWRlbnRpdHlzZXJ2ZXIudGhpbmt0ZWN0dXJlLmNvbS9jbGFpbXMvY2xpZW50IjoiVGVzdENsaWVudCIsImh0dHA6Ly9pZGVudGl0eXNlcnZlci50aGlua3RlY3R1cmUuY29tL2NsYWltcy9zY29wZSI6InVybjptYm9mcmFtZXdvcmthcGkiLCJyb2xlIjoiTWluZGJvZHlBcGlDbGllbnQifQ.ieNftfKCu5CGDF62R4ZkPB0g5JCmUuDzI54SxW9Gi2s",
-            ExpiresIn = "7199",
-            RefreshToken = "deda596367594946a861dba28ed70e37",
-            TokenType = "urn:ietf:params:oauth:token-type:jwt"
-        };
+        public TokenModel GeneratedToken;
 
-        public TokenModel UserToken = new TokenModel
-        {
-            AccessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXV0aC5tYm9kZXYubWUvdHJ1c3QvdjIiLCJhdWQiOiJ1cm46bWJvZnJhbWV3b3JrYXBpIiwibmJmIjoxMzc4OTI5NjQ5LCJleHAiOjEzNzg5MzY4NDksIm5hbWVpZCI6ImppbS5qb25lc29uNTQzNjU0M0BnbWFpbC5jb20iLCJ1bmlxdWVfbmFtZSI6ImppbS5qb25lc29uNTQzNjU0M0BnbWFpbC5jb20iLCJhdXRobWV0aG9kIjoiT0F1dGgyIiwiYXV0aF90aW1lIjoiMjAxMy0wOS0xMVQyMDowMDo0OS45MjdaIiwiaHR0cDovL2lkZW50aXR5c2VydmVyLnRoaW5rdGVjdHVyZS5jb20vY2xhaW1zL2NsaWVudCI6IlRlc3RDbGllbnQiLCJodHRwOi8vaWRlbnRpdHlzZXJ2ZXIudGhpbmt0ZWN0dXJlLmNvbS9jbGFpbXMvc2NvcGUiOiJ1cm46bWJvZnJhbWV3b3JrYXBpIiwiZW1haWwiOiJqaW0uam9uZXNvbjU0MzY1NDNAZ21haWwuY29tIn0.SkN3wcb5Qit-_RjG-MaKT5qtKIggqQZzlCde6tQbDfI",
-            ExpiresIn = "7199",
-            RefreshToken = "a46b973799bc4afb9606ec1ba903d2b7",
-            TokenType = "urn:ietf:params:oauth:token-type:jwt"
-        };
+        public TokenModel UserToken;
 
         public TokenModel StaffToken;
 
@@ -59,8 +48,28 @@ namespace MindBodyAPITests
         
 
         [ClassInitialize]
-        public virtual void FixtureSetUp()
+        public virtual void FixtureSetup()
         {
+            TokenModel generatedToken = new TokenModel
+            {
+                AccessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXV0aC5tYm9kZXYubWUvdHJ1c3QvdjIiLCJhdWQiOiJ1cm46bWJvZnJhbWV3b3JrYXBpIiwibmJmIjoxMzc4OTI5NTQ2LCJleHAiOjEzNzg5MzY3NDYsIm5hbWVpZCI6ImFwaV91c2VyIiwidW5pcXVlX25hbWUiOiJhcGlfdXNlciIsImF1dGhtZXRob2QiOiJPQXV0aDIiLCJhdXRoX3RpbWUiOiIyMDEzLTA5LTExVDE5OjU5OjA2LjY4MFoiLCJodHRwOi8vaWRlbnRpdHlzZXJ2ZXIudGhpbmt0ZWN0dXJlLmNvbS9jbGFpbXMvY2xpZW50IjoiVGVzdENsaWVudCIsImh0dHA6Ly9pZGVudGl0eXNlcnZlci50aGlua3RlY3R1cmUuY29tL2NsYWltcy9zY29wZSI6InVybjptYm9mcmFtZXdvcmthcGkiLCJyb2xlIjoiTWluZGJvZHlBcGlDbGllbnQifQ.ieNftfKCu5CGDF62R4ZkPB0g5JCmUuDzI54SxW9Gi2s",
+                ExpiresIn = "7199",
+                RefreshToken = "deda596367594946a861dba28ed70e37",
+                TokenType = "urn:ietf:params:oauth:token-type:jwt"
+            };
+
+            TokenModel userToken = new TokenModel
+            {
+                AccessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXV0aC5tYm9kZXYubWUvdHJ1c3QvdjIiLCJhdWQiOiJ1cm46bWJvZnJhbWV3b3JrYXBpIiwibmJmIjoxMzc4OTI5NjQ5LCJleHAiOjEzNzg5MzY4NDksIm5hbWVpZCI6ImppbS5qb25lc29uNTQzNjU0M0BnbWFpbC5jb20iLCJ1bmlxdWVfbmFtZSI6ImppbS5qb25lc29uNTQzNjU0M0BnbWFpbC5jb20iLCJhdXRobWV0aG9kIjoiT0F1dGgyIiwiYXV0aF90aW1lIjoiMjAxMy0wOS0xMVQyMDowMDo0OS45MjdaIiwiaHR0cDovL2lkZW50aXR5c2VydmVyLnRoaW5rdGVjdHVyZS5jb20vY2xhaW1zL2NsaWVudCI6IlRlc3RDbGllbnQiLCJodHRwOi8vaWRlbnRpdHlzZXJ2ZXIudGhpbmt0ZWN0dXJlLmNvbS9jbGFpbXMvc2NvcGUiOiJ1cm46bWJvZnJhbWV3b3JrYXBpIiwiZW1haWwiOiJqaW0uam9uZXNvbjU0MzY1NDNAZ21haWwuY29tIn0.SkN3wcb5Qit-_RjG-MaKT5qtKIggqQZzlCde6tQbDfI",
+                ExpiresIn = "7199",
+                RefreshToken = "a46b973799bc4afb9606ec1ba903d2b7",
+                TokenType = "urn:ietf:params:oauth:token-type:jwt"
+            };
+
+            GeneratedToken = generatedToken;
+
+            UserToken = userToken;
+
             //I will finish this one day when the API works. Until then error log gen yay!
             /*Tokens tokenCalls = new Tokens();
 
@@ -88,13 +97,13 @@ namespace MindBodyAPITests
         }
 
         [TestInitialize]
-        public virtual void SetUp()
+        public virtual void Setup()
         {
             _runTime.Start();
         }
 
         [TestCleanup]
-        public virtual void TearDown()
+        public virtual void Teardown()
         {
             _runTime.Stop();
             Console.WriteLine("Runtime: " +  _runTime.Elapsed);
@@ -106,7 +115,7 @@ namespace MindBodyAPITests
         }
 
         [ClassCleanup]
-        public virtual void FixtureTearDown()
+        public virtual void FixtureTeardown()
         {
             //delete users.
         }
@@ -126,12 +135,17 @@ namespace MindBodyAPITests
 
         public IEnumerable<UserDataModel> GetRandomUsers(int howManyUsers)
         {
+            IList<UserDataModel> users = new List<UserDataModel>();
             Random randomGenerator = new Random();
 
             for (int user = 0; user < howManyUsers; user++)
             {
-                yield return new UserDataModel { Username = "jim" + randomGenerator.Next(1000) + user + ".joneson@mindbodyonline.com", Password = "jimmybob1234", Firstname = "jim", Lastname = "joneson" };
+                users.Add(new UserDataModel { Username = "jim" + randomGenerator.Next(1000) + user + ".joneson@mindbodyonline.com", Password = "jimmybob1234", Firstname = "jim", Lastname = "joneson" });
             }
+
+            return users;
         }
+
+        //public 
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using InternalParallelReflectiveTestRunner.DataFactoryAttribute;
 using InternalParallelReflectiveTestRunner.Reflector.Interfaces;
 
 namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
@@ -15,7 +16,7 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
 
         private readonly Assembly _testAssembly;
 
-        public Reflector(string path = @"\MindBodyAPITests.dll")
+        public Reflector(string path = @"C:\Users\chris.essley\Documents\GitHub\MindbodyAPITestSuite\MindbodyAPITestSuite\MindBodyAPITests\bin\Release\MindBodyAPITests.dll")
         {
             _path = path;
             _testAssembly = Assembly.LoadFrom(_path);
@@ -37,10 +38,38 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             return GetMethodInfoFromObject(instantiatedObject, method);
         }
 
+        public object PropertyCopy(object fromInstance, object toInstance)
+        {
+            foreach (PropertyInfo prop in toInstance.GetType().GetProperties())
+            {
+                if (prop.GetValue(toInstance) == null)
+                {
+                    prop.SetValue(toInstance, fromInstance.GetType().GetProperties().First(propName => propName.Name == prop.Name));
+                }
+            }
+
+            return toInstance;
+        }
+
+        public bool CheckForFactoryMethod(string method, object instance)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataFactory GetDataFactoryMethod(string method, object instance)
+        {
+            throw new NotImplementedException();
+        }
+
         //returns new instance of classname
         public object Instantiate(string className)
         {
             return InstantiateClass(className);
+        }
+
+        public object Instantiate(Type typeOfClass)
+        {
+            return InstantiateClass(typeOfClass);
         }
 
         public IEnumerable<object> Instantiate(IEnumerable<string> classNames)
@@ -106,7 +135,9 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
 
         private MethodInfo GetMethodInfoFromObject(object obj, string method)
         {
-            return obj.GetType().GetMethod(method);
+            MethodInfo[] methods = obj.GetType().GetMethods();
+
+            return methods.FirstOrDefault(info => info.Name.Contains(method));
         }
 
         private IEnumerable<IEnumerable<IMethodResult>> RunAllMethodsInAssembly()
@@ -155,7 +186,7 @@ namespace InternalParallelReflectiveTestRunner.Reflector.Implementations
             }
             catch (Exception exception)
             {
-                return exception;
+                return exception.InnerException;
             }
 
             return null;

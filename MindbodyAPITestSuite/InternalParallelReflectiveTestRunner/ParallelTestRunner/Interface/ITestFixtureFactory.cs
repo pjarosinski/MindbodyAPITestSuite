@@ -12,5 +12,6 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface
         ITestFixture Create(string name);
         IList<ITestFixture> Create(IList<string> fixtures);
         IList<ITestFixture> Create();
+        ITestFixture CreateBaseFixture();
     }
 }
