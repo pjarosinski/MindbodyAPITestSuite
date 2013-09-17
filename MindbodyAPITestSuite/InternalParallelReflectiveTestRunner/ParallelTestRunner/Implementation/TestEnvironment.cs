@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using InternalParallelReflectiveTestRunner.DataFactoryAttribute;
 using InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface;
-using InternalParallelReflectiveTestRunner.Reflector.Implementations;
-using InternalParallelReflectiveTestRunner.Reflector.Interfaces;
 
 namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 {
@@ -93,6 +84,7 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
             IList<Test> tests = testInfos.Select(testInfo => new Test(baseFixture, 
                 TestFixtureManager.GetFixture(testInfo.Class), testInfo.Method)).ToList();
+
             return tests;
         }
 
@@ -106,6 +98,7 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
                 IEnumerable<object> testData = testFixture.RunDataFactoryForMethod(testInfo.Method);
                 return testData.Select(argument => new Test(baseFixture, testFixture, testInfo.Method) {TestArguments = new[] {argument}}).ToList();
             }
+
             return new List<Test>{new Test(baseFixture, testFixture, testInfo.Method)};
         }
 
@@ -114,6 +107,7 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
             IEnumerable<string> testNames = TestFixtureManager.GetAllTestsInFixture(fixtureName);
             ITestFixture testFixture = TestFixtureManager.GetFixture(fixtureName);
             ITestFixture baseFixture = TestFixtureManager.GetBaseFixture();
+
             return testNames.Select(testName => new Test(baseFixture, testFixture, testName)).ToList();
         } 
 
@@ -121,18 +115,9 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
         {
             IList<ITestFixture> fixtures = TestFixtureManager.GetAllFixtures();
             ITestFixture baseFixture = TestFixtureManager.GetBaseFixture();
+
             return (from fixture in fixtures from testName in TestFixtureManager.GetAllTestsInFixture(fixture.Name) 
                     select new Test(baseFixture, fixture, testName)).ToList();
         } 
-
-        //if test has annotation data factory, create data and pass to tests
-        //public User getUsers() {
-        //   yeild return Users }
-
-
-        //DataFactory[("UserFactory")]
-        //public void GetUser(User user)
-        
-
     }
 }

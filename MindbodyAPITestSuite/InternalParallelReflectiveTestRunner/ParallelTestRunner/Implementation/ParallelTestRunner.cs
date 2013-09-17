@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface;
-using InternalParallelReflectiveTestRunner.Reflector.Interfaces;
 
 namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 {
@@ -31,27 +26,21 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
         private IList<ITestResult> RunParallel(ITestInfo test)
         {
             ITestEnvironment environment = new TestEnvironment(test);
-
             IList<ITestResult> results = environment.RunTestsInParallel();
-
             return results;
         }
 
         private IList<ITestResult> RunParallel(string testClass)
         {
             ITestEnvironment environment = new TestEnvironment(testClass);
-
             IList<ITestResult> results = environment.RunTestsInParallel();
-
             return results;
         }
 
         private IList<ITestResult> RunParallel()
         {
             ITestEnvironment environment = new TestEnvironment();
-
             IList<ITestResult> results = environment.RunTestsInParallel();
-
             return results;
         }
     }

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using InternalParallelReflectiveTestRunner.DataFactoryAttribute;
 using InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface;
 using InternalParallelReflectiveTestRunner.Reflector.Interfaces;
@@ -27,13 +24,13 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
 
         public void TestSetup()
         {
-            MethodInfo fixtureSetup = Reflector.GetAllMethodsInObject(Instance).First(method => method.Name.Contains("Teardown"));
+            MethodInfo fixtureSetup = Reflector.GetAllMethodsInObject(Instance).First(method => method.Name.Equals("Setup"));
             Reflector.InvokeMethod(Instance, fixtureSetup);
         }
 
         public void TestTeardown()
         {
-            MethodInfo fixtureSetup = Reflector.GetAllMethodsInObject(Instance).First(method => method.Name.Contains("Setup"));
+            MethodInfo fixtureSetup = Reflector.GetAllMethodsInObject(Instance).First(method => method.Name.Equals("Teardown"));
             Reflector.InvokeMethod(Instance, fixtureSetup);
         }
 

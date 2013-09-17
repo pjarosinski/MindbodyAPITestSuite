@@ -43,10 +43,7 @@ namespace MindBodyAPITests
 
         public int UserId; 
 
-        private readonly Stopwatch _runTime = new Stopwatch();
-
-        
-
+       
         [ClassInitialize]
         public virtual void FixtureSetup()
         {
@@ -69,6 +66,8 @@ namespace MindBodyAPITests
             GeneratedToken = generatedToken;
 
             UserToken = userToken;
+
+            Console.WriteLine("Fixture Setup Executed");
 
             //I will finish this one day when the API works. Until then error log gen yay!
             /*Tokens tokenCalls = new Tokens();
@@ -99,25 +98,19 @@ namespace MindBodyAPITests
         [TestInitialize]
         public virtual void Setup()
         {
-            _runTime.Start();
+            Console.WriteLine("Test Setup Executed");
         }
 
         [TestCleanup]
         public virtual void Teardown()
         {
-            _runTime.Stop();
-            Console.WriteLine("Runtime: " +  _runTime.Elapsed);
-
-            foreach (var user in CreatedUsers)
-            {
-                Console.WriteLine("User: " + user.Content);
-            }
+            Console.WriteLine("Test Teardown Executed");
         }
 
         [ClassCleanup]
         public virtual void FixtureTeardown()
         {
-            //delete users.
+            Console.WriteLine("Fixture Teardown Executed");
         }
 
         public bool BaseCompare(IRestResponse mockResponse, IRestResponse response)
@@ -145,7 +138,5 @@ namespace MindBodyAPITests
 
             return users;
         }
-
-        //public 
     }
 }

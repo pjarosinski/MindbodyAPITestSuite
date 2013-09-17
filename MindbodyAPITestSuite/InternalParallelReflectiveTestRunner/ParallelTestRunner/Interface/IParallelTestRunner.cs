@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using InternalParallelReflectiveTestRunner.Reflector.Interfaces;
 
 namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface
 {

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using InternalParallelReflectiveTestRunner.DataFactoryAttribute;
-using InternalParallelReflectiveTestRunner.ParallelTestRunner.Interface;
 using InternalParallelReflectiveTestRunner.Reflector.Interfaces;
 
 namespace InternalParallelReflectiveTestRunner.Reflector.Implementations

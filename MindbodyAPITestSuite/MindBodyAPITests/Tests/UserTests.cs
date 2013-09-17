@@ -35,9 +35,13 @@ namespace MindBodyAPITests.Tests
 
             IRestResponse response = userCalls.GetUser();
 
+            Console.WriteLine("work damnit");
+
             Console.WriteLine(response);
 
             Console.WriteLine(response.Content);
+
+            
 
             var responseId = GetUserModel.Parse(response.Content).Id;
             var expectedId = 577;//Int32.Parse(CreatedUsers[0].Content);
