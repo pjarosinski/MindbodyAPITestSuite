@@ -32,7 +32,6 @@ namespace InternalParallelReflectiveTestRunner.ParallelTestRunner.Implementation
         private ITestResult RunTest()
         {
             ITestResult testResult = new TestResult();
-
             InstantiatedTestFixture.Instance = SetInstanceProperties(InstantiatedBaseTestFixture.Instance,
                                                                      InstantiatedTestFixture.Instance);
             InstantiatedTestFixture.TestSetup();
